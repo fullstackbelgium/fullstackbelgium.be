@@ -26,15 +26,14 @@
         img {
             margin-top: 20px;
             margin-bottom: 25px;
-            max-width: 300px;
-            width: 100%;
+            max-width: 200px;
         }
         div.content {
-            width: 450px;
+            max-width: 450px;
             margin: 0 auto;
         }
         h1 {
-            font-size: 3em;
+            font-size: 1.8em;
             margin-bottom: 25px;
         }
         p {
@@ -52,6 +51,14 @@
         }
         a:hover {
             background-color: #22B4B5; 
+        }
+        @media only screen and (min-width: 600px)  {
+            img {
+                max-width: 300px;
+            }
+            h1 {
+                font-size: 3em;
+            }
         }
     </style>
 </head>
