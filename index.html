@@ -37,20 +37,28 @@
             margin-bottom: 25px;
         }
         p {
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
         a {
+            color: #999;
+        }
+        a.invite {
             background-color: #1E8787; 
             border-radius: 5px;
             color: white;
+            display: block;
             font-size: 20px;
             font-weight: bold;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             padding: 15px 25px;
             text-decoration: none;
         }
-        a:hover {
+        a.invite:hover {
             background-color: #22B4B5; 
+        }
+        p.info {
+            color: #777;
+            font-size: 0.8em;
         }
         @media only screen and (min-width: 600px)  {
             img {
@@ -69,9 +77,10 @@
         <p>
             Full Stack Belgium is an online Slack community for developers from Belgium. Join us to discuss anything you want about web development and programming.
         </p>
-        <a href="https://join.slack.com/t/fullstackbelgium/shared_invite/enQtMzYxNjMwNTM3NDU2LTE5Nzk3NDkwMmNjMThhODM2MzM2MTE0NzMxZjIwNWZkNjAwMDc3NmZlYWQ0NGVmZTc4NWJkMzMzODAzZjVmZGU">
+        <a class="invite" href="https://join.slack.com/t/fullstackbelgium/shared_invite/enQtMzYxNjMwNTM3NDU2LTE5Nzk3NDkwMmNjMThhODM2MzM2MTE0NzMxZjIwNWZkNjAwMDc3NmZlYWQ0NGVmZTc4NWJkMzMzODAzZjVmZGU">
             Join The Community
         </a>
+        <p class="info">If you can't join, email <a href="mailto:dries.vints@gmail.com">dries.vints@gmail.com</a> to add you.</p>
     </div>
 </body>
 </html>
