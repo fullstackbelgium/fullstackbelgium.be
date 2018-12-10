@@ -23,11 +23,9 @@ class MeetupApi
     {
         Log::info("Updating meet event {$meetupId}" . print_r($updatedProperties, true));
 
-        /*
         if (! app()->environment('production')) {
             return;
         }
-        */
 
         $this->client->patch("/{$meetupId}/events/{$eventId}?key={$this->apiKey}", [
             'form_params' => $updatedProperties
