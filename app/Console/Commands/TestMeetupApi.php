@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Services\Meetup\Meetup;
+use App\Services\Meetup\MeetupApi;
 use Illuminate\Console\Command;
 
 class TestMeetupApi extends Command
@@ -13,10 +13,10 @@ class TestMeetupApi extends Command
 
     public function handle()
     {
-        $meetup = app(Meetup::class);
+        $meetup = app(MeetupApi::class);
 
         $meetup->updateEvent('fullstackantwerp', '257096861', [
-            'description' => 'this is the test description',
+            'description' => 'this is the test description2',
         ]);
     }
 }

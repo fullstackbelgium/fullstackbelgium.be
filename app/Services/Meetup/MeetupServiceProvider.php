@@ -9,8 +9,8 @@ class MeetupServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        $this->app->bind(Meetup::class, function () {
-            ;
+        $this->app->bind(MeetupApi::class, function () {
+
             $client = new Client([
                 'base_uri' => 'https://api.meetup.com/',
                 'headers' => [
@@ -19,9 +19,8 @@ class MeetupServiceProvider extends ServiceProvider
             ]);
 
             $apiKey = config('services.meetup.api_key');
-            $client->addSubscriber(new KeyAuthPlugin($apiKey));
 
-            return new Meetup($client);
+            return new MeetupApi($client, $apiKey);
         });
     }
 }

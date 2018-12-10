@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Actions\SendTweetAction;
+use App\Actions\UpdateMeetupEventDescriptionAction;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use  Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -13,6 +14,23 @@ class Event extends Model
         'date',
         'tweet_sent_at',
     ];
+
+    protected $attributes = [
+        'schedule' => '19:00 Doors' . PHP_EOL . '20:00 Talks'
+    ];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::saved(function(Event $event) {
+            if (empty($event->meetup_com_event_id)) {
+                return;
+            }
+
+            app(UpdateMeetupEventDescriptionAction::class)->execute($event);
+        });
+    }
 
     public function meetup(): BelongsTo
     {
@@ -35,5 +53,10 @@ class Event extends Model
         $this->save();
 
         return $this;
+    }
+
+    public function generateMeetupComDescription(): string
+    {
+        return view('admin.generate-meetup-com-description', ['event' => $this]);
     }
 }

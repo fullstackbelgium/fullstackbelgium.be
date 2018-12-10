@@ -22,7 +22,7 @@ return [
     ],
 
     'meetup' => [
-        'api_key' => env('API_KEY'),
+        'api_key' => env('MEETUP_API_KEY'),
     ],
 
     'mailgun' => [

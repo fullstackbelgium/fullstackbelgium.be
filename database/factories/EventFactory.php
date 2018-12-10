@@ -10,12 +10,14 @@ $factory->define(Event::class, function (Faker $faker) {
         'meetup_id' => function () {
             return factory(Meetup::class)->create()->id;
         },
+
+        'meetup_com_event_id' => $faker->word,
         'date' => $faker->dateTimeBetween('-2 years', '+ 6 month'),
         'intro' => $faker->paragraph,
+        'sponsors' => $faker->paragraph,
 
-        'speaker_1_name' => $faker->name,
+        'schedule' => $faker->paragraph,
         'speaker_1_abstract' => $faker->paragraph,
-        'speaker_2_name' => $faker->name,
         'speaker_2_abstract' => $faker->paragraph,
 
         'tweet' => $faker->sentence,

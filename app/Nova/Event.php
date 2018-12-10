@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Date;
+use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Trix;
@@ -21,9 +22,8 @@ class Event extends Resource
     public static $search = [
         'venue_name',
         'intro',
-        'speaker_1_name',
+        'sponsors',
         'speaker_1_abstract',
-        'speaker_2_name',
         'speaker_2_abstract',
         'tweet',
     ];
@@ -35,12 +35,12 @@ class Event extends Resource
             BelongsTo::make('Meetup')->sortable()->rules('required'),
             Text::make('Venue name'),
 
-            Trix::make('Intro')->hideFromIndex(),
+            Markdown::make('Intro')->hideFromIndex(),
+            Markdown::make('Sponsors')->hideFromIndex(),
 
-            Text::make('Speaker 1 name')->hideFromIndex(),
-            Trix::make('Speaker 1 abstract')->hideFromIndex(),
-            Text::make('Speaker 2 name')->hideFromIndex(),
-            Trix::make('Speaker 2 abstract')->hideFromIndex(),
+            Markdown::make('Schedule')->hideFromIndex(),
+            Markdown::make('Speaker 1 abstract')->hideFromIndex(),
+            Markdown::make('Speaker 2 abstract')->hideFromIndex(),
 
             Textarea::make('Tweet'),
 
