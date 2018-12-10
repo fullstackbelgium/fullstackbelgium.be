@@ -57,6 +57,8 @@ class Event extends Model
 
     public function generateMeetupComDescription(): string
     {
-        return view('admin.generate-meetup-com-description', ['event' => $this]);
+        $html =  view('admin.generate-meetup-com-description', ['event' => $this]);
+
+        return strip_tags($html, '<br><p>');
     }
 }

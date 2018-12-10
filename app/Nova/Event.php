@@ -33,14 +33,15 @@ class Event extends Resource
         return [
             Date::make('Date')->sortable()->rules('required'),
             BelongsTo::make('Meetup')->sortable()->rules('required'),
+            Text::make('Meetup.com event id', 'meetup_com_event_id'),
             Text::make('Venue name'),
 
-            Markdown::make('Intro')->hideFromIndex(),
-            Markdown::make('Sponsors')->hideFromIndex(),
+            Trix::make('Intro')->hideFromIndex(),
+            Trix::make('Sponsors')->hideFromIndex(),
 
-            Markdown::make('Schedule')->hideFromIndex(),
-            Markdown::make('Speaker 1 abstract')->hideFromIndex(),
-            Markdown::make('Speaker 2 abstract')->hideFromIndex(),
+            Trix::make('Schedule')->hideFromIndex(),
+            Trix::make('Speaker 1 abstract')->hideFromIndex(),
+            Trix::make('Speaker 2 abstract')->hideFromIndex(),
 
             Textarea::make('Tweet'),
 

@@ -10,7 +10,5 @@ function faker(): Generator
 
 function markdownToHtml(string $markdown): string
 {
-    return (new Parsedown())
-        ->setBreaksEnabled(true)
-        ->text($markdown);
+    return (new Parsedown())->text($markdown);
 }

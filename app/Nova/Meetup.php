@@ -19,6 +19,7 @@ class Meetup extends Resource
     {
         return [
             Text::make('Name')->sortable()->rules('required'),
+            Text::make('Meetup.com id', 'meetup_com_id')->sortable()->rules('required'),
         ];
     }
 }

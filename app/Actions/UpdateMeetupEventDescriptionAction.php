@@ -4,7 +4,6 @@ namespace App\Actions;
 
 use App\Models\Event;
 use App\Services\Meetup\MeetupApi;
-use App\Services\Twitter\Twitter;
 
 class UpdateMeetupEventDescriptionAction
 {

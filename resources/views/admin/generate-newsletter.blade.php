@@ -2,13 +2,14 @@
 <body>
 Dear Meetup members,
 
-{!! markdownToHtml($event->intro) !!}
-{!! markdownToHtml($event->sponsors) !!}
+{!! markdownToHtml($event->intro) !!}<br/>
+{!! markdownToHtml($event->sponsors) !!}<br/>
 
 <h2>Schedule</h2>
-{!! markdownToHtml($event->schedule) !!}
-{!! markdownToHtml($event->speaker_1_abstract) !!}
-{!! markdownToHtml($event->speaker_2_abstract) !!}
+{!! markdownToHtml($event->schedule) !!}<br/>
+
+{!! markdownToHtml($event->speaker_1_abstract) !!}<br/>
+{!! markdownToHtml($event->speaker_2_abstract) !!}<br/>
 
 <br />
 
