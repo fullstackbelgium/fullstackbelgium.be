@@ -15,11 +15,14 @@ class ScheduledTweet extends Resource
 
     public static $title = 'tweet';
 
-    public static $label = 'Scheduled Tweets';
-
     public static $search = [
         'tweet',
     ];
+
+    public static function label()
+    {
+        return 'Scheduled Tweets';
+    }
 
     public function fields(Request $request)
     {
