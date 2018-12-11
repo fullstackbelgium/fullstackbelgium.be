@@ -5,7 +5,7 @@ namespace App\Actions;
 use App\Models\Event;
 use App\Services\Meetup\MeetupApi;
 
-class UpdateMeetupEventDescriptionAction
+class UpdateMeetupComEventAction
 {
     /** @var \App\Services\Meetup\MeetupApi */
     protected $meetupApi;
@@ -21,10 +21,9 @@ class UpdateMeetupEventDescriptionAction
 
         $eventId = $event->meetup_com_event_id;
 
-        $this->meetupApi->updateEvent(
-            $meetupId,
-            $eventId,
-            ['description' => $event->generateMeetupComDescription()]
-        );
+        $this->meetupApi->updateEvent($meetupId, $eventId, [
+            'description' => $event->generateMeetupComDescription(),
+            'time' => $event->date->timestamp * 1000,
+        ]);
     }
 }

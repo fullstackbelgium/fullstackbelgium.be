@@ -6,8 +6,7 @@ use App\Http\Controllers\Admin\GenerateNewsletterController;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
-use Laravel\Nova\Fields\Date;
-use Laravel\Nova\Fields\Markdown;
+use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Trix;
@@ -31,7 +30,7 @@ class Event extends Resource
     public function fields(Request $request)
     {
         return [
-            Date::make('Date')->sortable()->rules('required'),
+            DateTime::make('Date')->sortable()->rules('required'),
             BelongsTo::make('Meetup')->sortable()->rules('required'),
             Text::make('Meetup.com event id', 'meetup_com_event_id'),
             Text::make('Venue name'),

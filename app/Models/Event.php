@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use App\Actions\SendTweetAction;
-use App\Actions\UpdateMeetupEventDescriptionAction;
+use App\Actions\UpdateMeetupComEventAction;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use  Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -28,7 +28,7 @@ class Event extends Model
                 return;
             }
 
-            app(UpdateMeetupEventDescriptionAction::class)->execute($event);
+            app(UpdateMeetupComEventAction::class)->execute($event);
         });
     }
 
