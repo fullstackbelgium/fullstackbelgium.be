@@ -52,6 +52,14 @@ class Event extends Resource
                 return '<a target="fullstack_belgium_newsletter" href="' . action(GenerateNewsletterController::class, $this->id) . '">Newsletter</a>';
             })->asHtml(),
 
+            Text::make('', function () {
+                if (! $this->exists) {
+                    return '';
+                }
+
+                return '<a target="fullstack_belgium_meetup" href="' . $this->meetup_com_url . '">Meetup.com</a>';
+            })->asHtml(),
+
             Boolean::make('Tweet sent', function () {
                 return ! is_null($this->tweet_sent_at);
             })
