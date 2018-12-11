@@ -4,7 +4,7 @@ require __DIR__.'/vendor/autoload.php';
 
 $server = "68.183.222.4";
 $userAndServer = 'forge@'. $server;
-$repository = "spatie/fullstackbelgium.be";
+$repository = "fullstackantwerp/fullstackbelgium.be";
 $baseDir = "/home/forge/fullstackbelgium.be";
 $releasesDir = "{$baseDir}/releases";
 $persistentDir = "{$baseDir}/persistent";
