@@ -61,4 +61,9 @@ class Event extends Model
 
         return strip_tags($html, '<br><p>');
     }
+
+    public function getMeetupComUrlAttribute(): string
+    {
+        return "https://meetup.com/{$this->meetup->meetup_com_id}/events/{$this->meetup_com_event_id}";
+    }
 }
