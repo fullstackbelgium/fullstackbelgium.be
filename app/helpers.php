@@ -8,7 +8,7 @@ function faker(): Generator
     return Factory::create();
 }
 
-function markdownToHtml(string $markdown = ''): string
+function markdownToHtml(?string $markdown = ''): string
 {
     return (new Parsedown())->text($markdown);
 }
