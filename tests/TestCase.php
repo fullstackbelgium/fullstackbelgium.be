@@ -38,6 +38,8 @@ abstract class TestCase extends BaseTestCase
 
     protected function fakeMeetupApi(): MeetupApiMock
     {
+
+
         $this->swap(MeetupApi::class, new MeetupApiMock());
 
         return app(MeetupApi::class);
