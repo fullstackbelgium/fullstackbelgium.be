@@ -23,7 +23,6 @@ class UpdateMeetupComEventAction
 
         $this->meetupApi->updateEvent($meetupId, $eventId, [
             'description' => $event->generateMeetupComDescription(),
-            //'time' => $event->date->timestamp * 1000,
         ]);
     }
 }
