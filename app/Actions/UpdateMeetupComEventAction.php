@@ -22,7 +22,8 @@ class UpdateMeetupComEventAction
         $eventId = $event->meetup_com_event_id;
 
         $this->meetupApi->updateEvent($meetupId, $eventId, [
-            'description' => $event->generateMeetupComDescription(),
+            'name' => $event->meetup_com_name,
+            'description' => $event->meetup_com_description,
         ]);
     }
 }

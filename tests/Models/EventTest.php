@@ -3,6 +3,7 @@
 namespace Tests\Models;
 
 use App\Models\Event;
+use Carbon\Carbon;
 use Tests\TestCase;
 
 class EventTest extends TestCase
@@ -43,5 +44,21 @@ class EventTest extends TestCase
         $this->event->intro = 'new intro';
         $this->event->save();
         $this->meetupApi->assertEventsUpdatedCount(0);
+    }
+
+    /** @test */
+    public function it_can_generate_the_name_for_meetup_com()
+    {
+        $event = factory(Event::class)->create([
+            'venue_name' => null,
+            'date' => Carbon::createFromFormat('Ymd', '20180201')
+        ]);
+
+        $this->assertEquals('February Meetup', $event->meetup_com_name);
+
+        $event->update(['venue_name' => 'Spatie']);
+
+        $this->assertEquals('February Meetup at Spatie', $event->meetup_com_name);
+
     }
 }

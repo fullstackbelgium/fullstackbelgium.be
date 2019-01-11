@@ -10,6 +10,8 @@ use  Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Event extends Model
 {
+    protected $guarded = [];
+
     protected $dates = [
         'date',
         'tweet_sent_at',
@@ -55,11 +57,22 @@ class Event extends Model
         return $this;
     }
 
-    public function generateMeetupComDescription(): string
+    public function getMeetupComDescriptionAttribute(): string
     {
         $html =  view('admin.generate-meetup-com-description', ['event' => $this]);
 
         return strip_tags($html, '<br><p>');
+    }
+
+    public function getMeetupComNameAttribute(): string
+    {
+        $name = "{$this->date->format('F')} Meetup";
+
+        if (! empty($this->venue_name)) {
+            $name .= " at {$this->venue_name}";
+        }
+
+        return $name;
     }
 
     public function getMeetupComUrlAttribute(): string
