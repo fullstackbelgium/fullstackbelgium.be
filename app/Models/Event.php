@@ -16,7 +16,7 @@ class Event extends Model
     ];
 
     protected $attributes = [
-        'schedule' => '19:00 Doors' . PHP_EOL . '20:00 Talks'
+        'schedule' => '19:00 Doors<br />20:00 Talks'
     ];
 
     protected static function boot()
