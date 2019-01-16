@@ -3,6 +3,8 @@
 Dear Meetup members,<br /><br/>
 {!! markdownToHtml($event->intro) !!}<br/>
 If you want to attend this meetup, please RSVP on <a href="{{ $event->meetup_com_url }}">the event page at meetup.com</a><br/><br />
+
+<h2>Sponsors</h2>
 {!! markdownToHtml($event->sponsors) !!}<br/>
 
 <h2>Schedule</h2>
