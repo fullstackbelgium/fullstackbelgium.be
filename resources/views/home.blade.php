@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <title>Full Stack Belgium</title>
-    <meta name="description" content="Full Stack Belgium is an online Slack community for developers from Belgium.">
+    <meta name="description" content="Organising meetups on front end, back end, devops and everything in between in the cities of Antwerp, Ghent and Brussels">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
 
