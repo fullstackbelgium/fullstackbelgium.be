@@ -6,9 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <title>Full Stack Belgium</title>
-    <meta name="description" content="Full Stack Belgium is an online Slack community for developers from Belgium.">
+    <meta name="description" content="Organising meetups on front end, back end, devops and everything in between in the cities of Antwerp, Ghent and Brussels">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="theme-color" content="#ffffff">
 
     <style type="text/css">
         * {
@@ -71,17 +79,15 @@
     </style>
 </head>
 <body>
-<img src="/images/full-stack-belgium.png">
-<h1>Full Stack Belgium</h1>
-<div class="content">
-    <p>
-        Full Stack Belgium is an online Slack community for developers from Belgium. Join us to discuss anything you want about web development and programming.
-    </p>
-    <a class="invite" href="https://join.slack.com/t/fullstackbelgium/shared_invite/enQtMzYxNjMwNTM3NDU2LTE5Nzk3NDkwMmNjMThhODM2MzM2MTE0NzMxZjIwNWZkNjAwMDc3NmZlYWQ0NGVmZTc4NWJkMzMzODAzZjVmZGU">
-        Join The Community
-    </a>
-    <p class="info">If you can't join, email <a href="mailto:dries.vints@gmail.com">dries.vints@gmail.com</a> to add you.</p>
-</div>
+    <img src="/images/full-stack-belgium.png">
+    <h1>Full Stack Belgium</h1>
+    <div class="content">
+        <p>Organising meetups on front end, back end, devops and everything in between in the cities of <a href="https://meetup.com/fullstackantwerp">Antwerp</a>, <a href="https://meetup.com/fullstackghent">Ghent</a> and <a href="https://meetup.com/fullstackbrussels">Brussels</a>.</p>
+        <a class="invite" href="https://join.slack.com/t/fullstackbelgium/shared_invite/enQtMzYxNjMwNTM3NDU2LTE5Nzk3NDkwMmNjMThhODM2MzM2MTE0NzMxZjIwNWZkNjAwMDc3NmZlYWQ0NGVmZTc4NWJkMzMzODAzZjVmZGU">
+            Join us on Slack
+        </a>
+        <p class="info">If you can't join, email <a href="mailto:dries.vints@gmail.com">dries.vints@gmail.com</a> to add you.</p>
+    </div>
 </body>
 </html>
 <!--
