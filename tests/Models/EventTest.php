@@ -54,11 +54,11 @@ class EventTest extends TestCase
             'date' => Carbon::createFromFormat('Ymd', '20180201')
         ]);
 
-        $this->assertEquals('February Meetup', $event->meetup_com_name);
+        $this->assertEquals('February Meetup', $event->determineMeetupComName());
 
         $event->update(['venue_name' => 'Spatie']);
 
-        $this->assertEquals('February Meetup at Spatie', $event->meetup_com_name);
+        $this->assertEquals('February Meetup at Spatie', $event->determineMeetupComName());
 
     }
 }

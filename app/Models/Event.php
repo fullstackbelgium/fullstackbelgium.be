@@ -64,7 +64,7 @@ class Event extends Model
         return strip_tags($html, '<br><p>');
     }
 
-    public function getMeetupComNameAttribute(): string
+    public function determineMeetupComName(): string
     {
         $name = "{$this->date->format('F')} Meetup";
 
