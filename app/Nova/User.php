@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\Password;
+use App\Models\User as UserModel;
 
 class User extends Resource
 {
@@ -15,7 +16,7 @@ class User extends Resource
      *
      * @var string
      */
-    public static $model = User::class;
+    public static $model = UserModel::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
