@@ -22,14 +22,9 @@ class UpdateMeetupComEventAction
 
         $eventId = $event->meetup_com_event_id;
 
-        try {
-            $this->meetupApi->updateEvent($meetupId, $eventId, [
-                'description' => $event->meetup_com_description,
-            ]);
-        } catch (Exception $exception)
-        {
-            report($exception);
-        }
+        $this->meetupApi->updateEvent($meetupId, $eventId, [
+            'description' => $event->meetup_com_description,
+        ]);
 
     }
 }
