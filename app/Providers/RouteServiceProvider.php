@@ -30,6 +30,4 @@ class RouteServiceProvider extends ServiceProvider
 
         return $this;
     }
-
-
 }
