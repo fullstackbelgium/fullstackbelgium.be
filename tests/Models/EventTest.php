@@ -59,6 +59,5 @@ class EventTest extends TestCase
         $event->update(['venue_name' => 'Spatie']);
 
         $this->assertEquals('February Meetup at Spatie', $event->determineMeetupComName());
-
     }
 }
