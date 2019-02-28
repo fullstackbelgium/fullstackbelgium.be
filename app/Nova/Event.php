@@ -30,7 +30,7 @@ class Event extends Resource
     public function fields(Request $request)
     {
         return [
-            Text::make('Name')->help('This is just a label. Will not be sent to meetup.com')->rules('required'),
+            Text::make('Name')->help('Will not be sent to meetup.com')->rules('required'),
 
             BelongsTo::make('Meetup')->sortable()->rules('required'),
             Text::make('Meetup.com event id', 'meetup_com_event_id'),
