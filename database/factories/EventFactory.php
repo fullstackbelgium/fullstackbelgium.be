@@ -6,13 +6,13 @@ use Faker\Generator as Faker;
 
 $factory->define(Event::class, function (Faker $faker) {
     return [
+        'name' => $faker->word,
         'venue_name' => $faker->company,
         'meetup_id' => function () {
             return factory(Meetup::class)->create()->id;
         },
 
         'meetup_com_event_id' => $faker->word,
-        'date' => $faker->dateTimeBetween('-2 years', '+ 6 month'),
         'intro' => $faker->paragraph,
         'sponsors' => $faker->paragraph,
 

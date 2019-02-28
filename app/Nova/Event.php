@@ -30,10 +30,12 @@ class Event extends Resource
     public function fields(Request $request)
     {
         return [
+            Text::make('Name')->help('This is just a label. Will not be sent to meetup.com'),
+
             DateTime::make('Date')->sortable()->rules('required'),
             BelongsTo::make('Meetup')->sortable()->rules('required'),
             Text::make('Meetup.com event id', 'meetup_com_event_id'),
-            Text::make('Venue name'),
+            Text::make('Venue name')->help('Will not be sent to meetup.com'),
 
             Trix::make('Intro')->hideFromIndex(),
             Trix::make('Sponsors')->hideFromIndex(),
