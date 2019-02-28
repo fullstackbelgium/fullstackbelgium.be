@@ -1,7 +1,4 @@
 @setup
-require __DIR__.'/vendor/autoload.php';
-(new \Dotenv\Dotenv(__DIR__, '.env'))->load();
-
 $server = "68.183.222.4";
 $userAndServer = 'forge@'. $server;
 $repository = "fullstackbelgium/fullstackbelgium.be";
