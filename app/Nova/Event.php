@@ -66,4 +66,17 @@ class Event extends Resource
             })
         ];
     }
+
+    public static function indexQuery(NovaRequest $request, $query)
+    {
+        if (empty($request->get('orderBy'))) {
+            $query->getQuery()->orders = [];
+
+            return $query->orderByDesc('name');
+        }
+
+
+
+        return $query;
+    }
 }

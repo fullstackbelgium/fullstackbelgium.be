@@ -4,6 +4,7 @@ namespace App\Actions;
 
 use App\Models\Event;
 use App\Services\Meetup\MeetupApi;
+use Exception;
 
 class UpdateMeetupComEventAction
 {
@@ -21,8 +22,14 @@ class UpdateMeetupComEventAction
 
         $eventId = $event->meetup_com_event_id;
 
-        $this->meetupApi->updateEvent($meetupId, $eventId, [
-            'description' => $event->meetup_com_description,
-        ]);
+        try {
+            $this->meetupApi->updateEvent($meetupId, $eventId, [
+                'description' => $event->meetup_com_description,
+            ]);
+        } catch (Exception $exception)
+        {
+            report($exception);
+        }
+
     }
 }
