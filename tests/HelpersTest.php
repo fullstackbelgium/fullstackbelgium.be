@@ -11,5 +11,4 @@ class HelpersTest extends TestCase
 
         $this->assertEquals('<p><strong>test</strong></p>', $html);
     }
-
 }
