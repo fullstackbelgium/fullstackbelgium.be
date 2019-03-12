@@ -1,7 +1,80 @@
 @charset 'UTF-8';
 
-@import './bootstrap.css';
-@import './components/*';
-@import './utilities/*';
+@tailwind preflight;
+
+:root {
+    --black: #22292f;
+    --grey-darkest: #3d4852;
+    --grey-darker: #606f7b;
+    --grey-dark: #8795a1;
+    --grey: #b8c2cc;
+    --grey-light: #dae1e7;
+    --grey-lighter: #f1f5f8;
+    --grey-lightest: #f8fafc;
+    --white: #ffffff;
+    --belgium: #188788;
+    --antwerp: #af3448;
+    --brussels: #5f58a2;
+    --ghent: #3997bd;
+}
+
+* {
+    position: relative;
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    font: inherit;
+}
+
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+h1 {
+    font-size: inherit; /* Reset normalize 2em */
+}
+
+a {
+    text-decoration: none;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+img,
+svg {
+    display: block;
+    vertical-align: middle;
+}
+
+.fade-left:after,
+.fade-right:after {
+    bottom: 0;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+}
+
+.fade-left:after {
+    background: linear-gradient(90deg, rgba(248, 250, 252, 255), rgba(248, 250, 252, 0));
+    left: 0;
+    right: 0;
+}
+
+.fade-right:after {
+    background: linear-gradient(90deg, rgba(248, 250, 252, 0), rgba(248, 250, 252, 255));
+    left: 0;
+    right: 0;
+}
 
 @tailwind utilities;

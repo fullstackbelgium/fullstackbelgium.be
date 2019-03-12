@@ -45,17 +45,19 @@ let defaultConfig = require('tailwindcss/defaultConfig')();
 let colors = {
   transparent: 'transparent',
 
-  black: '#22292f',
-  'grey-darkest': '#3d4852',
-  'grey-darker': '#606f7b',
-  'grey-dark': '#8795a1',
-  grey: '#b8c2cc',
-  'grey-light': '#dae1e7',
-  'grey-lighter': '#f1f5f8',
-  'grey-lightest': '#f8fafc',
-  white: '#ffffff',
-
-  teal: '#138788',
+  black: 'var(--black)',
+  'grey-darkest': 'var(--grey-darkest)',
+  'grey-darker': 'var(--grey-darker)',
+  'grey-dark': 'var(--grey-dark)',
+  grey: 'var(--grey)',
+  'grey-light': 'var(--grey-light)',
+  'grey-lighter': 'var(--grey-lighter)',
+  'grey-lightest': 'var(--grey-lightest)',
+  white: 'var(--white)',
+  belgium: 'var(--belgium)',
+  antwerp: 'var(--antwerp)',
+  brussels: 'var(--brussels)',
+  ghent: 'var(--ghent)',
 };
 
 module.exports = {
@@ -121,7 +123,7 @@ module.exports = {
 
   fonts: {
     sans: [
-      'Inter',
+      'interstate',
       'system-ui',
       'BlinkMacSystemFont',
       '-apple-system',
@@ -135,20 +137,8 @@ module.exports = {
       'Helvetica Neue',
       'sans-serif',
     ],
-    serif: [
-      'Constantia',
-      'Lucida Bright',
-      'Lucidabright',
-      'Lucida Serif',
-      'Lucida',
-      'DejaVu Serif',
-      'Bitstream Vera Serif',
-      'Liberation Serif',
-      'Georgia',
-      'serif',
-    ],
     mono: [
-      'IBM Plex Mono',
+      'interstate-mono',
       'Menlo',
       'Monaco',
       'Consolas',
@@ -156,6 +146,7 @@ module.exports = {
       'Courier New',
       'monospace',
     ],
+    roboto: ['Roboto'],
   },
 
   /*
@@ -326,6 +317,7 @@ module.exports = {
     default: '1px',
     '0': '0',
     '2': '2px',
+    '3': '3px',
     '4': '4px',
     '8': '8px',
   },
@@ -609,6 +601,7 @@ module.exports = {
     auto: 'auto',
     px: '1px',
     '0': '0',
+    '1/2': '0.125rem',
     '1': '0.25rem',
     '2': '0.5rem',
     '3': '0.75rem',
@@ -677,8 +670,8 @@ module.exports = {
 
   shadows: {
     default: '0 2px 4px 0 rgba(0,0,0,0.10)',
-    md: '0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08)',
-    lg: '0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08)',
+    md: '0 4px 8px 0 rgba(0,0,0,0.05), 0 2px 4px 0 rgba(0,0,0,0.03)',
+    lg: '0 15px 30px 0 rgba(0,0,0,0.05), 0 5px 15px 0 rgba(0,0,0,0.03)',
     inner: 'inset 0 2px 4px 0 rgba(0,0,0,0.06)',
     outline: '0 0 0 3px rgba(52,144,220,0.5)',
     none: 'none',
