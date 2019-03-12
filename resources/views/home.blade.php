@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <title>Full Stack Belgium</title>
-    <meta name="description" content="Organising meetups on front end, back end, devops and everything in between in the cities of Antwerp, Ghent and Brussels">
+    <meta name="description" content="Organising meetups on front-end, back-end, devops and everything in between in the cities of Antwerp, Ghent and Brussels">
 
     <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
@@ -42,7 +42,7 @@
     <main>
         <div class="max-w-xl px-24 mx-auto">
             <section class="text-2xl w-2/3 pb-20 border-b">
-                <p>Organising meetups on front end, back end, devops and everything in between in the cities of <strong class="font-medium">Antwerp</strong>, <strong class="font-medium">Ghent</strong> and <strong class="font-medium">Brussels</strong>.</p>
+                <p>Organising meetups on front-end, back-end, devops and everything in between in the cities of <strong class="font-medium">Antwerp</strong>, <strong class="font-medium">Ghent</strong> and <strong class="font-medium">Brussels</strong>.</p>
             </section>
             <div class="flex flex-col items-end mb-32" style="margin-top: -2.4rem;">
                 <div style="max-width: min-content">
@@ -102,8 +102,8 @@
             </div>
         </div>
         <section class="max-w-xl px-12 mx-auto mb-16">
-            <p class="text-center mb-8">
-                🎉 Thanks to all <strong class="font-medium">235</strong> attendees for joining last month's meetups!
+            <p class="text-center text-lg mb-8">
+                🎉 Thanks to all <strong class="font-bold">235</strong> attendees for joining last month's meetups!
             </p>
             <ul class="flex -mx-2 mb-8">
                 <li class="flex-1 px-2">
@@ -126,7 +126,7 @@
         </section>
         <section class="bg-white pt-10 pb-12">
             <div class="max-w-xl px-24 mx-auto">
-                <h2 class="text-center font-bold mb-10">Full Stack Belgium is hosted by:</h2>
+                <h2 class="text-center font-bold mb-10">Full Stack Belgium is organized by</h2>
                 <ul class="flex">
                     <li class="w-1/3 text-center">
                         <img class="inline-block w-24 mb-3 rounded-full" src="{{ url('images/dries.jpg') }}" alt="Headshot of Dries Vints">
@@ -159,6 +159,7 @@
     <footer class="max-w-xl mx-auto px-24">
         <div class="py-6 flex justify-between text-xs text-grey-dark tracking-wide">
             <ul class="flex">
+                <li class="mr-6"><a href="#">Contact</a></li>
                 <li class="mr-6"><a href="#">Policy</a></li>
                 <li><a href="#">Code of conduct</a></li>
             </ul>
