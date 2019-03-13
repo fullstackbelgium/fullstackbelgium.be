@@ -56,25 +56,31 @@ svg {
     vertical-align: middle;
 }
 
-.fade-left:after,
-.fade-right:after {
-    bottom: 0;
+.link {
+    color: var(--belgium);
+    display: inline-block;
+}
+
+.link:before {
     content: '';
-    display: block;
+    background: currentColor;
     position: absolute;
-    top: 0;
-}
-
-.fade-left:after {
-    background: linear-gradient(90deg, rgba(248, 250, 252, 255), rgba(248, 250, 252, 0));
     left: 0;
     right: 0;
+    bottom: 2px;
+    height: 2px;
+    opacity: 0.66;
+    transition: all 0.3s ease-out;
+    transform: translate3d(0, 0, 0);
 }
 
-.fade-right:after {
-    background: linear-gradient(90deg, rgba(248, 250, 252, 0), rgba(248, 250, 252, 255));
-    left: 0;
-    right: 0;
+.link--small:before {
+    height: 1px;
+}
+
+.link:hover:before {
+    opacity: 0.33;
+    transform: scaleX(0.92);
 }
 
 @tailwind utilities;

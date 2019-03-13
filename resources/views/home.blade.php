@@ -95,8 +95,8 @@
                             </li>
                         </ol>
                     </section>
-                    <p class="mr-1 mt-2 text-xs text-grey-darker text-right">
-                        Can't join any of our meetups? Hang out with us in our <a class="underline text-belgium" href="#">Slack group</a> instead!
+                    <p class="mr-1 mt-3 text-xs text-grey-darker text-right">
+                        Can't join any of our meetups? Hang out with us in our <a class="link link--small" href="#">Slack group</a> instead!
                     </p>
                 </div>
             </div>
@@ -120,36 +120,36 @@
                 <p class="text-center">
                     We're always on the lookout for speakers, sponsors and venues for our user groups.
                     <br>
-                    <a class="underline text-belgium" href="#">Get in touch</a> if you want to be involved.
+                    <a class="link" href="#">Get in touch</a> if you want to be involved.
                 </p>
             </div>
         </section>
         <section class="bg-white pt-10 pb-12">
             <div class="max-w-xl px-24 mx-auto">
-                <h2 class="text-center font-bold mb-10">Full Stack Belgium is organized by</h2>
+                <h2 class="text-center font-bold mb-10">Full Stack Belgium is organised by</h2>
                 <ul class="flex">
                     <li class="w-1/3 text-center">
                         <img class="inline-block w-24 mb-3 rounded-full" src="{{ url('images/dries.jpg') }}" alt="Headshot of Dries Vints">
                         <p>Dries Vints</p>
                         <p class="text-xs text-grey-dark">
-                            <a class="underline text-belgium inline-block mr-1" href="https://twitter.com/driesvints">@driesvints</a>
-                            <a class="underline text-belgium" href="https://driesvints.com">driesvints.com</a>
+                            <a class="link link--small mr-1" href="https://twitter.com/driesvints">@driesvints</a>
+                            <a class="link link--small" href="https://driesvints.com">driesvints.com</a>
                         </p>
                     </li>
                     <li class="w-1/3 px-2 text-center">
                         <img class="inline-block w-24 mb-3 rounded-full" src="{{ url('images/freek.jpg') }}" alt="Headshot of Freek Van der Herten">
                         <p>Freek Van der Herten</p>
                         <p class="text-xs text-grey-dark">
-                            <a class="underline text-belgium inline-block mr-1" href="https://twitter.com/freekmurze">@freekmurze</a>
-                            <a class="underline text-belgium" href="https://murze.be">murze.be</a>
+                            <a class="link link--small mr-1" href="https://twitter.com/freekmurze">@freekmurze</a>
+                            <a class="link link--small" href="https://murze.be">murze.be</a>
                         </p>
                     </li>
                     <li class="w-1/3 px-2 text-center">
                         <img class="inline-block w-24 mb-3 rounded-full" src="{{ url('images/rias.jpg') }}" alt="Headshot of Rias Van der Veken">
                         <p>Rias Van der Veken</p>
                         <p class="text-xs text-grey-dark">
-                            <a class="underline text-belgium inline-block mr-1" href="https://twitter.com/riasvdv">@riasvdv</a>
-                            <a class="underline text-belgium" href="https://rias.be">rias.be</a>
+                            <a class="link link--small mr-1" href="https://twitter.com/riasvdv">@riasvdv</a>
+                            <a class="link link--small" href="https://rias.be">rias.be</a>
                         </p>
                     </li>
                 </ul>
