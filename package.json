@@ -13,7 +13,6 @@
   "devDependencies": {
     "cross-env": "^5.1",
     "laravel-mix": "^2.0",
-    "postcss-easy-import": "^3.0.0",
     "prettier": "^1.16.4",
     "tailwindcss": "^0.7.4"
   }

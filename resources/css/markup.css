@@ -1,0 +1,50 @@
+.markup h1 {
+    @apply font-bold;
+    @apply text-3xl;
+    @apply mb-8;
+}
+
+.markup p,
+.markup ul {
+    @apply mb-6;
+}
+
+.markup ul {
+    list-style: disc;
+    padding-left: 1em;
+}
+
+.markup ul ul {
+    list-style: circle;
+}
+
+.markup a,
+.link {
+    color: var(--belgium);
+    display: inline-block;
+}
+
+.markup a:before,
+.link:before {
+    content: '';
+    background: currentColor;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 2px;
+    height: 2px;
+    opacity: 0.66;
+    transition: all 0.3s ease-out;
+    transform: translate3d(0, 0, 0);
+}
+
+.markup a.is-small:before,
+.link.is-small:before {
+    height: 1px;
+}
+
+.markup a:hover:before,
+.link:hover:before {
+    opacity: 0.33;
+    transform: scaleX(0.92);
+}
