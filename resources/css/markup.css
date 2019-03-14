@@ -18,13 +18,13 @@
     list-style: circle;
 }
 
-.markup a,
+.markup a:not(.button),
 .link {
     color: var(--belgium);
     display: inline-block;
 }
 
-.markup a:before,
+.markup a:not(.button):before,
 .link:before {
     content: '';
     background: currentColor;
@@ -38,12 +38,12 @@
     transform: translate3d(0, 0, 0);
 }
 
-.markup a.is-small:before,
+.markup a:not(.button).is-small:before,
 .link.is-small:before {
     height: 1px;
 }
 
-.markup a:hover:before,
+.markup a:not(.button):hover:before,
 .link:hover:before {
     opacity: 0.33;
     transform: scaleX(0.92);

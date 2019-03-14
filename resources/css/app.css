@@ -57,7 +57,7 @@ svg {
 }
 
 .wrapper {
-    @apply max-w-xl px-6 mx-auto;
+    @apply max-w-xl px-6 mx-auto w-full;
 }
 
 @screen sm {
@@ -70,6 +70,18 @@ svg {
     .wrapper {
         @apply px-24;
     }
+}
+
+.button {
+    @apply bg-white shadow-md rounded-sm font-medium px-6 py-4 border-l-4 border-belgium;
+    display: inline-block;
+    transform: translate3d(0, 0, 0);
+    transition: all 0.15s ease-out;
+}
+
+.button:hover {
+    @apply shadow-lg;
+    transform: translateX(0.05em);
 }
 
 @import './markup.css';

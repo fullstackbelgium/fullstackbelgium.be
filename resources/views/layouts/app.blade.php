@@ -26,54 +26,56 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link rel="stylesheet" href="https://use.typekit.net/hje0ebn.css">
 </head>
-<body class="font-sans text-black leading-normal bg-grey-lightest">
-    <header class="max-w-xl px-6 sm:px-12 mx-auto mb-12 md:mb-24">
-        <div class="pt-6 flex items-center sm:items-end justify-between">
-            <figure class="hidden sm:block absolute pin-r pin-t mt-4" style="width: 18rem">
-                {{ svg('belgium') }}
-            </figure>
-            <a class="block rounded-full border-4 border-white shadow-lg w-32 mr-8" href="{{ url('/') }}">
-                {{ svg('full-stack-belgium') }}
-            </a>
-            <nav class="tracking-wide bg-grey-lightest text-grey-darker py-1 leading-none sm:mt-8 mb-1">
-                <ul class="sm:flex text-right">
-                    <li class="mb-4 sm:mb-0 sm:mr-3 md:mr-5 hidden md:block {{ $active === 'home' ? 'font-bold text-black' : '' }}">
-                        <a href="{{ url('/') }}">Home</a>
-                    </li>
-                    <li class="mb-4 sm:mb-0 sm:mr-3 md:mr-5 {{ $active === 'meetups' ? 'font-bold text-black' : '' }}">
-                        <a href="{{ url('meetups') }}">Meetups</a>
-                    </li>
-                    <li class="mb-4 sm:mb-0 sm:mr-3 md:mr-5 {{ $active === 'slack' ? 'font-bold text-black' : '' }}">
-                        <a href="{{ url('slack') }}">Slack</a>
-                    </li>
-                    <li class="mb-4 sm:mb-0 sm:mr-3 md:mr-5">
-                        <a href="https://twitter.com/fullstackbe" target="_blank">Twitter</a>
-                    </li>
-                    <li class="{{ $active === 'contact' ? 'font-bold text-black' : '' }}">
-                        <a href="{{ url('contact') }}">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <main>
-        {{ $slot }}
-    </main>
-    <footer class="max-w-xl px-6 sm:px-12 lg:px-24 mx-auto">
-        <div class="py-6 md:flex justify-between text-xs text-grey-dark tracking-wide">
-            <ul class="flex mb-2 md:mb-0">
-                <li class="mr-3 md:mr-6"><a href="{{ url('contact') }}">Contact</a></li>
-                <li class="mr-3 md:mr-6"><a href="{{ url('policy') }}">Policy</a></li>
-                <li><a href="{{ url('code-of-conduct') }}">Code of conduct</a></li>
-            </ul>
-            <p>
-                &copy; {{ now()->format('Y') }}
-                <a href="{{ url('/') }}">
-                    Full Stack Belgium
+<body class="bg-grey-lightest font-sans text-black leading-normal">
+    <div class="flex flex-col min-h-screen">
+        <header class="w-full max-w-xl px-6 sm:px-12 mx-auto mb-12 md:mb-24">
+            <div class="pt-6 flex items-center sm:items-end justify-between">
+                <figure class="hidden sm:block absolute pin-r pin-t mt-4" style="width: 18rem">
+                    {{ svg('belgium') }}
+                </figure>
+                <a class="block rounded-full border-4 border-white shadow-lg w-32 mr-8" href="{{ url('/') }}">
+                    {{ svg('full-stack-belgium') }}
                 </a>
-            </p>
-        </div>
-    </footer>
+                <nav class="tracking-wide bg-grey-lightest text-grey-darker py-1 leading-none sm:mt-8 mb-1">
+                    <ul class="sm:flex text-right">
+                        <li class="mb-4 sm:mb-0 sm:mr-3 md:mr-5 hidden md:block {{ $active === 'home' ? 'font-bold text-black' : '' }}">
+                            <a href="{{ url('/') }}">Home</a>
+                        </li>
+                        <li class="mb-4 sm:mb-0 sm:mr-3 md:mr-5 {{ $active === 'meetups' ? 'font-bold text-black' : '' }}">
+                            <a href="{{ url('meetups') }}">Meetups</a>
+                        </li>
+                        <li class="mb-4 sm:mb-0 sm:mr-3 md:mr-5 {{ $active === 'slack' ? 'font-bold text-black' : '' }}">
+                            <a href="{{ url('slack') }}">Slack</a>
+                        </li>
+                        <li class="mb-4 sm:mb-0 sm:mr-3 md:mr-5">
+                            <a href="https://twitter.com/fullstackbe" target="_blank">Twitter</a>
+                        </li>
+                        <li class="{{ $active === 'contact' ? 'font-bold text-black' : '' }}">
+                            <a href="{{ url('contact') }}">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main class="w-full flex-1">
+            {{ $slot }}
+        </main>
+        <footer class="w-full max-w-xl px-6 sm:px-12 lg:px-24 mx-auto">
+            <div class="py-6 md:flex justify-between text-xs text-grey-dark tracking-wide">
+                <ul class="flex mb-2 md:mb-0">
+                    <li class="mr-3 md:mr-6"><a href="{{ url('contact') }}">Contact</a></li>
+                    <li class="mr-3 md:mr-6"><a href="{{ url('policy') }}">Policy</a></li>
+                    <li><a href="{{ url('code-of-conduct') }}">Code of conduct</a></li>
+                </ul>
+                <p>
+                    &copy; {{ now()->format('Y') }}
+                    <a href="{{ url('/') }}">
+                        Full Stack Belgium
+                    </a>
+                </p>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
 <!--
