@@ -74,7 +74,7 @@
                     {{ svg('full-stack-ghent') }}
                 </figure>
             </div>
-            <div class="flex-1 mt-2">
+            <div class="flex-1">
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, a fuga! Nisi, nemo officiis, blanditiis mollitia quae aliquid porro ullam rem recusandae magni.</p>
             </div>
         </div>
