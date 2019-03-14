@@ -106,7 +106,7 @@
 
     <section class="bg-white py-16">
         <div class="wrapper">
-            <h2 class="text-center font-bold mb-1">All Full Stack Belgium meetups are organised by Dries, Freek and Rias.</h2>
+            <h2 class="text-center font-bold mb-1">Organised by Dries, Freek and Rias</h2>
             <p class="text-center text-sm text-grey-darker mb-12">Come say hi at our next meetup! 👋</p>
             <ul class="flex flex-wrap justify-center">
                 <li class="w-full sm:w-1/2 md:w-1/3 mb-8 md:mb-0 text-center">
