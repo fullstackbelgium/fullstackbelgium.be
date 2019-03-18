@@ -12,13 +12,8 @@
             <div class="markup flex-1 bg-white p-6 shadow-md">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta id vero incidunt ad alias exercitationem magni assumenda quo officia porro, quae repudiandae quaerat laborum vitae dolores cumque dolorum explicabo quas?</p>
                 <p class="mb-0">
-                    <a class="no-link" href="mailto:dries.vints@gmail.com">
-                        <span class="link">
-                            Get in touch with Dries
-                        </span>
-                        <span class="text-belgium">
-                            →
-                        </span>
+                    <a class="no-link button" href="mailto:dries.vints@gmail.com">
+                        Get in touch with Dries →
                     </a>
                 </p>
             </div>
@@ -28,13 +23,8 @@
             <div class="markup flex-1 bg-white p-6 shadow-md">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta id vero incidunt ad alias exercitationem magni assumenda quo officia porro, quae repudiandae quaerat laborum vitae dolores cumque dolorum explicabo quas?</p>
                 <p class="mb-0">
-                    <a class="no-link" href="mailto:dries.vints@gmail.com">
-                        <span class="link">
-                            Get in touch with Dries
-                        </span>
-                        <span class="text-belgium">
-                            →
-                        </span>
+                    <a class="no-link button" href="mailto:dries.vints@gmail.com">
+                        Get in touch with Dries →
                     </a>
                 </p>
             </div>
@@ -44,13 +34,8 @@
             <div class="markup flex-1 bg-white p-6 shadow-md">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta id vero incidunt ad alias exercitationem magni assumenda quo officia porro, quae repudiandae quaerat laborum vitae dolores cumque dolorum explicabo quas?</p>
                 <p class="mb-0">
-                    <a class="no-link" href="mailto:hello@rias.be">
-                        <span class="link">
-                            Get in touch with Rias
-                        </span>
-                        <span class="text-belgium">
-                            →
-                        </span>
+                    <a class="no-link button" href="mailto:hello@rias.be">
+                        Get in touch with Rias →
                     </a>
                 </p>
             </div>
@@ -60,13 +45,8 @@
             <div class="markup flex-1 bg-white p-6 shadow-md">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta id vero incidunt ad alias exercitationem magni assumenda quo officia porro, quae repudiandae quaerat laborum vitae dolores cumque dolorum explicabo quas?</p>
                 <p class="mb-0">
-                    <a class="no-link" href="mailto:dries.vints@gmail.com">
-                        <span class="link">
-                            Get in touch with Dries
-                        </span>
-                        <span class="text-belgium">
-                            →
-                        </span>
+                    <a class="no-link button" href="mailto:dries.vints@gmail.com">
+                        Get in touch with Dries →
                     </a>
                 </p>
             </div>

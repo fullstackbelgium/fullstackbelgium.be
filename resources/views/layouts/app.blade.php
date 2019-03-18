@@ -30,7 +30,7 @@
     <div class="flex flex-col min-h-screen">
         <header class="w-full max-w-5xl px-6 sm:px-12 mx-auto mb-12 md:mb-24">
             <div class="pt-6 flex items-center sm:items-end justify-between">
-                <figure class="hidden sm:block absolute pin-r pin-t mt-4" style="width: 18rem">
+                <figure class="hidden sm:block absolute right-0 top-0 mt-4" style="width: 18rem">
                     {{ svg('belgium') }}
                 </figure>
                 <a class="block rounded-full border-4 border-white shadow-lg w-32 mr-8" href="{{ url('/') }}">

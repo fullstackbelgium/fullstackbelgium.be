@@ -1,0 +1,15 @@
+.wrapper {
+    @apply max-w-5xl px-6 mx-auto w-full;
+}
+
+@screen sm {
+    .wrapper {
+        @apply px-12;
+    }
+}
+
+@screen lg {
+    .wrapper {
+        @apply px-24;
+    }
+}
