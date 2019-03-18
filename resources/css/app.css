@@ -1,16 +1,16 @@
 @charset 'UTF-8';
 
-@tailwind preflight;
+@tailwind base;
 
 :root {
     --black: #22292f;
-    --grey-darkest: #3d4852;
-    --grey-darker: #606f7b;
-    --grey-dark: #8795a1;
-    --grey: #b8c2cc;
-    --grey-light: #dae1e7;
-    --grey-lighter: #f1f5f8;
-    --grey-lightest: #f8fafc;
+    --gray-200: #f8fafc;
+    --gray-300: #f1f5f8;
+    --gray-400: #dae1e7;
+    --gray-500: #b8c2cc;
+    --gray-600: #8795a1;
+    --gray-700: #606f7b;
+    --gray-800: #3d4852;
     --white: #ffffff;
     --belgium: #188788;
     --antwerp: #af3448;
@@ -57,7 +57,7 @@ svg {
 }
 
 .wrapper {
-    @apply max-w-xl px-6 mx-auto w-full;
+    @apply max-w-5xl px-6 mx-auto w-full;
 }
 
 @screen sm {

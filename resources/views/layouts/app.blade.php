@@ -26,9 +26,9 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link rel="stylesheet" href="https://use.typekit.net/hje0ebn.css">
 </head>
-<body class="bg-grey-lightest font-sans text-black leading-normal">
+<body class="bg-gray-200 font-sans text-black leading-normal">
     <div class="flex flex-col min-h-screen">
-        <header class="w-full max-w-xl px-6 sm:px-12 mx-auto mb-12 md:mb-24">
+        <header class="w-full max-w-5xl px-6 sm:px-12 mx-auto mb-12 md:mb-24">
             <div class="pt-6 flex items-center sm:items-end justify-between">
                 <figure class="hidden sm:block absolute pin-r pin-t mt-4" style="width: 18rem">
                     {{ svg('belgium') }}
@@ -36,7 +36,7 @@
                 <a class="block rounded-full border-4 border-white shadow-lg w-32 mr-8" href="{{ url('/') }}">
                     {{ svg('full-stack-belgium') }}
                 </a>
-                <nav class="tracking-wide bg-grey-lightest text-grey-darker py-1 leading-none sm:mt-8 mb-1">
+                <nav class="tracking-wide bg-gray-200 text-gray-700 py-1 leading-none sm:mt-8 mb-1">
                     <ul class="sm:flex text-right">
                         <li class="mb-4 sm:mb-0 sm:mr-3 md:mr-5 hidden md:block {{ $active === 'home' ? 'font-bold text-black' : '' }}">
                             <a href="{{ url('/') }}">Home</a>
@@ -60,8 +60,8 @@
         <main class="w-full flex-1">
             {{ $slot }}
         </main>
-        <footer class="w-full max-w-xl px-6 sm:px-12 lg:px-24 mx-auto">
-            <div class="py-6 md:flex justify-between text-xs text-grey-dark tracking-wide">
+        <footer class="w-full max-w-5xl px-6 sm:px-12 lg:px-24 mx-auto">
+            <div class="py-6 md:flex justify-between text-xs text-gray-600 tracking-wide">
                 <ul class="flex mb-2 md:mb-0">
                     <li class="mr-3 md:mr-6"><a href="{{ url('contact') }}">Contact</a></li>
                     <li class="mr-3 md:mr-6"><a href="{{ url('policy') }}">Policy</a></li>

@@ -4,6 +4,11 @@
     @apply mb-8;
 }
 
+.markup h2 {
+    @apply font-bold;
+    @apply mb-8;
+}
+
 .markup p,
 .markup ul {
     @apply mb-6;
@@ -18,32 +23,33 @@
     list-style: circle;
 }
 
-.markup a:not(.button),
+.markup a:not(.no-link),
 .link {
     color: var(--belgium);
     display: inline-block;
 }
 
-.markup a:not(.button):before,
+.markup a:not(.no-link):before,
 .link:before {
     content: '';
     background: currentColor;
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 2px;
+    bottom: 0;
     height: 2px;
     opacity: 0.66;
     transition: all 0.3s ease-out;
     transform: translate3d(0, 0, 0);
 }
 
-.markup a:not(.button).is-small:before,
+.markup a:not(.no-link).is-small:before,
 .link.is-small:before {
     height: 1px;
+    bottom: 1px;
 }
 
-.markup a:not(.button):hover:before,
+.markup a:not(.no-link):hover:before,
 .link:hover:before {
     opacity: 0.33;
     transform: scaleX(0.92);
