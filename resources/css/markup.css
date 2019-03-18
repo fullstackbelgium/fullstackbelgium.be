@@ -6,6 +6,7 @@
 
 .markup h2 {
     @apply font-bold;
+    @apply text-lg;
     @apply mb-8;
 }
 
