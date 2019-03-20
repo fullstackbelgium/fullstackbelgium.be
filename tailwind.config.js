@@ -38,6 +38,9 @@ module.exports = {
             maxWidth: {
                 'min-content': 'min-content',
             },
+            cursor: {
+                'zoom-in': 'zoom-in',
+            },
         },
     },
 };

@@ -11,9 +11,15 @@
     "format": "prettier \"**/*.{js,json,css}\" --write --ignore-path .gitignore"
   },
   "devDependencies": {
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "cross-env": "^5.1",
-    "laravel-mix": "^2.0",
+    "laravel-mix": "^4.0",
     "prettier": "^1.16.4",
-    "tailwindcss": "^1.0.0-beta"
+    "tailwindcss": "^1.0.0-beta",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "dependencies": {
+    "laravel-mix-purgecss": "^4.1.0",
+    "photoswipe": "^4.1.3"
   }
 }

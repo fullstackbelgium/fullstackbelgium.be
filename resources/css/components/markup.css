@@ -28,6 +28,7 @@
 .link {
     color: var(--belgium);
     display: inline-block;
+    position: relative;
 }
 
 .markup a:not(.no-link):before,

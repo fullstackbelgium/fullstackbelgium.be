@@ -82,17 +82,24 @@
 
     <div class="pb-8 md:pb-16">
         <section class="wrapper">
-            <ul class="md:flex -mx-2 mb-8">
-                <li class="flex-1 mb-4 md:mb-0 px-2">
-                    <img class="border-white border-8 rounded-sm shadow-md" src="{{ url('images/meetups/meetup-dummy-1.jpg') }}">
-                </li>
-                <li class="flex-1 mb-4 md:mb-0 px-2">
-                    <img class="border-white border-8 rounded-sm shadow-md" src="{{ url('images/meetups/meetup-dummy-2.jpg') }}">
-                </li>
-                <li class="flex-1 px-2">
-                    <img class="border-white border-8 rounded-sm shadow-md" src="{{ url('images/meetups/meetup-dummy-3.jpg') }}">
-                </li>
-            </ul>
+            <div class="-mx-2 mb-8">
+                @component('components.gallery')
+                    <ul class="md:flex">
+                        <li class="flex-1 mb-4 md:mb-0 px-2">
+                            <img class="border-white border-8 rounded-sm shadow-md cursor-zoom-in" src="{{ url('images/meetups/meetup-dummy-1.jpg') }}"
+                                data-gallery-item data-src="/images/meetups/meetup-dummy-1.jpg" data-msrc="/images/meetups/meetup-dummy-1.jpg" data-w="1024" data-h="768">
+                        </li>
+                        <li class="flex-1 mb-4 md:mb-0 px-2">
+                            <img class="border-white border-8 rounded-sm shadow-md cursor-zoom-in" src="{{ url('images/meetups/meetup-dummy-2.jpg') }}"
+                                data-gallery-item data-src="/images/meetups/meetup-dummy-2.jpg" data-msrc="/images/meetups/meetup-dummy-2.jpg" data-w="1024" data-h="768">
+                        </li>
+                        <li class="flex-1 px-2">
+                            <img class="border-white border-8 rounded-sm shadow-md cursor-zoom-in" src="{{ url('images/meetups/meetup-dummy-3.jpg') }}"
+                                data-gallery-item data-src="/images/meetups/meetup-dummy-3.jpg" data-msrc="/images/meetups/meetup-dummy-3.jpg" data-w="2048 " data-h="1536">
+                        </li>
+                    </ul>
+                @endcomponent
+            </div>
             <p class="text-xl mb-6">
                 🎉 Thanks to all <strong class="font-bold text-2xl px-2 py-1 bg-white shadow-md rounded-sm">235</strong> attendees for joining last month's meetups!
             </p>

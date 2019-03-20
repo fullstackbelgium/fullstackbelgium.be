@@ -25,6 +25,11 @@
 
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link rel="stylesheet" href="https://use.typekit.net/hje0ebn.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=Array.from" defer></script>
+    <script src="{{ mix('js/app.js') }}" defer></script>
+
+    @preload
 </head>
 <body class="bg-gray-200 font-sans text-black leading-normal">
     <div class="flex flex-col min-h-screen">
