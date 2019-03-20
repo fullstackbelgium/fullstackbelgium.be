@@ -2,7 +2,7 @@
     'title' => 'Slack',
     'active' => 'slack',
 ])
-    <div class="wrapper">
+    <div class="wrapper mb-8">
         <section class="md:w-2/3">
             <div class="markup mb-8">
                 <h1>Join our Slack community</h1>

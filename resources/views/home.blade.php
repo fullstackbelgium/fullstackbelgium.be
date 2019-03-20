@@ -62,8 +62,8 @@
     </div>
 
     <section class="mb-8">
-        <div class="wrapper flex items-center">
-            <div class="flex mr-8">
+        <div class="wrapper md:flex items-center">
+            <div class="flex mb-4 md:mb-0 md:mr-8">
                 <figure class="block rounded-full border-4 border-white shadow-md w-32">
                     {{ svg('full-stack-antwerp') }}
                 </figure>

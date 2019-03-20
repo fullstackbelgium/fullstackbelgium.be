@@ -3,13 +3,16 @@
     'active' => 'contact',
 ])
     <section class="wrapper markup">
-        <div class="w-2/3 mb-16">
+        <div class="md:w-2/3 mb-8 md:mb-12">
             <h1>Contact</h1>
             <p class="text-xl">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus illo est rem sit, perferendis, consequatur provident amet pariatur natus totam alias earum odio? Dicta quidem maxime minima sed laborum accusantium.</p>
         </div>
-        <div class="flex items-start mb-16">
-            <h2 class="w-1/3 pt-5 pb-1 border-b">Speakers</h2>
+        <div class="flex items-start mb-8 md:mb-12">
+            <h2 class="hidden md:block w-1/3 pt-5 pb-1 border-b">
+                Speakers
+            </h2>
             <div class="markup flex-1 box">
+                <h2 class="md:hidden">Speakers</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta id vero incidunt ad alias exercitationem magni assumenda quo officia porro, quae repudiandae quaerat laborum vitae dolores cumque dolorum explicabo quas?</p>
                 <ul>
                     <li>Talks should be around 30 minutes long</li>
@@ -24,9 +27,12 @@
                 </p>
             </div>
         </div>
-        <div class="flex items-start mb-16">
-            <h2 class="w-1/3 pt-5 pb-1 border-b">Venues</h2>
+        <div class="flex items-start mb-8 md:mb-12">
+            <h2 class="hidden md:block w-1/3 pt-5 pb-1 border-b">
+                Venues
+            </h2>
             <div class="markup flex-1 box">
+                <h2 class="md:hidden">Venues</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta id vero incidunt ad alias exercitationem magni assumenda quo officia porro, quae repudiandae quaerat laborum vitae dolores cumque dolorum explicabo quas?</p>
                 <ul>
                     <li>Venues ideally can host at least 50 people</li>
@@ -40,9 +46,12 @@
                 </p>
             </div>
         </div>
-        <div class="flex items-start mb-16">
-            <h2 class="w-1/3 pt-5 pb-1 border-b">Sponsorships</h2>
+        <div class="flex items-start mb-8 md:mb-12">
+            <h2 class="hidden md:block w-1/3 pt-5 pb-1 border-b">
+                Sponsorships
+            </h2>
             <div class="markup flex-1 box">
+                <h2 class="md:hidden">Sponsorships</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla sit impedit, consequuntur similique in quod distinctio qui quos tenetur. Mollitia voluptates saepe nisi ab! Vitae voluptatum quod perferendis obcaecati laboriosam!</p>
                 <ul>
                     <li>Sponsors get mentioned at the meetup and on Twitter</li>
@@ -56,9 +65,12 @@
                 </p>
             </div>
         </div>
-        <div class="flex items-start mb-16">
-            <h2 class="w-1/3 pt-5 pb-1 border-b">Other inquiries</h2>
+        <div class="flex items-start mb-8 md:mb-12">
+            <h2 class="hidden md:block w-1/3 pt-5 pb-1 border-b">
+                Other inquiries
+            </h2>
             <div class="markup flex-1 box">
+                <h2 class="md:hidden">Other inquiries</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio sapiente at blanditiis inventore, dolor esse voluptates possimus sunt aperiam laborum libero perferendis, quos, sit doloribus cum debitis. Quis, officia architecto?</p>
                 <p class="mb-0">
                     <a class="no-link button" href="mailto:dries.vints@gmail.com">

@@ -5,11 +5,11 @@
     <div class="wrapper">
         <h1 class="h1">Meetups</h1>
         <div class="box pb-0 overflow-hidden border-t-4 border-antwerp mb-12 z-10">
-            <header class="flex items-center mb-8 -ml-2">
-                <figure class="block w-24 mr-4">
+            <header class="flex flex-col md:flex-row items-center mb-8 md:-ml-2">
+                <figure class="block w-24 mb-4 md:mb-0 md:mr-4">
                     {{ svg('full-stack-antwerp') }}
                 </figure>
-                <div>
+                <div class="w-full">
                     <h2 class="font-bold text-xl">
                         Full Stack Antwerp
                         <a class="inline-block w-4" href="https://www.meetup.com/fullstackghent/" target="_blank" title="View on meetup.com">
@@ -93,12 +93,12 @@
                 @endcomponent
             </div>
         </div>
-        <div class="box pb-0 overflow-hidden border-t-4 border-brussels mb-12">
-            <header class="flex items-center mb-8 -ml-2">
-                <figure class="block w-24 mr-4">
+        <div class="box pb-0 overflow-hidden border-t-4 border-brussels mb-8 md:mb-12">
+            <header class="flex flex-col md:flex-row items-center mb-8 md:-ml-2">
+                <figure class="block w-24 mb-4 md:mb-0 md:mr-4">
                     {{ svg('full-stack-brussels') }}
                 </figure>
-                <div>
+                <div class="w-full">
                     <h2 class="font-bold text-xl">
                         Full Stack Brussels
                         <a class="inline-block w-4" href="https://www.meetup.com/fullstackghent/" target="_blank" title="View on meetup.com">
@@ -182,12 +182,12 @@
                 @endcomponent
             </div>
         </div>
-        <div class="box pb-0 overflow-hidden border-t-4 border-ghent mb-12">
-            <header class="flex items-center mb-8 -ml-2">
-                <figure class="block w-24 mr-4">
+        <div class="box pb-0 overflow-hidden border-t-4 border-ghent mb-8 md:mb-12">
+            <header class="flex flex-col md:flex-row items-center mb-8 md:-ml-2">
+                <figure class="block w-24 mb-4 md:mb-0 md:mr-4">
                     {{ svg('full-stack-ghent') }}
                 </figure>
-                <div>
+                <div class="w-full">
                     <h2 class="font-bold text-xl">
                         Full Stack Ghent
                         <a class="inline-block w-4" href="https://www.meetup.com/fullstackghent/" target="_blank" title="View on meetup.com">
