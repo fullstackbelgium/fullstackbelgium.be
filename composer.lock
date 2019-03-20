@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "531183a1a7011ae6e54411cc5893eb7d",
+    "content-hash": "f8dafdbb8a5c7069c008c5b0d2d0fd8a",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -2021,16 +2021,16 @@
         },
         {
             "name": "spatie/laravel-mix-preload",
-            "version": "0.1.4",
+            "version": "0.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-mix-preload.git",
-                "reference": "5ef56ff9469b5a565c7ab1d7f5b6c153a463d5d7"
+                "reference": "8bfaf86768765cf116dc376468762fe2e3b5f048"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-mix-preload/zipball/5ef56ff9469b5a565c7ab1d7f5b6c153a463d5d7",
-                "reference": "5ef56ff9469b5a565c7ab1d7f5b6c153a463d5d7",
+                "url": "https://api.github.com/repos/spatie/laravel-mix-preload/zipball/8bfaf86768765cf116dc376468762fe2e3b5f048",
+                "reference": "8bfaf86768765cf116dc376468762fe2e3b5f048",
                 "shasum": ""
             },
             "require": {
@@ -2072,7 +2072,7 @@
                 "laravel-mix-preload",
                 "spatie"
             ],
-            "time": "2019-03-20T13:25:31+00:00"
+            "time": "2019-03-20T13:57:55+00:00"
         },
         {
             "name": "spatie/laravel-sluggable",

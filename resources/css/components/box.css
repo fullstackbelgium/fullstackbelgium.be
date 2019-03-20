@@ -1,0 +1,3 @@
+.box {
+    @apply bg-white rounded-sm shadow-md p-8;
+}

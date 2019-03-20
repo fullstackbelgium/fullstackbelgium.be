@@ -19,6 +19,7 @@ module.exports = {
                     700: 'var(--gray-700)',
                     800: 'var(--gray-800)',
                 },
+                yellow: 'var(--yellow)',
                 belgium: 'var(--belgium)',
                 antwerp: 'var(--antwerp)',
                 brussels: 'var(--brussels)',

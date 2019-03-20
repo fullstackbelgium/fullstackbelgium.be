@@ -1,10 +1,12 @@
-.markup h1 {
+.markup h1,
+.h1 {
     @apply font-bold;
     @apply text-3xl;
     @apply mb-8;
 }
 
-.markup h2 {
+.markup h2,
+.h2 {
     @apply font-bold;
     @apply text-lg;
     @apply mb-8;

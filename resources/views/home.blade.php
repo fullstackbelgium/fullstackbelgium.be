@@ -5,7 +5,7 @@
         </section>
         <div class="flex flex-col items-end" style="margin-top: -2.4rem;">
             <div class="w-full md:max-w-min-content">
-                <section class="md:flex bg-white rounded-sm shadow-lg p-6 whitespace-no-wrap">
+                <section class="box p-6 md:flex whitespace-no-wrap">
                     <h2 class="mb-2 mr-8 font-bold">
                         Our next meetups
                     </h2>
@@ -87,15 +87,15 @@
                     <ul class="md:flex">
                         <li class="flex-1 mb-4 md:mb-0 px-2">
                             <img class="border-white border-8 rounded-sm shadow-md cursor-zoom-in" src="{{ url('images/meetups/meetup-dummy-1.jpg') }}"
-                                data-gallery-item data-src="/images/meetups/meetup-dummy-1.jpg" data-msrc="/images/meetups/meetup-dummy-1.jpg" data-w="1024" data-h="768">
+                                data-gallery-item data-src="/images/meetups/meetup-dummy-1.jpg" data-w="1024" data-h="768">
                         </li>
                         <li class="flex-1 mb-4 md:mb-0 px-2">
                             <img class="border-white border-8 rounded-sm shadow-md cursor-zoom-in" src="{{ url('images/meetups/meetup-dummy-2.jpg') }}"
-                                data-gallery-item data-src="/images/meetups/meetup-dummy-2.jpg" data-msrc="/images/meetups/meetup-dummy-2.jpg" data-w="1024" data-h="768">
+                                data-gallery-item data-src="/images/meetups/meetup-dummy-2.jpg" data-w="1024" data-h="768">
                         </li>
                         <li class="flex-1 px-2">
                             <img class="border-white border-8 rounded-sm shadow-md cursor-zoom-in" src="{{ url('images/meetups/meetup-dummy-3.jpg') }}"
-                                data-gallery-item data-src="/images/meetups/meetup-dummy-3.jpg" data-msrc="/images/meetups/meetup-dummy-3.jpg" data-w="2048 " data-h="1536">
+                                data-gallery-item data-src="/images/meetups/meetup-dummy-3.jpg" data-w="2048 " data-h="1536">
                         </li>
                     </ul>
                 @endcomponent
