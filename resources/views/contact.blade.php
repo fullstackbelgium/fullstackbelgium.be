@@ -2,16 +2,16 @@
     'title' => 'Contact',
     'active' => 'contact',
 ])
-    <section class="wrapper markup pb-16">
+    <section class="wrapper markup pb-4 md:pb-16">
         <div class="md:w-2/3">
             <h1>Contact</h1>
             <p class="text-xl">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus illo est rem sit, perferendis, consequatur provident amet pariatur natus totam alias earum odio? Dicta quidem maxime minima sed laborum accusantium.</p>
         </div>
     </section>
 
-    <section class="bg-white border-t border-b border-gray-300 pt-24 pb-16">
+    <section class="bg-white border-t border-b border-gray-300 pt-10 pb-4 md:pt-24 md:pb-16">
         <div class="wrapper markup">
-            <div class="flex items-start mb-8 md:mb-12">
+            <div class="md:flex items-start mb-8 md:mb-12">
                 <h2 class="w-1/3">
                     Speakers
                 </h2>
@@ -30,8 +30,8 @@
                     </p>
                 </div>
             </div>
-            <hr class="h-px w-2/3 bg-gray-400 mt-20 mb-24">
-            <div class="flex items-start mb-8 md:mb-12">
+            <hr class="h-px w-2/3 bg-gray-400 my-12 md:mt-20 md:mb-24">
+            <div class="md:flex items-start mb-8 md:mb-12">
                 <h2 class="w-1/3">
                     Venues
                 </h2>
@@ -49,8 +49,8 @@
                     </p>
                 </div>
             </div>
-            <hr class="h-px w-2/3 bg-gray-400 mt-20 mb-24">
-            <div class="flex items-start mb-8 md:mb-12">
+            <hr class="h-px w-2/3 bg-gray-400 my-12 md:mt-20 md:mb-24">
+            <div class="md:flex items-start mb-8 md:mb-12">
                 <h2 class="w-1/3">
                     Sponsorships
                 </h2>
@@ -68,8 +68,8 @@
                     </p>
                 </div>
             </div>
-            <hr class="h-px w-2/3 bg-gray-400 mt-20 mb-24">
-            <div class="flex items-start mb-8 md:mb-12">
+            <hr class="h-px w-2/3 bg-gray-400 my-12 md:mt-20 md:mb-24">
+            <div class="md:flex items-start mb-8 md:mb-12">
                 <h2 class="w-1/3">
                     Other inquiries
                 </h2>

@@ -1,5 +1,5 @@
-<div class="flex">
-    <header class="w-1/3">
+<div class="md:flex">
+    <header class="md:w-1/3 mb-6 md:mb-0">
         <figure class="block w-24 mb-3">
             <a href="https://www.meetup.com/fullstack{{ $location }}" target="_blank" rel="noopener" title="View on meetup.com">
                 <img src="{{ url("/svg/full-stack-{$location}.svg") }}" alt="Full Stack {{ ucfirst($location) }}">

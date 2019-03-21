@@ -3,7 +3,7 @@
         <p class="md:w-2/3 text-2xl pb-16 md:pb-24 md:border-b">
             Organising meetups on front-end, back-end, devops and everything in between in the cities of <strong class="font-medium">Antwerp</strong>, <strong class="font-medium">Ghent</strong> and <strong class="font-medium">Brussels</strong>.
         </p>
-        <div class="flex flex-col items-end mb-24" style="margin-top: -2.4rem;">
+        <div class="flex flex-col items-end mb-12 md:mb-24" style="margin-top: -2.4rem;">
             <div class="w-full md:max-w-min-content">
                 <section class="box p-6 md:flex whitespace-no-wrap">
                     <h2 class="mb-2 mr-8 font-bold">
@@ -78,31 +78,31 @@
         </div>
     </section>
 
-    <div class="bg-white border-t border-b border-gray-300 pt-24 pb-16">
+    <div class="bg-white border-t md:border-b border-gray-300 pt-12 md:pt-24 pb-12 md:pb-16">
         <section class="wrapper">
             @include('partials.meetup', ['location' => 'antwerp'])
-            <hr class="h-px w-2/3 bg-gray-400 mt-20 mb-24">
+            <hr class="h-px w-2/3 bg-gray-400 my-12 md:mt-20 md:mb-24">
             @include('partials.meetup', ['location' => 'brussels'])
-            <hr class="h-px w-2/3 bg-gray-400 mt-20 mb-24">
+            <hr class="h-px w-2/3 bg-gray-400 my-12 md:mt-20 md:mb-24">
             @include('partials.meetup', ['location' => 'ghent'])
         </section>
     </div>
 
-    <section class="py-8 md:py-24">
+    <section class="pb-8 md:py-24">
         <div class="wrapper text-center">
-            <div class="-mx-2 mb-10">
+            <div class="-mx-2 mb-8 md:mb-10">
                 @component('components.gallery')
-                    <ul class="md:flex -mx-px">
-                        <li class="flex-1 mb-4 md:mb-0 px-px">
-                            <img class="cursor-zoom-in rounded-l-sm" src="{{ url('images/meetups/meetup-dummy-1.jpg') }}" alt="Full Stack Ghent 2019-02-12"
+                    <ul class="md:flex -mx-4 md:-mx-px">
+                        <li class="flex-1 mb-4 md:mb-0 md:px-px">
+                            <img class="cursor-zoom-in md:rounded-l-sm" src="{{ url('images/meetups/meetup-dummy-1.jpg') }}" alt="Full Stack Ghent 2019-02-12"
                                 data-gallery-item data-src="/images/meetups/meetup-dummy-1.jpg" data-w="1024" data-h="768">
                         </li>
-                        <li class="flex-1 mb-4 md:mb-0 px-px">
+                        <li class="flex-1 mb-4 md:mb-0 md:px-px">
                             <img class="cursor-zoom-in" src="{{ url('images/meetups/meetup-dummy-2.jpg') }}" alt="Full Stack Ghent 2019-02-12"
                                 data-gallery-item data-src="/images/meetups/meetup-dummy-2.jpg" data-w="1024" data-h="768">
                         </li>
-                        <li class="flex-1 px-px">
-                            <img class="cursor-zoom-in rounded-r-sm" src="{{ url('images/meetups/meetup-dummy-3.jpg') }}" alt="Full Stack Ghent 2019-02-12"
+                        <li class="flex-1 md:px-px">
+                            <img class="cursor-zoom-in md:rounded-r-sm" src="{{ url('images/meetups/meetup-dummy-3.jpg') }}" alt="Full Stack Ghent 2019-02-12"
                                 data-gallery-item data-src="/images/meetups/meetup-dummy-3.jpg" data-w="2048 " data-h="1536">
                         </li>
                     </ul>
@@ -119,10 +119,10 @@
         </div>
     </section>
 
-    <section class="bg-white border-t border-b border-gray-300 py-16">
+    <section class="bg-white border-t border-b border-gray-300 py-8 md:py-16">
         <div class="wrapper">
             <h2 class="text-center font-bold mb-1">Organised by Dries, Freek and Rias</h2>
-            <p class="text-center text-sm text-gray-700 mb-12">Come say hi at our next meetup! 👋</p>
+            <p class="text-center text-sm text-gray-700 mb-8 md:mb-12">Come say hi at our next meetup! 👋</p>
             <ul class="flex flex-wrap justify-center">
                 <li class="w-full sm:w-1/2 md:w-1/3 mb-8 md:mb-0 text-center">
                     <img class="inline-block w-24 mb-3 rounded-full border-4 border-white shadow-md" src="{{ url('images/dries.jpg') }}" alt="Headshot of Dries Vints">

@@ -50,13 +50,13 @@
                 </a>
                 <nav class="bg-gray-200 text-gray-700 py-1 leading-none sm:mt-8 mb-1 relative">
                     <ul class="sm:flex text-right">
-                        <li class="mb-4 sm:mb-0 sm:mr-3 md:mr-5 hidden md:block {{ $active === 'home' ? 'font-bold text-black' : '' }}">
+                        <li class="mb-3 sm:mb-0 sm:mr-3 md:mr-5 {{ $active === 'home' ? 'font-bold text-black' : '' }}">
                             <a href="{{ url('/') }}">Home</a>
                         </li>
-                        <li class="mb-4 sm:mb-0 sm:mr-3 md:mr-5 {{ $active === 'slack' ? 'font-bold text-black' : '' }}">
+                        <li class="mb-3 sm:mb-0 sm:mr-3 md:mr-5 {{ $active === 'slack' ? 'font-bold text-black' : '' }}">
                             <a href="{{ url('slack') }}">Slack</a>
                         </li>
-                        <li class="mb-4 sm:mb-0 sm:mr-3 md:mr-5">
+                        <li class="mb-3 sm:mb-0 sm:mr-3 md:mr-5">
                             <a href="https://twitter.com/fullstackbe" target="_blank"  rel="noopener">Twitter</a>
                         </li>
                         <li class="{{ $active === 'contact' ? 'font-bold text-black' : '' }}">
