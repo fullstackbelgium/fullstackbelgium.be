@@ -23,7 +23,7 @@
         <h3 class="text-sm text-gray-700 mb-2">
             Next meetup:
         </h3>
-        <p class="text-xl mb-8">
+        <p class="text-xl mb-6">
             <a href="#" target="_blank" title="View on meetup.com">
                 <time class="font-medium" datetime="2019-03-13">April 10<sup>th</sup></time>
                 at Code d'Or
@@ -32,27 +32,40 @@
                 </span>
             </a>
         </p>
-        <div class="markup">
-            <p>For our second meetup we have two developers from the Antwerp company Spatie speaking. Sebastian De Deyne will introduce a cool new react feature called hooks. Freek Van der Herten will introduce us into the wonderful world of event sourcing.</p>
-            <p>A big thanks to Code d'Or for hosting us! They'll provide us with drinks and some small snacks.</p>
-        </div>
-        {{-- <div class="-mx-8">
-            @component('components.gallery')
-                <ul class="flex -mx-px">
-                    <li class="flex-1 px-px md:mb-0">
-                        <img class="cursor-zoom-in" src="{{ url('images/meetups/meetup-dummy-1.jpg') }}"
-                            data-gallery-item data-src="/images/meetups/meetup-dummy-1.jpg" data-w="1024" data-h="768">
-                    </li>
-                    <li class="flex-1 px-px md:mb-0">
-                        <img class="cursor-zoom-in" src="{{ url('images/meetups/meetup-dummy-2.jpg') }}"
-                            data-gallery-item data-src="/images/meetups/meetup-dummy-2.jpg" data-w="1024" data-h="768">
-                    </li>
-                    <li class="flex-1 px-px">
-                        <img class="cursor-zoom-in" src="{{ url('images/meetups/meetup-dummy-3.jpg') }}"
-                            data-gallery-item data-src="/images/meetups/meetup-dummy-3.jpg" data-w="2048 " data-h="1536">
-                    </li>
-                </ul>
-            @endcomponent
-        </div> --}}
+        <ol class="mb-6 -ml-2 leading-tight">
+            <li class="flex items-start pl-2 py-2">
+                <time class="inline-block font-bold text-sm w-16 mt-1/2">19:00</time>
+                <p class="flex-1">Doors</p>
+            </li>
+            <li class="flex items-start pl-2 py-2 bg-gray-200">
+                <time class="inline-block font-bold text-sm w-16 mt-1/2">20:00</time>
+                <p class="flex-1">
+                    Getting started with event sourcing in a Laravel app
+                    <br>
+                    <span class="text-sm text-gray-700">by Freek Van der Herten</span>
+                </p>
+            </li>
+            <li class="flex items-start pl-2 py-2">
+                <time class="inline-block font-bold text-sm w-16 mt-1/2">20:45</time>
+                <p class="flex-1">
+                    Mingle
+                </p>
+            </li>
+            <li class="flex items-start pl-2 py-2 bg-gray-200">
+                <time class="inline-block font-bold text-sm w-16 mt-1/2">21:00</time>
+                <p class="flex-1">
+                    Connecting microservices with gRPC
+                    <br>
+                    <span class="text-sm text-gray-700">by Frederick Vanbrabant</span>
+                </p>
+            </li>
+            <li class="flex items-start pl-2 py-2">
+                <time class="inline-block font-bold text-sm w-16 mt-1/2">21:45</time>
+                <p class="flex-1">
+                    Mingle
+                </p>
+            </li>
+        </ol>
+        <p>The venue will provide drinks and some small snacks.</p>
     </div>
 </div>

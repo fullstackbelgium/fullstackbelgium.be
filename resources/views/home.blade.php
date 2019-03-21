@@ -17,10 +17,12 @@
                                 </span>
                             </p>
                             <p style="margin-top: 0.2rem">
-                                <time class="font-medium" datetime="2019-03-27">March 27<sup>th</sup></time>
-                                at Spilberg
-                                <a class="inline-block w-4" href="#" target="_blank" title="View on meetup.com">
-                                    {{ svg('meetup') }}
+                                <a href="#" target="_blank" title="View on meetup.com">
+                                    <time class="font-medium" datetime="2019-03-27">March 27<sup>th</sup></time>
+                                    at Spilberg
+                                    <span class="inline-block w-4">
+                                        {{ svg('meetup') }}
+                                    </span>
                                 </a>
                             </p>
                         </li>
@@ -31,10 +33,12 @@
                                 </span>
                             </p>
                             <p style="margin-top: 0.2rem">
-                                <time class="font-medium" datetime="2019-03-03">April 3<sup>rd</sup></time>
-                                at BeCode
-                                <a class="inline-block w-4" href="#" target="_blank" title="View on meetup.com">
-                                    {{ svg('meetup') }}
+                                <a href="#" target="_blank" title="View on meetup.com">
+                                    <time class="font-medium" datetime="2019-03-03">April 3<sup>rd</sup></time>
+                                    at BeCode
+                                    <span class="inline-block w-4" href="#" target="_blank" title="View on meetup.com">
+                                        {{ svg('meetup') }}
+                                    </span>
                                 </a>
                             </p>
                         </li>
@@ -45,10 +49,12 @@
                                 </span>
                             </p>
                             <p style="margin-top: 0.2rem">
-                                <time class="font-medium" datetime="2019-03-13">April 10<sup>th</sup></time>
-                                at Code d'Or
-                                <a class="inline-block w-4" href="#" target="_blank" title="View on meetup.com">
-                                    {{ svg('meetup') }}
+                                <a href="#" target="_blank" title="View on meetup.com">
+                                    <time class="font-medium" datetime="2019-03-13">April 10<sup>th</sup></time>
+                                    at Code d'Or
+                                    <span class="inline-block w-4" href="#" target="_blank" title="View on meetup.com">
+                                        {{ svg('meetup') }}
+                                    </span>
                                 </a>
                             </p>
                         </li>
@@ -75,9 +81,9 @@
     <div class="bg-white border-t border-b border-gray-300 pt-24 pb-16">
         <section class="wrapper">
             @include('partials.meetup', ['location' => 'antwerp'])
-            <hr class="h-px w-2/3 bg-gray-400 mt-16 mb-24">
+            <hr class="h-px w-2/3 bg-gray-400 mt-20 mb-24">
             @include('partials.meetup', ['location' => 'brussels'])
-            <hr class="h-px w-2/3 bg-gray-400 mt-16 mb-24">
+            <hr class="h-px w-2/3 bg-gray-400 mt-20 mb-24">
             @include('partials.meetup', ['location' => 'ghent'])
         </section>
     </div>

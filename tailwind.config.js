@@ -25,6 +25,9 @@ module.exports = {
                 brussels: 'var(--brussels)',
                 ghent: 'var(--ghent)',
             },
+            spacing: {
+                '1/2': '0.125rem',
+            },
             fontFamily: {
                 sans: ['interstate', 'system-ui', 'sans-serif'],
             },
