@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{2:function(n,i,t){"use strict";t.r(i),t.d(i,"init",function(){return p});var e=t(0),o=t.n(e),s=t(1),w=t.n(s);function p(n){var i=n.pswpEl,t=n.items,e=n.index;new o.a(i,w.a,t,{index:e,history:!1}).init()}}}]);
