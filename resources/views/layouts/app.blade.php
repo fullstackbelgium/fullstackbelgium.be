@@ -70,7 +70,7 @@
             {{ $slot }}
         </main>
         <footer class="w-full max-w-5xl px-6 sm:px-12 lg:px-24 mx-auto">
-            <div class="py-6 md:flex justify-between text-xs text-gray-600">
+            <div class="py-6 md:flex justify-between text-xs text-gray-700">
                 <ul class="flex mb-2 md:mb-0">
                     <li class="mr-3 md:mr-6"><a href="{{ url('contact') }}">Contact</a></li>
                     <li class="mr-3 md:mr-6"><a href="{{ url('policy') }}">Policy</a></li>
