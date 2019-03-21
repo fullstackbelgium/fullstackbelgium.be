@@ -17,7 +17,7 @@
                                 </span>
                             </p>
                             <p style="margin-top: 0.2rem">
-                                <a href="#" target="_blank" title="View on meetup.com">
+                                <a href="#" target="_blank"  rel="noopener" title="View on meetup.com">
                                     <time class="font-medium" datetime="2019-03-27">March 27<sup>th</sup></time>
                                     at Spilberg
                                     <span class="inline-block w-4">
@@ -33,10 +33,10 @@
                                 </span>
                             </p>
                             <p style="margin-top: 0.2rem">
-                                <a href="#" target="_blank" title="View on meetup.com">
+                                <a href="#" target="_blank"  rel="noopener" title="View on meetup.com">
                                     <time class="font-medium" datetime="2019-03-03">April 3<sup>rd</sup></time>
                                     at BeCode
-                                    <span class="inline-block w-4" href="#" target="_blank" title="View on meetup.com">
+                                    <span class="inline-block w-4" href="#" target="_blank"  rel="noopener" title="View on meetup.com">
                                         {{ svg('meetup') }}
                                     </span>
                                 </a>
@@ -49,10 +49,10 @@
                                 </span>
                             </p>
                             <p style="margin-top: 0.2rem">
-                                <a href="#" target="_blank" title="View on meetup.com">
+                                <a href="#" target="_blank"  rel="noopener" title="View on meetup.com">
                                     <time class="font-medium" datetime="2019-03-13">April 10<sup>th</sup></time>
                                     at Code d'Or
-                                    <span class="inline-block w-4" href="#" target="_blank" title="View on meetup.com">
+                                    <span class="inline-block w-4" href="#" target="_blank"  rel="noopener" title="View on meetup.com">
                                         {{ svg('meetup') }}
                                     </span>
                                 </a>
@@ -94,15 +94,15 @@
                 @component('components.gallery')
                     <ul class="md:flex -mx-px">
                         <li class="flex-1 mb-4 md:mb-0 px-px">
-                            <img class="cursor-zoom-in rounded-l-sm" src="{{ url('images/meetups/meetup-dummy-1.jpg') }}"
+                            <img class="cursor-zoom-in rounded-l-sm" src="{{ url('images/meetups/meetup-dummy-1.jpg') }}" alt="Full Stack Ghent 2019-02-12"
                                 data-gallery-item data-src="/images/meetups/meetup-dummy-1.jpg" data-w="1024" data-h="768">
                         </li>
                         <li class="flex-1 mb-4 md:mb-0 px-px">
-                            <img class="cursor-zoom-in" src="{{ url('images/meetups/meetup-dummy-2.jpg') }}"
+                            <img class="cursor-zoom-in" src="{{ url('images/meetups/meetup-dummy-2.jpg') }}" alt="Full Stack Ghent 2019-02-12"
                                 data-gallery-item data-src="/images/meetups/meetup-dummy-2.jpg" data-w="1024" data-h="768">
                         </li>
                         <li class="flex-1 px-px">
-                            <img class="cursor-zoom-in rounded-r-sm" src="{{ url('images/meetups/meetup-dummy-3.jpg') }}"
+                            <img class="cursor-zoom-in rounded-r-sm" src="{{ url('images/meetups/meetup-dummy-3.jpg') }}" alt="Full Stack Ghent 2019-02-12"
                                 data-gallery-item data-src="/images/meetups/meetup-dummy-3.jpg" data-w="2048 " data-h="1536">
                         </li>
                     </ul>

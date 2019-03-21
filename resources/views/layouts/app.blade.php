@@ -1,11 +1,11 @@
 @php($active = $active ?? null)
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
 
     @isset($title)
         <title>{{ $title }} — Full Stack Belgium</title>
@@ -35,7 +35,7 @@
     <div class="flex flex-col min-h-screen">
         <section class="bg-europe-dark border-t-4 border-europe-light text-white font-medium pt-3 pb-4 mb-4">
             <div class="wrapper text-center">
-                <a class="focus:underline focus:bg-transparent" href="https://fullstackeurope.com/" target="_blank">
+                <a class="focus:underline focus:bg-transparent" href="https://fullstackeurope.com/" target="_blank" rel="noopener">
                     We're doing a conference! Join us at Hilton Antwerp Old Town for Full Stack Europe 2019 →
                 </a>
             </div>
@@ -45,7 +45,7 @@
                 <figure class="hidden sm:block absolute right-0 top-0 mt-4" style="width: 18rem">
                     {{ svg('belgium') }}
                 </figure>
-                <a tabindex="-1" class="block rounded-full border-4 border-white shadow-lg w-32 mr-8 relative" href="{{ url('/') }}">
+                <a tabindex="-1" class="block rounded-full border-4 border-white shadow-lg w-32 mr-8 relative" href="{{ url('/') }}" title="Full Stack Belgium">
                     {{ svg('full-stack-belgium') }}
                 </a>
                 <nav class="bg-gray-200 text-gray-700 py-1 leading-none sm:mt-8 mb-1 relative">
@@ -57,7 +57,7 @@
                             <a href="{{ url('slack') }}">Slack</a>
                         </li>
                         <li class="mb-4 sm:mb-0 sm:mr-3 md:mr-5">
-                            <a href="https://twitter.com/fullstackbe" target="_blank">Twitter</a>
+                            <a href="https://twitter.com/fullstackbe" target="_blank"  rel="noopener">Twitter</a>
                         </li>
                         <li class="{{ $active === 'contact' ? 'font-bold text-black' : '' }}">
                             <a href="{{ url('contact') }}">Contact</a>
