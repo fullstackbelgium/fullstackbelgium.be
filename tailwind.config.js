@@ -24,6 +24,8 @@ module.exports = {
                 antwerp: 'var(--antwerp)',
                 brussels: 'var(--brussels)',
                 ghent: 'var(--ghent)',
+                'europe-dark': 'var(--europe-dark)',
+                'europe-light': 'var(--europe-light)',
             },
             spacing: {
                 '1/2': '0.125rem',

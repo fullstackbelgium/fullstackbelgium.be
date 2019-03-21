@@ -8,7 +8,7 @@
 .markup h2,
 .h2 {
     @apply font-bold;
-    @apply text-lg;
+    @apply text-xl;
     @apply mb-8;
 }
 
@@ -45,6 +45,11 @@
     opacity: 0.66;
     transition: all 0.3s ease-out;
     transform: translate3d(0, 0, 0);
+}
+
+.markup a:not(.no-link).is-thick:before,
+.link.is-thick:before {
+    height: 2px;
 }
 
 .markup a:not(.no-link):hover:before,
