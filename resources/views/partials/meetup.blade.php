@@ -1,13 +1,13 @@
 <div class="flex">
     <header class="w-1/3">
         <figure class="block w-24 mb-3">
-            <a href="https://www.meetup.com/fullstack{{ $location }}" target="_blank" title="View on meetup.com">
+            <a href="https://www.meetup.com/fullstack{{ $location }}" target="_blank" rel="noopener" title="View on meetup.com">
                 <img src="{{ url("/svg/full-stack-{$location}.svg") }}" alt="Full Stack {{ ucfirst($location) }}">
             </a>
         </figure>
         <div class="w-full">
             <h2 class="font-bold text-xl">
-                <a href="https://www.meetup.com/fullstack{{ $location }}" target="_blank" title="View on meetup.com">
+                <a href="https://www.meetup.com/fullstack{{ $location }}" target="_blank" rel="noopener" title="View on meetup.com">
                     Full Stack {{ ucfirst($location) }}
                     <span class="inline-block w-4" >
                         {{ svg('meetup') }}
@@ -24,7 +24,7 @@
             Next meetup:
         </h3>
         <p class="text-xl mb-6">
-            <a href="#" target="_blank" title="View on meetup.com">
+            <a href="#" target="_blank" rel="noopener" title="View on meetup.com">
                 <time class="font-medium" datetime="2019-03-13">April 10<sup>th</sup></time>
                 at Code d'Or
                 <span class="inline-block w-4" >
