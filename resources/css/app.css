@@ -37,3 +37,7 @@ a:not(.button):focus {
 @import '../../node_modules/photoswipe/dist/default-skin/default-skin.css';
 
 @tailwind utilities;
+
+.bg-dots {
+    background-image: url('/images/svg/dots.svg');
+}

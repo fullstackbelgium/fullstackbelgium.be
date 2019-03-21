@@ -19,7 +19,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#00aba9">
     <meta name="theme-color" content="#ffffff">
 
@@ -41,13 +40,10 @@
                 <a class="block rounded-full border-4 border-white shadow-lg w-32 mr-8 relative" href="{{ url('/') }}">
                     {{ svg('full-stack-belgium') }}
                 </a>
-                <nav class="tracking-wide bg-gray-200 text-gray-700 py-1 leading-none sm:mt-8 mb-1 relative">
+                <nav class="bg-gray-200 text-gray-700 py-1 leading-none sm:mt-8 mb-1 relative">
                     <ul class="sm:flex text-right">
                         <li class="mb-4 sm:mb-0 sm:mr-3 md:mr-5 hidden md:block {{ $active === 'home' ? 'font-bold text-black' : '' }}">
                             <a href="{{ url('/') }}">Home</a>
-                        </li>
-                        <li class="mb-4 sm:mb-0 sm:mr-3 md:mr-5 {{ $active === 'meetups' ? 'font-bold text-black' : '' }}">
-                            <a href="{{ url('meetups') }}">Meetups</a>
                         </li>
                         <li class="mb-4 sm:mb-0 sm:mr-3 md:mr-5 {{ $active === 'slack' ? 'font-bold text-black' : '' }}">
                             <a href="{{ url('slack') }}">Slack</a>
@@ -66,7 +62,7 @@
             {{ $slot }}
         </main>
         <footer class="w-full max-w-5xl px-6 sm:px-12 lg:px-24 mx-auto">
-            <div class="py-6 md:flex justify-between text-xs text-gray-600 tracking-wide">
+            <div class="py-6 md:flex justify-between text-xs text-gray-600">
                 <ul class="flex mb-2 md:mb-0">
                     <li class="mr-3 md:mr-6"><a href="{{ url('contact') }}">Contact</a></li>
                     <li class="mr-3 md:mr-6"><a href="{{ url('policy') }}">Policy</a></li>

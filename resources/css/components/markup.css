@@ -41,16 +41,10 @@
     left: 0;
     right: 0;
     bottom: 0;
-    height: 2px;
+    height: 1px;
     opacity: 0.66;
     transition: all 0.3s ease-out;
     transform: translate3d(0, 0, 0);
-}
-
-.markup a:not(.no-link).is-small:before,
-.link.is-small:before {
-    height: 1px;
-    bottom: 1px;
 }
 
 .markup a:not(.no-link):hover:before,

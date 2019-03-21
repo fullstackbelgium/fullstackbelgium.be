@@ -1,9 +1,9 @@
 @component('layouts.app', ['active' => 'home'])
-    <div class="wrapper mb-24">
-        <section class="text-2xl md:w-2/3 pb-16 md:pb-20 md:border-b">
-            <p>Organising meetups on front-end, back-end, devops and everything in between in the cities of <strong class="font-medium">Antwerp</strong>, <strong class="font-medium">Ghent</strong> and <strong class="font-medium">Brussels</strong>.</p>
-        </section>
-        <div class="flex flex-col items-end" style="margin-top: -2.4rem;">
+    <section class="wrapper pb-12">
+        <p class="md:w-2/3 text-2xl pb-16 md:pb-24 md:border-b">
+            Organising meetups on front-end, back-end, devops and everything in between in the cities of <strong class="font-medium">Antwerp</strong>, <strong class="font-medium">Ghent</strong> and <strong class="font-medium">Brussels</strong>.
+        </p>
+        <div class="flex flex-col items-end mb-24" style="margin-top: -2.4rem;">
             <div class="w-full md:max-w-min-content">
                 <section class="box p-6 md:flex whitespace-no-wrap">
                     <h2 class="mb-2 mr-8 font-bold">
@@ -59,59 +59,61 @@
                 </p>
             </div>
         </div>
-    </div>
-
-    <section class="mb-8">
-        <div class="wrapper md:flex items-center">
-            <div class="flex mb-4 md:mb-0 md:mr-8">
-                <figure class="block rounded-full border-4 border-white shadow-md w-32">
-                    {{ svg('full-stack-antwerp') }}
-                </figure>
-                <figure class="block rounded-full border-4 border-white shadow-md w-32 -ml-8">
-                    {{ svg('full-stack-brussels') }}
-                </figure>
-                <figure class="block rounded-full border-4 border-white shadow-md w-32 -ml-8">
-                    {{ svg('full-stack-ghent') }}
-                </figure>
-            </div>
-            <div class="flex-1">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, a fuga! Nisi, nemo officiis, blanditiis mollitia quae aliquid porro ullam rem recusandae magni.</p>
+        <div class="flex items-end">
+            <div class="flex-2 mr-4">
+                <p class="text-xl">
+                    We're always on the lookout for speakers.
+                </p>
+                <p class="text-gray-700">
+                    First time speaker? Prepping a conference talk? All welcome,
+                    <a class="link" href="{{ url('contact') }}">get in touch</a>!
+                </p>
             </div>
         </div>
     </section>
 
-    <div class="pb-8 md:pb-16">
+    <div class="bg-white border-t border-b border-gray-300 pt-24 pb-16">
         <section class="wrapper">
-            <div class="-mx-2 mb-8">
+            @include('partials.meetup', ['location' => 'antwerp'])
+            <hr class="h-px w-2/3 bg-gray-400 mt-16 mb-24">
+            @include('partials.meetup', ['location' => 'brussels'])
+            <hr class="h-px w-2/3 bg-gray-400 mt-16 mb-24">
+            @include('partials.meetup', ['location' => 'ghent'])
+        </section>
+    </div>
+
+    <section class="py-8 md:py-24">
+        <div class="wrapper text-center">
+            <div class="-mx-2 mb-10">
                 @component('components.gallery')
-                    <ul class="md:flex">
-                        <li class="flex-1 mb-4 md:mb-0 px-2">
-                            <img class="border-white border-8 rounded-sm shadow-md cursor-zoom-in" src="{{ url('images/meetups/meetup-dummy-1.jpg') }}"
+                    <ul class="md:flex -mx-px">
+                        <li class="flex-1 mb-4 md:mb-0 px-px">
+                            <img class="cursor-zoom-in rounded-l-sm" src="{{ url('images/meetups/meetup-dummy-1.jpg') }}"
                                 data-gallery-item data-src="/images/meetups/meetup-dummy-1.jpg" data-w="1024" data-h="768">
                         </li>
-                        <li class="flex-1 mb-4 md:mb-0 px-2">
-                            <img class="border-white border-8 rounded-sm shadow-md cursor-zoom-in" src="{{ url('images/meetups/meetup-dummy-2.jpg') }}"
+                        <li class="flex-1 mb-4 md:mb-0 px-px">
+                            <img class="cursor-zoom-in" src="{{ url('images/meetups/meetup-dummy-2.jpg') }}"
                                 data-gallery-item data-src="/images/meetups/meetup-dummy-2.jpg" data-w="1024" data-h="768">
                         </li>
-                        <li class="flex-1 px-2">
-                            <img class="border-white border-8 rounded-sm shadow-md cursor-zoom-in" src="{{ url('images/meetups/meetup-dummy-3.jpg') }}"
+                        <li class="flex-1 px-px">
+                            <img class="cursor-zoom-in rounded-r-sm" src="{{ url('images/meetups/meetup-dummy-3.jpg') }}"
                                 data-gallery-item data-src="/images/meetups/meetup-dummy-3.jpg" data-w="2048 " data-h="1536">
                         </li>
                     </ul>
                 @endcomponent
             </div>
-            <p class="text-xl mb-6">
-                🎉 Thanks to all <strong class="font-bold text-2xl px-2 py-1 bg-white shadow-md rounded-sm">235</strong> attendees for joining last month's meetups!
+            <p class="text-2xl mb-4">
+                🎉 Thanks to all <strong class="font-bold text-2xl px-2 py-1 bg-white shadow-md rounded-sm">235</strong> attendees for joining last month's meetups! 🎉
             </p>
-            <p class="text-sm text-gray-700">
+            <p class="text-gray-700">
                 We're always on the lookout for speakers, sponsors and venues for our user groups.
                 <br>
                 <a class="link is-small" href="{{ url('contact') }}">Talk to us</a> if you want to get involved.
             </p>
-        </section>
-    </div>
+        </div>
+    </section>
 
-    <section class="bg-white py-16">
+    <section class="bg-white border-t border-b border-gray-300 py-16">
         <div class="wrapper">
             <h2 class="text-center font-bold mb-1">Organised by Dries, Freek and Rias</h2>
             <p class="text-center text-sm text-gray-700 mb-12">Come say hi at our next meetup! 👋</p>
