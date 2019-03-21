@@ -1,0 +1,29 @@
+@tailwind base;
+
+:root {
+    --white: #ffffff;
+    --black: #22292f;
+    --gray-200: #f8fafc;
+    --gray-300: #f1f5f8;
+    --gray-400: #dae1e7;
+    --gray-500: #b8c2cc;
+    --gray-600: #8795a1;
+    --gray-700: #606f7b;
+    --gray-800: #3d4852;
+    --yellow: #fff7c1;
+    --belgium: #188788;
+    --antwerp: #af3448;
+    --brussels: #5f58a2;
+    --ghent: #3997bd;
+    --europe-dark: #5845d0;
+    --europe-light: #6a58e4;
+}
+
+html {
+    font-size: 18px;
+}
+
+a:not(.button):focus {
+    outline: none;
+    background-color: var(--yellow);
+}

@@ -22,8 +22,9 @@
     <meta name="msapplication-TileColor" content="#00aba9">
     <meta name="theme-color" content="#ffffff">
 
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <style>{{ inline_mix('css/app.css') }}</style>
     <link rel="stylesheet" href="https://use.typekit.net/hje0ebn.css">
+    <link rel="preload" href="{{ mix('css/vendor.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=Array.from" defer></script>
     <script src="{{ mix('js/app.js') }}" defer></script>
