@@ -16,4 +16,6 @@ mix.webpackConfig({
     },
 });
 
-mix.purgeCss();
+mix.purgeCss({
+    whitelistPatterns: [/pswp/],
+});
