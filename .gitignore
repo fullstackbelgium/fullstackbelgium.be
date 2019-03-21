@@ -3,6 +3,7 @@
 /public/storage
 /public/css
 /public/js
+/public/svg
 /public/images/vendor
 /public/mix-manifest.json
 /storage/*.key

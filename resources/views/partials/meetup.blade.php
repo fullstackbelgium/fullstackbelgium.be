@@ -2,7 +2,7 @@
     <header class="w-1/3">
         <figure class="block w-24 mb-3">
             <a href="https://www.meetup.com/fullstack{{ $location }}" target="_blank" title="View on meetup.com">
-                {{ svg("full-stack-{$location}") }}
+                <img src="{{ url("/svg/full-stack-{$location}.svg") }}" alt="Full Stack {{ ucfirst($location) }}">
             </a>
         </figure>
         <div class="w-full">
