@@ -38,6 +38,9 @@ class Event extends Resource
 
             Text::make('Venue name')->help('Will not be sent to meetup.com'),
             Image::make('Venue logo')
+                ->disk('public')->storeAs(function (Request $request) {
+                    return sha1($request->venue_logo->getClientOriginalName()) . '.' . $request->venue_logo->getClientOriginalExtension();
+                })
                 ->hideFromIndex()
                 ->help('Will not be sent to meetup.com'),
 
