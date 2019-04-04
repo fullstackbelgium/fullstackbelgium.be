@@ -897,21 +897,21 @@
         },
         {
             "name": "laravel/nova",
-            "version": "v2.0.0",
+            "version": "v2.0.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:laravel/nova.git",
-                "reference": "375af45813382079f961f945975124e65d433e8a"
+                "reference": "fb641afddcd23265e1a31754cd16a6c942f0f7ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-375af45813382079f961f945975124e65d433e8a-zip-1b9520.zip",
-                "reference": "375af45813382079f961f945975124e65d433e8a",
-                "shasum": "5566c364c43731107a1d514ed7d1f9c6fd49d3ca"
+                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-fb641afddcd23265e1a31754cd16a6c942f0f7ba-zip-d7b781.zip",
+                "reference": "fb641afddcd23265e1a31754cd16a6c942f0f7ba",
+                "shasum": "dd55d0eb98257d47ba0a2456815737ab1b4cc020"
             },
             "require": {
                 "cakephp/chronos": "^1.0",
-                "illuminate/support": "5.8.*",
+                "illuminate/support": "^5.7.15 | 5.8.*",
                 "moontoast/math": "^1.1",
                 "php": ">=7.1.0",
                 "spatie/once": "^1.1",
@@ -919,9 +919,9 @@
             },
             "require-dev": {
                 "mockery/mockery": "^1.0",
-                "orchestra/database": "3.8.*",
-                "orchestra/testbench": "3.8.*",
-                "phpunit/phpunit": "^8.0",
+                "orchestra/database": "3.7.* | 3.8.*",
+                "orchestra/testbench": "3.7.* | 3.8.*",
+                "phpunit/phpunit": "^7.0 | ^8.0",
                 "predis/predis": "^1.1"
             },
             "type": "library",
@@ -962,7 +962,7 @@
                 "admin",
                 "laravel"
             ],
-            "time": "2019-02-26T16:52:11+00:00"
+            "time": "2019-03-27T16:38:51+00:00"
         },
         {
             "name": "laravel/tinker",
