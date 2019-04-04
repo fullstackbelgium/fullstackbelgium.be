@@ -6,7 +6,6 @@ use Faker\Generator as Faker;
 
 $factory->define(Event::class, function (Faker $faker) {
     return [
-        'name' => $faker->word,
         'venue_name' => $faker->company,
         'meetup_id' => function () {
             return factory(Meetup::class)->create()->id;
@@ -14,7 +13,6 @@ $factory->define(Event::class, function (Faker $faker) {
 
         'meetup_com_event_id' => $faker->word,
         'intro' => $faker->paragraph,
-        'sponsors' => $faker->paragraph,
 
         'schedule' => $faker->paragraph,
         'speaker_1_abstract' => $faker->paragraph,

@@ -7,6 +7,7 @@ use App\Actions\UpdateMeetupComEventAction;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Event extends Model
 {
@@ -37,6 +38,13 @@ class Event extends Model
     public function meetup(): BelongsTo
     {
         return $this->belongsTo(Meetup::class);
+    }
+
+    public function sponsors(): BelongsToMany
+    {
+        return $this->belongsToMany(Sponsor::class)
+            ->withPivot('message')
+            ->withTimestamps();
     }
 
     public function scopeShouldBeTweeted(Builder $query)
