@@ -17,7 +17,7 @@ abstract class TestCase extends BaseTestCase
         RefreshDatabase,
         InteractsWithContainer;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
     }
