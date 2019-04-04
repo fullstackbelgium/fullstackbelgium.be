@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\DateTime;
+use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Trix;
@@ -34,7 +35,11 @@ class Event extends Resource
 
             BelongsTo::make('Meetup')->sortable()->rules('required'),
             Text::make('Meetup.com event id', 'meetup_com_event_id'),
+
             Text::make('Venue name')->help('Will not be sent to meetup.com'),
+            Image::make('Venue logo')
+                ->hideFromIndex()
+                ->help('Will not be sent to meetup.com'),
 
             Trix::make('Intro')->hideFromIndex(),
             Trix::make('Sponsors')->hideFromIndex(),
