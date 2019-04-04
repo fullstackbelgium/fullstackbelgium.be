@@ -2,7 +2,7 @@
 
 We hope to see you soon,<br/>
 <br/>
-Dries, Rias & Freek<br/>
+Dries & Rias<br/>
 <br/>
 SCHEDULE
 {!! $event->schedule !!}<br/>

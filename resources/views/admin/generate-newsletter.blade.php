@@ -21,6 +21,6 @@ We hope to see you there,
 <br />
 <br />
 <br />
-Dries, Rias & Freek
+Dries & Rias
 </body>
 </html>
