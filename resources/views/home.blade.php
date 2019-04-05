@@ -1,127 +1,154 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+@component('layouts.app', ['active' => 'home'])
+    <section class="wrapper pb-12">
+        <p class="md:w-2/3 text-2xl pb-16 md:pb-24 md:border-b">
+            Organising meetups on front-end, back-end, devops and everything in between in the cities of <strong class="font-medium">Antwerp</strong>, <strong class="font-medium">Ghent</strong> and <strong class="font-medium">Brussels</strong>.
+        </p>
+        <div class="flex flex-col items-end mb-12 md:mb-24" style="margin-top: -2.4rem;">
+            <div class="w-full md:max-w-min-content">
+                <section class="box p-6 md:flex whitespace-no-wrap">
+                    <h2 class="mb-2 mr-8 font-bold">
+                        Our next meetups
+                    </h2>
+                    <ol>
+                        <li class="flex items-center mb-1">
+                            <p class="w-24 mr-2">
+                                <span class="uppercase font-medium tracking-wide text-xs text-white bg-antwerp py-1 px-2 rounded-full">
+                                    Antwerp
+                                </span>
+                            </p>
+                            <p style="margin-top: 0.2rem">
+                                <a href="#" target="_blank"  rel="noopener" title="View on meetup.com">
+                                    <time class="font-medium" datetime="2019-03-27">March 27<sup>th</sup></time>
+                                    at Spilberg
+                                    <span class="inline-block w-4">
+                                        {{ svg('meetup') }}
+                                    </span>
+                                </a>
+                            </p>
+                        </li>
+                        <li class="flex items-center mb-1">
+                            <p class="w-24 mr-2">
+                                <span class="uppercase font-medium tracking-wide text-xs text-white bg-brussels py-1 px-2 rounded-full">
+                                    Brussels
+                                </span>
+                            </p>
+                            <p style="margin-top: 0.2rem">
+                                <a href="#" target="_blank"  rel="noopener" title="View on meetup.com">
+                                    <time class="font-medium" datetime="2019-03-03">April 3<sup>rd</sup></time>
+                                    at BeCode
+                                    <span class="inline-block w-4" href="#" target="_blank"  rel="noopener" title="View on meetup.com">
+                                        {{ svg('meetup') }}
+                                    </span>
+                                </a>
+                            </p>
+                        </li>
+                        <li class="flex items-center">
+                            <p class="w-24 mr-2">
+                                <span class="uppercase font-medium tracking-wide text-xs text-white bg-ghent py-1 px-2 rounded-full">
+                                    Ghent
+                                </span>
+                            </p>
+                            <p style="margin-top: 0.2rem">
+                                <a href="#" target="_blank"  rel="noopener" title="View on meetup.com">
+                                    <time class="font-medium" datetime="2019-03-13">April 10<sup>th</sup></time>
+                                    at Code d'Or
+                                    <span class="inline-block w-4" href="#" target="_blank"  rel="noopener" title="View on meetup.com">
+                                        {{ svg('meetup') }}
+                                    </span>
+                                </a>
+                            </p>
+                        </li>
+                    </ol>
+                </section>
+                <p class="mr-1 mt-3 text-xs text-gray-700 text-center md:text-right">
+                    Can't join any of our meetups? Hang out with us on <a class="link is-small" href="{{ url('slack') }}">Slack</a> instead!
+                </p>
+            </div>
+        </div>
+        <div class="flex items-end">
+            <div class="flex-2 mr-4">
+                <p class="text-xl">
+                    We're always on the lookout for speakers.
+                </p>
+                <p class="text-gray-700">
+                    First time speaker? Prepping a conference talk? All welcome,
+                    <a class="link" href="{{ url('contact') }}">get in touch</a>!
+                </p>
+            </div>
+        </div>
+    </section>
 
-    <title>Full Stack Belgium</title>
-    <meta name="description" content="Organising meetups on front end, back end, devops and everything in between in the cities of Antwerp, Ghent and Brussels">
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#00aba9">
-    <meta name="theme-color" content="#ffffff">
-
-    <style type="text/css">
-        * {
-            border: 0;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            border-top: 5px solid #1E8787;
-            font-family: 'Roboto', Helvetica, Arial, sans-serif;
-            font-size: 1em;
-            padding: 10px;
-            text-align: center;
-        }
-        img {
-            margin-top: 20px;
-            margin-bottom: 25px;
-            max-width: 200px;
-        }
-        div.content {
-            max-width: 450px;
-            margin: 0 auto;
-        }
-        h1 {
-            font-size: 1.8em;
-            margin-bottom: 25px;
-        }
-        p {
-            margin-bottom: 40px;
-        }
-        a {
-            color: #999;
-        }
-        a.invite {
-            background-color: #1E8787;
-            border-radius: 5px;
-            color: white;
-            display: block;
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            padding: 15px 25px;
-            text-decoration: none;
-        }
-        a.invite:hover {
-            background-color: #22B4B5;
-        }
-        p.info {
-            color: #777;
-            font-size: 0.8em;
-        }
-        @media only screen and (min-width: 600px)  {
-            img {
-                max-width: 300px;
-            }
-            h1 {
-                font-size: 3em;
-            }
-        }
-    </style>
-</head>
-<body>
-    <img src="/images/full-stack-belgium.png">
-    <h1>Full Stack Belgium</h1>
-    <div class="content">
-        <p>Organising meetups on front end, back end, devops and everything in between in the cities of <a href="https://meetup.com/fullstackantwerp">Antwerp</a>, <a href="https://meetup.com/fullstackghent">Ghent</a> and <a href="https://meetup.com/fullstackbrussels">Brussels</a>.</p>
-        <a class="invite" href="https://join.slack.com/t/fullstackbelgium/shared_invite/enQtMzYxNjMwNTM3NDU2LTE5Nzk3NDkwMmNjMThhODM2MzM2MTE0NzMxZjIwNWZkNjAwMDc3NmZlYWQ0NGVmZTc4NWJkMzMzODAzZjVmZGU">
-            Join us on Slack
-        </a>
-        <p class="info">If you can't join, email <a href="mailto:dries.vints@gmail.com">dries.vints@gmail.com</a> to add you.</p>
+    <div class="bg-white border-t md:border-b border-gray-300 pt-12 md:pt-24 pb-12 md:pb-16">
+        <section class="wrapper">
+            @include('partials.meetup', ['location' => 'antwerp'])
+            <hr class="h-px w-2/3 bg-gray-400 my-12 md:mt-20 md:mb-24">
+            @include('partials.meetup', ['location' => 'brussels'])
+            <hr class="h-px w-2/3 bg-gray-400 my-12 md:mt-20 md:mb-24">
+            @include('partials.meetup', ['location' => 'ghent'])
+        </section>
     </div>
-</body>
-</html>
-<!--
-           ___  ____
-          /   \/    \
-     ____/  __/      \________________
-   _/                 \               \__       ___
-  /  ___               \                 \_____/   )_
- /  /                  |                    ___    __)
-/     __               |     __             \  \___)
-|    / (\              |    /  \             \
-|    \_(/  (__)        /   / /\ \            |
-|            |     ___/   /  __  \           |
-|            /    /      /  ____  \          /
-|           /    (      /__/    \__\        |
-|       ___/                               /
-|      /  |   \                            |
-|      |  |   |                            |
-|     /   |   |          \_______/         |
-|     |   |   |          |   |   |         |
-|     |   |/\ |   _      |   | _ |  _      |
-|    /    | /\| _/ \     |   |/ \|_/ \     |
-|    |    \ | |// / \    |   || ||/ / \    |
-|    |     \\/| | | |    |   \\_/|| | |    |
-\___/          \\_\_/____/       \\_\_/____/
 
-  ____  _   _ ____       _          _
- |  _ \| | | |  _ \     / \   _ __ | |___      _____ _ __ _ __
- | |_) | |_| | |_) |   / _ \ | '_ \| __\ \ /\ / / _ \ '__| '_ \
- |  __/|  _  |  __/   / ___ \| | | | |_ \ V  V /  __/ |  | |_) |
- |_|   |_| |_|_|     /_/   \_\_|_|_|\__| \_/\_/ \___|_|_ | .__/
-  _ __   _____   _____ _ __   / _| ___  _ __ __ _  ___| ||_|
- | '_ \ / _ \ \ / / _ \ '__| | |_ / _ \| '__/ _` |/ _ \ __|
- | | | |  __/\ V /  __/ |    |  _| (_) | | | (_| |  __/ |_
- |_| |_|\___| \_/ \___|_|    |_|  \___/|_|  \__, |\___|\__|
-                                            |___/
--->
+    <section class="pb-8 md:py-24">
+        <div class="wrapper text-center">
+            <div class="-mx-2 mb-8 md:mb-10">
+                @component('components.gallery')
+                    <ul class="md:flex -mx-4 md:-mx-px">
+                        <li class="flex-1 mb-4 md:mb-0 md:px-px">
+                            <img class="cursor-zoom-in md:rounded-l-sm" src="{{ url('images/meetups/meetup-dummy-1.jpg') }}" alt="Full Stack Ghent 2019-02-12"
+                                data-gallery-item data-src="/images/meetups/meetup-dummy-1.jpg" data-w="1024" data-h="768">
+                        </li>
+                        <li class="flex-1 mb-4 md:mb-0 md:px-px">
+                            <img class="cursor-zoom-in" src="{{ url('images/meetups/meetup-dummy-2.jpg') }}" alt="Full Stack Ghent 2019-02-12"
+                                data-gallery-item data-src="/images/meetups/meetup-dummy-2.jpg" data-w="1024" data-h="768">
+                        </li>
+                        <li class="flex-1 md:px-px">
+                            <img class="cursor-zoom-in md:rounded-r-sm" src="{{ url('images/meetups/meetup-dummy-3.jpg') }}" alt="Full Stack Ghent 2019-02-12"
+                                data-gallery-item data-src="/images/meetups/meetup-dummy-3.jpg" data-w="2048 " data-h="1536">
+                        </li>
+                    </ul>
+                @endcomponent
+            </div>
+            <p class="text-2xl mb-4">
+                🎉 Thanks to all <strong class="font-bold text-2xl px-2 py-1 bg-white shadow-md rounded-sm">235</strong> attendees for joining last month's meetups! 🎉
+            </p>
+            <p class="text-gray-700">
+                We're always on the lookout for speakers, sponsors and venues for our user groups.
+                <br>
+                <a class="link is-small" href="{{ url('contact') }}">Talk to us</a> if you want to get involved.
+            </p>
+        </div>
+    </section>
+
+    <section class="bg-white border-t border-b border-gray-300 py-8 md:py-16">
+        <div class="wrapper">
+            <h2 class="text-center font-bold mb-1">Organised by Dries, Freek and Rias</h2>
+            <p class="text-center text-sm text-gray-700 mb-8 md:mb-12">Come say hi at our next meetup! 👋</p>
+            <ul class="flex flex-wrap justify-center">
+                <li class="w-full sm:w-1/2 md:w-1/3 mb-8 md:mb-0 text-center">
+                    <img class="inline-block w-24 mb-3 rounded-full border-4 border-white shadow-md" src="{{ url('images/dries.jpg') }}" alt="Headshot of Dries Vints">
+                    <p>Dries Vints</p>
+                    <p class="text-xs text-gray-600">
+                        <a class="link is-small mr-1" href="https://twitter.com/driesvints">@driesvints</a>
+                        <a class="link is-small" href="https://driesvints.com">driesvints.com</a>
+                    </p>
+                </li>
+                <li class="w-full sm:w-1/2 md:w-1/3 mb-8 md:mb-0 px-2 text-center">
+                    <img class="inline-block w-24 mb-3 rounded-full border-4 border-white shadow-md" src="{{ url('images/freek.jpg') }}" alt="Headshot of Freek Van der Herten">
+                    <p>Freek Van der Herten</p>
+                    <p class="text-xs text-gray-600">
+                        <a class="link is-small mr-1" href="https://twitter.com/freekmurze">@freekmurze</a>
+                        <a class="link is-small" href="https://murze.be">murze.be</a>
+                    </p>
+                </li>
+                <li class="w-full sm:w-1/2 md:w-1/3 px-2 text-center">
+                    <img class="inline-block w-24 mb-3 rounded-full border-4 border-white shadow-md" src="{{ url('images/rias.jpg') }}" alt="Headshot of Rias Van der Veken">
+                    <p>Rias Van der Veken</p>
+                    <p class="text-xs text-gray-600">
+                        <a class="link is-small mr-1" href="https://twitter.com/riasvdv">@riasvdv</a>
+                        <a class="link is-small" href="https://rias.be">rias.be</a>
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+@endcomponent
