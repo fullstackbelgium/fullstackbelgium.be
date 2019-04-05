@@ -57,7 +57,7 @@
                     ## Our next meetup <span style="color: {{ $event->meetup->color  }}">{{ \Illuminate\Support\Carbon::parse($nextMeetup->name)->format('d/m') }}</span></h2>
                     {{ $nextMeetup->speaker_1_abstract }}
 
-                    @if (!$nextMeetup->speaker_2_abstract)
+                    @if ($nextMeetup->speaker_2_abstract)
                     {{ $nextMeetup->speaker_2_abstract }}
                     @else
                     **You?**
