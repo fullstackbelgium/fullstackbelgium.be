@@ -6,6 +6,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Event::class, function (Faker $faker) {
     return [
+        'name' => $faker->date('Y-m-d'),
         'venue_name' => $faker->company,
         'meetup_id' => function () {
             return factory(Meetup::class)->create()->id;

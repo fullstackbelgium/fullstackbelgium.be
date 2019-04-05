@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use App\Http\Controllers\Admin\GenerateNewsletterController;
+use App\Http\Controllers\Admin\GenerateSlidesController;
 use App\Nova\Fields\EventSponsorFields;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
@@ -70,6 +71,14 @@ class Event extends Resource
                 }
 
                 return '<a target="fullstack_belgium_meetup" href="' . $this->meetup_com_url . '">Meetup.com</a>';
+            })->asHtml(),
+
+            Text::make('', function () {
+                if (! $this->exists) {
+                    return '';
+                }
+
+                return '<a target="fullstack_belgium_slides" href="' . action(GenerateSlidesController::class, $this->id) . '">Slides</a>';
             })->asHtml(),
 
             Boolean::make('Tweet sent', function () {
