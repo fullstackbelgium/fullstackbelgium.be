@@ -62,7 +62,8 @@ class Event extends Resource
                 return [
                     Heading::make('Event details')->onlyOnForms(),
                     Trix::make('Intro')->hideFromIndex(),
-                    Trix::make('Sponsors')->hideFromIndex(),
+                    BelongsToMany::make('Sponsors')
+                      ->fields(new EventSponsorFields),
 
                     Trix::make('Schedule')->hideFromIndex(),
                     Trix::make('Speaker 1 abstract')->hideFromIndex(),
