@@ -9,10 +9,13 @@ use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\DateTime;
+use Laravel\Nova\Fields\Heading;
+use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Laravel\Nova\Panel;
 
 class Event extends Resource
 {
@@ -31,42 +34,62 @@ class Event extends Resource
     public function fields(Request $request)
     {
         return [
-            Text::make('Name')->help('Will not be sent to meetup.com')->rules('required'),
+            new Panel("General information", function () {
+                return [
+                    Heading::make('General information')->onlyOnForms(),
+                    Text::make('Name')->help('Will not be sent to meetup.com')->rules('required'),
+                    BelongsTo::make('Meetup')->sortable()->rules('required'),
+                    Text::make('Meetup.com event id', 'meetup_com_event_id'),
+                ];
+            }),
 
-            BelongsTo::make('Meetup')->sortable()->rules('required'),
-            Text::make('Meetup.com event id', 'meetup_com_event_id'),
-            Text::make('Venue name')->help('Will not be sent to meetup.com'),
+            new Panel("Venue", function () {
+                return [
+                    Heading::make('Venue')->onlyOnForms(),
+                    Text::make('Venue name')->help('Will not be sent to meetup.com'),
+                ];
+            }),
 
-            Trix::make('Intro')->hideFromIndex(),
+            new Panel("Event details", function () {
+                return [
+                    Heading::make('Event details')->onlyOnForms(),
+                    Trix::make('Intro')->hideFromIndex(),
+                    BelongsToMany::make('Sponsors')
+                      ->fields(new EventSponsorFields),
 
-            BelongsToMany::make('Sponsors')
-                ->fields(new EventSponsorFields),
+                    Trix::make('Schedule')->hideFromIndex(),
+                    Trix::make('Speaker 1 abstract')->hideFromIndex(),
+                    Trix::make('Speaker 2 abstract')->hideFromIndex(),
+                ];
+            }),
 
-            Trix::make('Schedule')->hideFromIndex(),
-            Trix::make('Speaker 1 abstract')->hideFromIndex(),
-            Trix::make('Speaker 2 abstract')->hideFromIndex(),
+            new Panel('Extra', function () {
+                return [
+                    Heading::make('Extra')->onlyOnForms(),
+                    Textarea::make('Tweet'),
 
-            Textarea::make('Tweet'),
+                    Text::make('', function () {
+                        if (! $this->exists) {
+                            return '';
+                        }
 
-            Text::make('', function () {
-                if (! $this->exists) {
-                    return '';
-                }
+                        return '<a target="fullstack_belgium_newsletter" href="' . action(GenerateNewsletterController::class, $this->id) . '">Newsletter</a>';
+                    })->asHtml(),
 
-                return '<a target="fullstack_belgium_newsletter" href="' . action(GenerateNewsletterController::class, $this->id) . '">Newsletter</a>';
-            })->asHtml(),
+                    Text::make('', function () {
+                        if (! $this->exists) {
+                            return '';
+                        }
 
-            Text::make('', function () {
-                if (! $this->exists) {
-                    return '';
-                }
+                        return '<a target="fullstack_belgium_meetup" href="' . $this->meetup_com_url . '">Meetup.com</a>';
+                    })->asHtml(),
 
-                return '<a target="fullstack_belgium_meetup" href="' . $this->meetup_com_url . '">Meetup.com</a>';
-            })->asHtml(),
+                    Boolean::make('Tweet sent', function () {
+                        return ! is_null($this->tweet_sent_at);
+                    })
+                ];
+            }),
 
-            Boolean::make('Tweet sent', function () {
-                return ! is_null($this->tweet_sent_at);
-            })
         ];
     }
 
