@@ -10,15 +10,6 @@
     <link rel="stylesheet" href="/revealjs/css/reveal.css">
     <link rel="stylesheet" href="/revealjs/css/theme.css">
 
-    <!-- Printing and PDF exports -->
-    <script>
-        var link = document.createElement( 'link' );
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = window.location.search.match( /print-pdf/gi ) ? '/revealjs/css/print/pdf.css' : '/revealjs/css/print/paper.css';
-        document.getElementsByTagName( 'head' )[0].appendChild( link );
-    </script>
-
     <style>
         .reveal a,
         .reveal .controls,
@@ -100,8 +91,6 @@
         dependencies: [
             { src: '/revealjs/plugin/markdown/marked.js' },
             { src: '/revealjs/plugin/markdown/markdown.js' },
-            { src: '/revealjs/plugin/notes/notes.js', async: true },
-            { src: '/revealjs/plugin/highlight/highlight.js', async: true }
         ]
     });
 </script>
