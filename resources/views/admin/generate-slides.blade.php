@@ -66,7 +66,7 @@
             <img class="w-1/2" src="{{ asset('images/fseu.png') }}" alt="">
         </section>
         <section class="text-left px-12">
-            <div class="flex">
+            <div class="flex items-center">
                 <img class="w-1/2" src="{{ asset('/storage/'.$event->meetup->logo) }}" alt="">
                 <div class="ml-auto" style="margin-right: 50px;">
                     <h2>Enjoy!</h2>

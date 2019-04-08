@@ -377,3 +377,7 @@ footer {
 .ml-auto {
     margin-left: auto;
 }
+
+.items-center {
+    align-items: center;
+}
