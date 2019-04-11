@@ -8,5 +8,30 @@ SCHEDULE
 {!! $event->schedule !!}<br/>
 
 TALKS
-{!! $event->speaker_1_abstract !!}<br/>
-{!! $event->speaker_2_abstract !!}<br/>
+@if ($event->speaker_1_title && $event->speaker_1_name)
+{{ $event->speaker_1_title }} by {{ $event->speaker_1_name }}<br>
+@endif
+@if ($event->speaker_1_abstract)
+{!! $event->speaker_1_abstract !!}<br>
+@endif
+@if ($event->speaker_1_bio)
+<span>Speaker:</span>
+{!! $event->speaker_1_bio !!}<br>
+@endif
+@if ($event->speaker_1_length)
+Length: {{ $event->speaker_1_length }}min<br><br>
+@endif
+<br>
+@if ($event->speaker_2_title && $event->speaker_2_name)
+{{ $event->speaker_2_title }} by {{ $event->speaker_2_name }}<br>
+@endif
+@if ($event->speaker_2_abstract)
+{!! $event->speaker_2_abstract !!}<br>
+@endif
+@if ($event->speaker_2_bio)
+<span>Speaker:</span>
+{!! $event->speaker_2_bio !!}<br>
+@endif
+@if ($event->speaker_2_length)
+Length: {{ $event->speaker_2_length }}min<br><br>
+@endif

@@ -4,12 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Event;
 
-class GenerateNewsletterController
+class GenerateSlidesController
 {
     public function __invoke(Event $event)
     {
         $event->load('sponsors');
 
-        return view('admin.generate-newsletter', compact('event'));
+        return view('admin.generate-slides', compact('event'));
     }
 }

@@ -10,6 +10,7 @@ class DatabaseSeeder extends Seeder
             ->call(UsersTableSeeder::class)
             ->call(MeetupsTableSeeder::class)
             ->call(EventsTableSeeder::class)
+            ->call(SponsorTableSeeder::class)
             ->call(ScheduledTweetsTableSeeder::class);
     }
 }
