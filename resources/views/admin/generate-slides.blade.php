@@ -45,7 +45,7 @@
         @if ($nextMeetup)
             <section class="text-left px-12" data-markdown>
                 <textarea class="leading-normal" data-template>
-                    ## Our next meetup <span style="color: {{ $event->meetup->color  }}">{{ $nextMeetup->date->format('d/m') }}</span></h2>
+                    ## Our next meetup <span style="color: {{ $event->meetup->color  }}">{{ $nextMeetup->date->format('d/m') }}</span> <small>at <span style="color: {{ $event->meetup->color  }}">{{ $nextMeetup->venue_name }}</span></small>
                     **{{ $nextMeetup->speaker_1_title }}**<br>
                     &mdash; {{ $nextMeetup->speaker_1_name }}
 
