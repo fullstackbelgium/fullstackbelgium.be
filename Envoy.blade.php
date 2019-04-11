@@ -129,6 +129,7 @@ php artisan migrate --force;
 {{ logMessage("🙏  Blessing new release…") }}
 ln -nfs {{ $newReleaseDir }} {{ $currentDir }};
 cd {{ $newReleaseDir }}
+php artisan storage:link
 php artisan config:clear
 php artisan view:clear
 php artisan cache:clear
