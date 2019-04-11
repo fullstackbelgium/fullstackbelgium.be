@@ -381,3 +381,7 @@ footer {
 .items-center {
     align-items: center;
 }
+
+.leading-normal {
+    line-height: 1.5;
+}

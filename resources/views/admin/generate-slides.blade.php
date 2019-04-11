@@ -44,15 +44,17 @@
         <?php $nextMeetup = $event->meetup->eventAfter($event) ?>
         @if ($nextMeetup)
             <section class="text-left px-12" data-markdown>
-                <textarea data-template>
-                    ## Our next meetup <span style="color: {{ $event->meetup->color  }}">{{ \Illuminate\Support\Carbon::parse($nextMeetup->name)->format('d/m') }}</span></h2>
-                    {{ $nextMeetup->speaker_1_abstract }}
+                <textarea class="leading-normal" data-template>
+                    ## Our next meetup <span style="color: {{ $event->meetup->color  }}">{{ $nextMeetup->date->format('d/m') }}</span></h2>
+                    **{{ $nextMeetup->speaker_1_title }}**<br>
+                    &mdash; {{ $nextMeetup->speaker_1_name }}
 
                     @if ($nextMeetup->speaker_2_abstract)
-                    {{ $nextMeetup->speaker_2_abstract }}
+                    **{{ $nextMeetup->speaker_2_title }}**<br>
+                    &mdash; {{ $nextMeetup->speaker_2_name }}
                     @else
-                    **You?**
-                    - Contact dries.vints@gmail.com to claim your slot!
+                    **You?**<br>
+                    &mdash; Contact dries.vints@gmail.com to claim your slot!
                     @endif
                 </textarea>
             </section>

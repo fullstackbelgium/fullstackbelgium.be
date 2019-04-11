@@ -25,6 +25,6 @@ class Meetup extends Model
 
     public function eventAfter(Event $event)
     {
-        return $this->events[$this->events->search($event) + 1] ?? null;
+        return $this->events()->where('date', '>', $event->date)->first();
     }
 }
