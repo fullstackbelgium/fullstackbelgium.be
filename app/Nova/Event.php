@@ -57,6 +57,7 @@ class Event extends Resource
                 return [
                     Heading::make('Venue')->onlyOnForms(),
                     Text::make('Venue name')->help('Will not be sent to meetup.com'),
+                    Trix::make('Venue info')->help('Will not be sent to meetup.com. e.g. Venue will provide snacks & drinks.'),
                     Image::make('Venue logo')
                       ->disk('public')->storeAs(function (Request $request) {
                           return sha1($request->venue_logo->getClientOriginalName()) . '.' . $request->venue_logo->getClientOriginalExtension();

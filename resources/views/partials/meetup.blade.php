@@ -74,6 +74,6 @@
                 </li>
             @endif
         </ol>
-        {{ $nextEvent->venue_info }}
+        {!! $nextEvent->venue_info !!}
     </div>
 </div>
