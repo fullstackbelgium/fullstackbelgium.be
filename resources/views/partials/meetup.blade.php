@@ -1,14 +1,14 @@
 <div class="md:flex">
     <header class="md:w-1/3 mb-6 md:mb-0">
         <figure class="block w-24 mb-3">
-            <a href="https://www.meetup.com/fullstack{{ $location }}" target="_blank" rel="noopener" title="View on meetup.com">
-                <img src="{{ url("/svg/full-stack-{$location}.svg") }}" alt="Full Stack {{ ucfirst($location) }}">
+            <a href="https://www.meetup.com/{{ $meetup->meetup_com_id }}" target="_blank" rel="noopener" title="View on meetup.com">
+                <img src="{{ asset('storage/'.$meetup->logo) }}" alt="{{ $meetup->name }}">
             </a>
         </figure>
         <div class="w-full">
             <h2 class="font-bold text-xl">
-                <a href="https://www.meetup.com/fullstack{{ $location }}" target="_blank" rel="noopener" title="View on meetup.com">
-                    Full Stack {{ ucfirst($location) }}
+                <a href="https://www.meetup.com/{{ $meetup->meetup_com_id }}" target="_blank" rel="noopener" title="View on meetup.com">
+                    {{ $meetup->name }}
                     <span class="inline-block w-4" >
                         {{ svg('meetup') }}
                     </span>
@@ -24,48 +24,56 @@
             Next meetup:
         </h3>
         <p class="text-xl mb-6">
-            <a href="#" target="_blank" rel="noopener" title="View on meetup.com">
-                <time class="font-medium" datetime="2019-03-13">April 10<sup>th</sup></time>
-                at Code d'Or
+            @php($nextEvent = $meetup->upcomingEvents->first())
+            <a href="{{ $nextEvent->meetup_com_url }}" target="_blank" rel="noopener" title="View on meetup.com">
+                <time class="font-medium" datetime="{!! $nextEvent->date->format('Y-m-d') !!}">{!! $nextEvent->date->format('F j<\s\up>S<\/\s\up>') !!}</time>
+                at {{ $nextEvent->venue_name }}
                 <span class="inline-block w-4" >
                     {{ svg('meetup') }}
                 </span>
             </a>
         </p>
         <ol class="mb-6 -ml-2 leading-tight">
+            @php($schedule = \Illuminate\Support\Carbon::createFromTime(19, 00, 00, "Europe/Brussels"))
             <li class="flex items-start pl-2 py-2">
-                <time class="inline-block font-bold text-sm w-16 mt-1/2">19:00</time>
+                <time class="inline-block font-bold text-sm w-16 mt-1/2">{{ $schedule->format('H:i') }}</time>
                 <p class="flex-1">Doors</p>
             </li>
+            @php($schedule->addHour())
             <li class="flex items-start pl-2 py-2 bg-gray-200">
-                <time class="inline-block font-bold text-sm w-16 mt-1/2">20:00</time>
+                <time class="inline-block font-bold text-sm w-16 mt-1/2">{{ $schedule->format('H:i') }}</time>
                 <p class="flex-1">
-                    Getting started with event sourcing in a Laravel app
+                    {{ $nextEvent->speaker_1_title }}
                     <br>
-                    <span class="text-sm text-gray-700">by Freek Van der Herten</span>
+                    <span class="text-sm text-gray-700">by {{ $nextEvent->speaker_1_name }}</span>
                 </p>
             </li>
+            @php($schedule->addMinutes($nextEvent->speaker_1_length))
             <li class="flex items-start pl-2 py-2">
-                <time class="inline-block font-bold text-sm w-16 mt-1/2">20:45</time>
+                <time class="inline-block font-bold text-sm w-16 mt-1/2">{{ $schedule->format('H:i') }}</time>
                 <p class="flex-1">
                     Mingle
                 </p>
             </li>
-            <li class="flex items-start pl-2 py-2 bg-gray-200">
-                <time class="inline-block font-bold text-sm w-16 mt-1/2">21:00</time>
-                <p class="flex-1">
-                    Connecting microservices with gRPC
-                    <br>
-                    <span class="text-sm text-gray-700">by Frederick Vanbrabant</span>
-                </p>
-            </li>
-            <li class="flex items-start pl-2 py-2">
-                <time class="inline-block font-bold text-sm w-16 mt-1/2">21:45</time>
-                <p class="flex-1">
-                    Mingle
-                </p>
-            </li>
+            @php($schedule->addMinutes(15))
+            @if ($nextEvent->speaker_2_name)
+                <li class="flex items-start pl-2 py-2 bg-gray-200">
+                    <time class="inline-block font-bold text-sm w-16 mt-1/2">{{ $schedule->format('H:i') }}</time>
+                    <p class="flex-1">
+                        {{ $nextEvent->speaker_2_title }}
+                        <br>
+                        <span class="text-sm text-gray-700">by {{ $nextEvent->speaker_2_name }}</span>
+                    </p>
+                </li>
+                @php($schedule->addMinutes($nextEvent->speaker_2_length))
+                <li class="flex items-start pl-2 py-2">
+                    <time class="inline-block font-bold text-sm w-16 mt-1/2">{{ $schedule->format('H:i') }}</time>
+                    <p class="flex-1">
+                        Mingle
+                    </p>
+                </li>
+            @endif
         </ol>
-        <p>The venue will provide drinks and some small snacks.</p>
+        {{ $nextEvent->venue_info }}
     </div>
 </div>

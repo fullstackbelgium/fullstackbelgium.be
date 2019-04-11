@@ -5,23 +5,30 @@
     <section class="wrapper markup pb-4 md:pb-16">
         <div class="md:w-2/3">
             <h1>Contact</h1>
-            <p class="text-xl">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus illo est rem sit, perferendis, consequatur provident amet pariatur natus totam alias earum odio? Dicta quidem maxime minima sed laborum accusantium.</p>
+            <p class="text-xl">We are always on the lookout for <a href="#speakers">speakers</a>, companies that want to
+                <a href="#venues">host a meetup</a> or companies that want to contribute and <a href="#sponsors">sponsor</a> a meetup. Don't be a stranger, <strong>get in touch!</strong></p>
         </div>
     </section>
 
     <section class="bg-white border-t border-b border-gray-300 pt-10 pb-4 md:pt-24 md:pb-16">
         <div class="wrapper markup">
             <div class="md:flex items-start mb-8 md:mb-12">
-                <h2 class="w-1/3">
+                <h2 id="speakers" class="w-1/3">
                     Speakers
                 </h2>
                 <div class="markup flex-1">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta id vero incidunt ad alias exercitationem magni assumenda quo officia porro, quae repudiandae quaerat laborum vitae dolores cumque dolorum explicabo quas?</p>
+                    <p>We are always looking for speakers that want to speak at our meetups.</p>
                     <ul>
-                        <li>Talks should be around 30 minutes long</li>
-                        <li>Dolores eligendi mollitia architecto</li>
-                        <li>Fugit veniam sequi ullam vero</li>
-                        <li>Omnis sit aut adipisci fugiat esse asperiores minus suscipit labore</li>
+                        <li class="mb-2">No experience required! We <strong>actively</strong> encourage new speakers to try out giving a talk.</li>
+                        <li class="mb-2">Talks should be around 30 minutes long</li>
+                        <li class="mb-2">Topics can be anything web development related, soft or hard skills...</li>
+                    </ul>
+                    <p>All we need from you is a few details:</p>
+                    <ul>
+                        <li class="mb-2">Topic or title of your talk with an abstract</li>
+                        <li class="mb-2">Duration of your talk (an estimate, 10min, 20min, 40min)</li>
+                        <li class="mb-2">A short bio of yourself</li>
+                        <li class="mb-2">Which meetup(s) you would like to speak at (Antwerp, Brussels, Ghent)</li>
                     </ul>
                     <p class="mb-0">
                         <a class="no-link text-belgium font-medium" href="mailto:dries.vints@gmail.com">
@@ -32,15 +39,20 @@
             </div>
             <hr class="h-px w-2/3 bg-gray-400 my-12 md:mt-20 md:mb-24">
             <div class="md:flex items-start mb-8 md:mb-12">
-                <h2 class="w-1/3">
+                <h2 id="venues" class="w-1/3">
                     Venues
                 </h2>
                 <div class="markup flex-1">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta id vero incidunt ad alias exercitationem magni assumenda quo officia porro, quae repudiandae quaerat laborum vitae dolores cumque dolorum explicabo quas?</p>
+                    <p>Meetups wouldn't be possible without a place to host them at, we're specifically looking for venues in <strong>Antwerp</strong> and <strong>Ghent</strong>.</p>
                     <ul>
-                        <li>Venues ideally can host at least 50 people</li>
-                        <li>Rerum deleniti cumque sit quia minus labore</li>
-                        <li>Accusamus dolorum ad asperiores dolore tempora inventore omnis excepturi</li>
+                        <li class="mb-2">Venues can host at least 40-50 people</li>
+                        <li class="mb-2">Should be easily accessible with public transport and ideally in the centre of the city</li>
+                        <li class="mb-2">A way for speakers to project their slides, either whitescreen & beamer or digital alternative</li>
+                        <li class="mb-2">Providing drinks and/or some snacks or food is <strong>not required</strong> but is always much appreciated</li>
+                    </ul>
+                    <p>Hosting a meetup also gives you the following benefit:</p>
+                    <ul>
+                        <li class="mb-2">A short pitch of max. 5 minutes to the attendees of a meetup: an opportunity to introduce your company and highlight any job listings you have</li>
                     </ul>
                     <p class="mb-0">
                         <a class="no-link text-belgium font-medium" href="mailto:dries.vints@gmail.com">
@@ -51,17 +63,27 @@
             </div>
             <hr class="h-px w-2/3 bg-gray-400 my-12 md:mt-20 md:mb-24">
             <div class="md:flex items-start mb-8 md:mb-12">
-                <h2 class="w-1/3">
+                <h2 id="sponsors" class="w-1/3">
                     Sponsorships
                 </h2>
                 <div class="markup flex-1">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla sit impedit, consequuntur similique in quod distinctio qui quos tenetur. Mollitia voluptates saepe nisi ab! Vitae voluptatum quod perferendis obcaecati laboriosam!</p>
+                    <p>If you're looking to highlight some vacancies you have, or want to promote your company at one of our meetups, we offer the following packages for sponsorships:</p>
+                    <p><strong>Bronze</strong> &euro;100 / meetup</p>
                     <ul>
-                        <li>Sponsors get mentioned at the meetup and on Twitter</li>
-                        <li>Unde dolor perspiciatis libero, eaque autem sapiente adipisci dolorem</li>
-                        <li>Veniam voluptas esse ducimus quaerat veritatis amet dolorum dolore</li>
+                        <li class="mb-2">Shout-out on Twitter from the <a href="https://twitter.com/fullstackbe" target="_blank">@fullstackbe</a> account (<strong>Always</strong> limited to one tweet per month) with a message &amp; link of your choice</li>
+                        <li class="mb-2">Thank you in the opening pitch at one meetup + logo in the opening slides</li>
+                    </ul>
+                    <p><strong>Silver</strong> &euro;200 / meetup</p>
+                    <ul>
+                        <li class="mb-2">Everything from our <strong>Bronze</strong> package</li>
+                        <li class="mb-2">Your message of choice in a monthly newsletter sent to the full member list of one of our meetup.com groups</li>
+                    </ul>
+                    <p><strong>Gold</strong> &euro;400 / 3 meetups</p>
+                    <ul>
+                        <li class="mb-2">Everything from our <strong>Silver</strong> package but for all three meetups</li>
                     </ul>
                     <p class="mb-0">
+                        Want to help us out and sponsor one of the meetups, or have a different proposal?<br>
                         <a class="no-link text-belgium font-medium" href="mailto:hello@rias.be">
                             <span class="link is-thick">Get in touch with Rias</span> →
                         </a>
@@ -70,11 +92,11 @@
             </div>
             <hr class="h-px w-2/3 bg-gray-400 my-12 md:mt-20 md:mb-24">
             <div class="md:flex items-start mb-8 md:mb-12">
-                <h2 class="w-1/3">
+                <h2 id="other" class="w-1/3">
                     Other inquiries
                 </h2>
                 <div class="markup flex-1">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio sapiente at blanditiis inventore, dolor esse voluptates possimus sunt aperiam laborum libero perferendis, quos, sit doloribus cum debitis. Quis, officia architecto?</p>
+                    <p>Have a question not related to speaking, hosting or sponsoring?</p>
                     <p class="mb-0">
                         <a class="no-link text-belgium font-medium" href="mailto:dries.vints@gmail.com">
                             <span class="link is-thick">Get in touch with Dries</span> →

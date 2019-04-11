@@ -1,6 +1,8 @@
 <?php
 
-Route::view('/', 'home');
+use App\Http\Controllers\HomeController;
+
+Route::get('/', HomeController::class);
 
 Route::view('meetups', 'meetups');
 

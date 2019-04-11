@@ -41,7 +41,7 @@
                 <h2>for sponsoring</h2>
             </section>
         @endforeach
-        <?php $nextMeetup = $event->meetup->eventAfter($event) ?>
+        <?php $nextMeetup = $event->meetup->eventAfter($event->date)->first() ?>
         @if ($nextMeetup)
             <section class="text-left px-12" data-markdown>
                 <textarea class="leading-normal" data-template>

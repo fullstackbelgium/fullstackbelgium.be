@@ -10,54 +10,25 @@
                         Our next meetups
                     </h2>
                     <ol>
+                        @foreach ($meetups as $meetup)
+                        @php($nextEvent = $meetup->upcomingEvents->first())
                         <li class="flex items-center mb-1">
                             <p class="w-24 mr-2">
-                                <span class="uppercase font-medium tracking-wide text-xs text-white bg-antwerp py-1 px-2 rounded-full">
-                                    Antwerp
+                                <span class="uppercase font-medium tracking-wide text-xs text-white bg-{{ $meetup->meetup_com_id }} py-1 px-2 rounded-full">
+                                    {{ str_replace('Full Stack ', '', $meetup->name) }}
                                 </span>
                             </p>
                             <p style="margin-top: 0.2rem">
-                                <a href="#" target="_blank"  rel="noopener" title="View on meetup.com">
-                                    <time class="font-medium" datetime="2019-03-27">March 27<sup>th</sup></time>
-                                    at Spilberg
+                                <a href="{{ $nextEvent->meetup_com_url }}" target="_blank"  rel="noopener" title="View on meetup.com">
+                                    <time class="font-medium" datetime="{{ $nextEvent->date->format('Y-m-d') }}">{!! $nextEvent->date->format('F j<\s\up>S<\/\s\up>') !!}</time>
+                                    at {{ $nextEvent->venue_name }}
                                     <span class="inline-block w-4">
                                         {{ svg('meetup') }}
                                     </span>
                                 </a>
                             </p>
                         </li>
-                        <li class="flex items-center mb-1">
-                            <p class="w-24 mr-2">
-                                <span class="uppercase font-medium tracking-wide text-xs text-white bg-brussels py-1 px-2 rounded-full">
-                                    Brussels
-                                </span>
-                            </p>
-                            <p style="margin-top: 0.2rem">
-                                <a href="#" target="_blank"  rel="noopener" title="View on meetup.com">
-                                    <time class="font-medium" datetime="2019-03-03">April 3<sup>rd</sup></time>
-                                    at BeCode
-                                    <span class="inline-block w-4" href="#" target="_blank"  rel="noopener" title="View on meetup.com">
-                                        {{ svg('meetup') }}
-                                    </span>
-                                </a>
-                            </p>
-                        </li>
-                        <li class="flex items-center">
-                            <p class="w-24 mr-2">
-                                <span class="uppercase font-medium tracking-wide text-xs text-white bg-ghent py-1 px-2 rounded-full">
-                                    Ghent
-                                </span>
-                            </p>
-                            <p style="margin-top: 0.2rem">
-                                <a href="#" target="_blank"  rel="noopener" title="View on meetup.com">
-                                    <time class="font-medium" datetime="2019-03-13">April 10<sup>th</sup></time>
-                                    at Code d'Or
-                                    <span class="inline-block w-4" href="#" target="_blank"  rel="noopener" title="View on meetup.com">
-                                        {{ svg('meetup') }}
-                                    </span>
-                                </a>
-                            </p>
-                        </li>
+                        @endforeach
                     </ol>
                 </section>
                 <p class="mr-1 mt-3 text-xs text-gray-700 text-center md:text-right">
@@ -80,11 +51,12 @@
 
     <div class="bg-white border-t md:border-b border-gray-300 pt-12 md:pt-24 pb-12 md:pb-16">
         <section class="wrapper">
-            @include('partials.meetup', ['location' => 'antwerp'])
-            <hr class="h-px w-2/3 bg-gray-400 my-12 md:mt-20 md:mb-24">
-            @include('partials.meetup', ['location' => 'brussels'])
-            <hr class="h-px w-2/3 bg-gray-400 my-12 md:mt-20 md:mb-24">
-            @include('partials.meetup', ['location' => 'ghent'])
+            @foreach ($meetups as $meetup)
+                @include('partials.meetup', ['meetup' => $meetup])
+                @if (! $loop->last)
+                    <hr class="h-px w-2/3 bg-gray-400 my-12 md:mt-20 md:mb-24">
+                @endif
+            @endforeach
         </section>
     </div>
 
@@ -109,7 +81,7 @@
                 @endcomponent
             </div>
             <p class="text-2xl mb-4">
-                🎉 Thanks to all <strong class="font-bold text-2xl px-2 py-1 bg-white shadow-md rounded-sm">235</strong> attendees for joining last month's meetups! 🎉
+                🎉 Thanks to all <strong class="font-bold text-2xl px-2 py-1 bg-white shadow-md rounded-sm">{{ $totalAttendees }}</strong> attendees for joining last month's meetups! 🎉
             </p>
             <p class="text-gray-700">
                 We're always on the lookout for speakers, sponsors and venues for our user groups.
@@ -121,7 +93,7 @@
 
     <section class="bg-white border-t border-b border-gray-300 py-8 md:py-16">
         <div class="wrapper">
-            <h2 class="text-center font-bold mb-1">Organised by Dries, Freek and Rias</h2>
+            <h2 class="text-center font-bold mb-1">Organised by Dries &amp; Rias</h2>
             <p class="text-center text-sm text-gray-700 mb-8 md:mb-12">Come say hi at our next meetup! 👋</p>
             <ul class="flex flex-wrap justify-center">
                 <li class="w-full sm:w-1/2 md:w-1/3 mb-8 md:mb-0 text-center">
@@ -130,14 +102,6 @@
                     <p class="text-xs text-gray-600">
                         <a class="link is-small mr-1" href="https://twitter.com/driesvints">@driesvints</a>
                         <a class="link is-small" href="https://driesvints.com">driesvints.com</a>
-                    </p>
-                </li>
-                <li class="w-full sm:w-1/2 md:w-1/3 mb-8 md:mb-0 px-2 text-center">
-                    <img class="inline-block w-24 mb-3 rounded-full border-4 border-white shadow-md" src="{{ url('images/freek.jpg') }}" alt="Headshot of Freek Van der Herten">
-                    <p>Freek Van der Herten</p>
-                    <p class="text-xs text-gray-600">
-                        <a class="link is-small mr-1" href="https://twitter.com/freekmurze">@freekmurze</a>
-                        <a class="link is-small" href="https://murze.be">murze.be</a>
                     </p>
                 </li>
                 <li class="w-full sm:w-1/2 md:w-1/3 px-2 text-center">
