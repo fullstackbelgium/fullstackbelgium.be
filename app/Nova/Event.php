@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Boolean;
+use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Heading;
 use Laravel\Nova\Fields\ID;
@@ -23,7 +24,7 @@ class Event extends Resource
 {
     public static $model = \App\Models\Event::class;
 
-    public static $title = 'name';
+    public static $title = 'date';
 
     public static $search = [
         'venue_name',
@@ -39,7 +40,7 @@ class Event extends Resource
             new Panel("General information", function () {
                 return [
                     Heading::make('General information')->onlyOnForms(),
-                    Text::make('Name')->help('Will not be sent to meetup.com')->rules('required'),
+                    Date::make('Date')->help('Will not be sent to meetup.com')->rules('required'),
                     BelongsTo::make('Meetup')->sortable()->rules('required'),
                     Text::make('Meetup.com event id', 'meetup_com_event_id'),
                 ];
@@ -114,7 +115,7 @@ class Event extends Resource
         if (empty($request->get('orderBy'))) {
             $query->getQuery()->orders = [];
 
-            return $query->orderByDesc('name');
+            return $query->orderByDesc('date');
         }
 
 
