@@ -15,7 +15,7 @@ TALKS
 {!! $event->speaker_1_abstract !!}<br>
 @endif
 @if ($event->speaker_1_bio)
-<span>Speaker:</span><br>
+<span>Speaker:</span>
 {!! $event->speaker_1_bio !!}<br>
 @endif
 @if ($event->speaker_1_length)
@@ -29,7 +29,7 @@ Length: {{ $event->speaker_1_length }}min<br><br>
 {!! $event->speaker_2_abstract !!}<br>
 @endif
 @if ($event->speaker_2_bio)
-<span>Speaker:</span><br>
+<span>Speaker:</span>
 {!! $event->speaker_2_bio !!}<br>
 @endif
 @if ($event->speaker_2_length)
