@@ -42,7 +42,7 @@ class Event extends Model
 
     public function sponsors(): BelongsToMany
     {
-        return $this->belongsToMany(Sponsor::class)
+        return $this->belongsToMany(Sponsor::class, 'sponsorships')
             ->withPivot('message')
             ->withTimestamps();
     }

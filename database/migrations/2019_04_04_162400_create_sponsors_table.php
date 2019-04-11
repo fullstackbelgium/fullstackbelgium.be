@@ -20,7 +20,7 @@ class CreateSponsorsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('event_sponsor', function (Blueprint $table) {
+        Schema::create('sponsorships', function (Blueprint $table) {
             $table->unsignedBigInteger('event_id');
             $table->unsignedBigInteger('sponsor_id');
             $table->longText('message')->nullable();
