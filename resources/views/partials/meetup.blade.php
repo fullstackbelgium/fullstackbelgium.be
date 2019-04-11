@@ -15,7 +15,7 @@
                 </a>
             </h2>
             <p class="text-sm text-gray-700">
-                Every 2<sup>nd</sup> Wednesday of the month
+                {{ $meetup->schedule }}
             </p>
         </div>
     </header>
