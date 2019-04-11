@@ -13,7 +13,7 @@ class Meetup extends Model
 
     public function events(): HasMany
     {
-        return $this->hasMany(Event::class);
+        return $this->hasMany(Event::class)->orderBy('date');
     }
 
     public function getSlugOptions(): SlugOptions
