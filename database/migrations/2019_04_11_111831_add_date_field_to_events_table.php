@@ -17,9 +17,11 @@ class AddDateFieldToEventsTable extends Migration
             $table->date('date')->first()->nullable();
         });
 
-        $events = \App\Models\Event::all();
-        $events->each(function (\App\Models\Event $event) {
-            $event->update(['date' => $event->name]);
+        \App\Models\Event::withoutEvents(function () {
+            $events = \App\Models\Event::all();
+            $events->each(function (\App\Models\Event $event) {
+                $event->update(['date' => $event->name]);
+            });
         });
 
         Schema::table('events', function (Blueprint $table) {
