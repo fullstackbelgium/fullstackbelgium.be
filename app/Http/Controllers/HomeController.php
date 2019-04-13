@@ -11,7 +11,7 @@ class HomeController
     public function __invoke(MeetupApi $meetupApi)
     {
         $meetups = Meetup::with('upcomingEvents', 'previousEvents')->get()->sortBy(function (Meetup $meetup) {
-            return $meetup->upcomingEvents->first()->date;
+            return optional($meetup->upcomingEvents->first())->date;
         });
 
         $totalAttendees = 0;

@@ -11,23 +11,25 @@
                     </h2>
                     <ol>
                         @foreach ($meetups as $meetup)
-                        @php($nextEvent = $meetup->upcomingEvents->first())
-                        <li class="flex items-center mb-1">
-                            <p class="w-24 mr-2">
-                                <span class="uppercase font-medium tracking-wide text-xs text-white bg-{{ $meetup->meetup_com_id }} py-1 px-2 rounded-full">
-                                    {{ str_replace('Full Stack ', '', $meetup->name) }}
-                                </span>
-                            </p>
-                            <p style="margin-top: 0.2rem">
-                                <a href="{{ $nextEvent->meetup_com_url }}" target="_blank"  rel="noopener" title="View on meetup.com">
-                                    <time class="font-medium" datetime="{{ $nextEvent->date->format('Y-m-d') }}">{!! $nextEvent->date->format('F j<\s\up>S<\/\s\up>') !!}</time>
-                                    at {{ $nextEvent->venue_name }}
-                                    <span class="inline-block w-4">
-                                        {{ svg('meetup') }}
-                                    </span>
-                                </a>
-                            </p>
-                        </li>
+                            @php($nextEvent = $meetup->upcomingEvents->first())
+                            @if ($nextEvent)
+                                <li class="flex items-center mb-1">
+                                    <p class="w-24 mr-2">
+                                        <span class="uppercase font-medium tracking-wide text-xs text-white bg-{{ $meetup->meetup_com_id }} py-1 px-2 rounded-full">
+                                            {{ str_replace('Full Stack ', '', $meetup->name) }}
+                                        </span>
+                                    </p>
+                                    <p style="margin-top: 0.2rem">
+                                        <a href="{{ $nextEvent->meetup_com_url }}" target="_blank"  rel="noopener" title="View on meetup.com">
+                                            <time class="font-medium" datetime="{{ $nextEvent->date->format('Y-m-d') }}">{!! $nextEvent->date->format('F j<\s\up>S<\/\s\up>') !!}</time>
+                                            at {{ $nextEvent->venue_name }}
+                                            <span class="inline-block w-4">
+                                                {{ svg('meetup') }}
+                                            </span>
+                                        </a>
+                                    </p>
+                                </li>
+                            @endif
                         @endforeach
                     </ol>
                 </section>
