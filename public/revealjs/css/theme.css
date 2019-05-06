@@ -362,6 +362,10 @@ footer {
     width: 33.33333%;
 }
 
+.w-2\/5 {
+    width: 40%;
+}
+
 .h-full {
     height: 100%;
 }
