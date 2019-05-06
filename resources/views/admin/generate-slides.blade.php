@@ -21,6 +21,10 @@
             bottom: 80px;
             height: 5px;
         }
+
+        .w-2\/5 {
+            width: 40%;
+        }
     </style>
 </head>
 <body>
