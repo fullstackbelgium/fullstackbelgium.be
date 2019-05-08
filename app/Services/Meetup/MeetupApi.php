@@ -3,7 +3,6 @@
 namespace App\Services\Meetup;
 
 use GuzzleHttp\Client;
-use Illuminate\Support\Facades\Log;
 
 class MeetupApi
 {
@@ -21,8 +20,6 @@ class MeetupApi
 
     public function updateEvent(string $meetupId, string $eventId, array $updatedProperties)
     {
-        Log::info("Updating meet event {$meetupId}" . print_r($updatedProperties, true));
-
         if (! app()->environment('production')) {
             return;
         }
