@@ -20,5 +20,5 @@ mix.webpackConfig({
 });
 
 mix.purgeCss({
-    whitelistPatterns: [/pswp/],
+    whitelistPatterns: [/pswp/, /belgium/, /antwerp/, /ghent/],
 });

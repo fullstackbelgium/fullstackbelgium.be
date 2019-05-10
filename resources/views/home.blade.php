@@ -1,7 +1,7 @@
 @component('layouts.app', ['active' => 'home'])
     <section class="wrapper pb-12">
         <p class="md:w-2/3 text-2xl pb-16 md:pb-24 md:border-b">
-            Organising meetups on front-end, back-end, devops and everything in between in the cities of <strong class="font-medium">Antwerp</strong>, <strong class="font-medium">Ghent</strong> and <strong class="font-medium">Brussels</strong>.
+            Organising meetups on front-end, back-end, devops and everything in between in the cities of <strong class="font-medium">Antwerp</strong> and <strong class="font-medium">Ghent</strong>.
         </p>
         <div class="flex flex-col items-end mb-12 md:mb-24" style="margin-top: -2.4rem;">
             <div class="w-full md:max-w-min-content">
@@ -13,8 +13,8 @@
                         @foreach ($meetups as $meetup)
                             @php($nextEvent = $meetup->upcomingEvents->first())
                             @if ($nextEvent)
-                                <li class="flex items-center mb-1">
-                                    <p class="w-24 mr-2">
+                                <li class="sm:flex items-center mt-4 sm:mt-0 sm:mb-1">
+                                    <p class="w-24 mb-2 sm:mb-0 sm:mr-2">
                                         <span class="uppercase font-medium tracking-wide text-xs text-white bg-{{ $meetup->meetup_com_id }} py-1 px-2 rounded-full">
                                             {{ str_replace('Full Stack ', '', $meetup->name) }}
                                         </span>

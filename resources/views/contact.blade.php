@@ -16,7 +16,7 @@
                 <h2 id="speakers" class="w-1/3">
                     Speakers
                 </h2>
-                <div class="markup flex-1">
+                <div class="markup flex-1 md:mt-1">
                     <p>We are always looking for speakers that want to speak at our meetups.</p>
                     <ul>
                         <li class="mb-2">No experience required! We <strong>actively</strong> encourage new speakers to try out giving a talk.</li>
@@ -28,7 +28,7 @@
                         <li class="mb-2">Topic or title of your talk with an abstract</li>
                         <li class="mb-2">Duration of your talk (an estimate, 10min, 20min, 40min)</li>
                         <li class="mb-2">A short bio of yourself</li>
-                        <li class="mb-2">Which meetup(s) you would like to speak at (Antwerp, Brussels, Ghent)</li>
+                        <li class="mb-2">Which meetup(s) you would like to speak at (Antwerp or Ghent)</li>
                     </ul>
                     <p class="mb-0">
                         <a class="no-link text-belgium font-medium" href="mailto:dries.vints@gmail.com">
@@ -42,7 +42,7 @@
                 <h2 id="venues" class="w-1/3">
                     Venues
                 </h2>
-                <div class="markup flex-1">
+                <div class="markup flex-1 md:mt-1">
                     <p>Meetups wouldn't be possible without a place to host them at, we're specifically looking for venues in <strong>Antwerp</strong> and <strong>Ghent</strong>.</p>
                     <ul>
                         <li class="mb-2">Venues can host at least 40-50 people</li>
@@ -66,7 +66,7 @@
                 <h2 id="sponsors" class="w-1/3">
                     Sponsorships
                 </h2>
-                <div class="markup flex-1">
+                <div class="markup flex-1 md:mt-1">
                     <p>If you're looking to highlight some vacancies you have, or want to promote your company at one of our meetups, we offer the following packages for sponsorships:</p>
                     <p><strong>Bronze</strong> &euro;100 / meetup</p>
                     <ul>
@@ -95,7 +95,7 @@
                 <h2 id="other" class="w-1/3">
                     Other inquiries
                 </h2>
-                <div class="markup flex-1">
+                <div class="markup flex-1 md:mt-1">
                     <p>Have a question not related to speaking, hosting or sponsoring?</p>
                     <p class="mb-0">
                         <a class="no-link text-belgium font-medium" href="mailto:dries.vints@gmail.com">
