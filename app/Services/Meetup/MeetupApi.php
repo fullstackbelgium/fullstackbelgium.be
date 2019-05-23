@@ -3,8 +3,8 @@
 namespace App\Services\Meetup;
 
 use App\Models\Event;
-use App\Models\Meetup;
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Log;
 
 class MeetupApi
 {
