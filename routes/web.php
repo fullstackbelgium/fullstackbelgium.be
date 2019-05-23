@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\HomeController;
 
-Route::get('/', HomeController::class);
+Route::group(['middleware' => ['cacheResponse:3600']], function () {
+    Route::get('/', HomeController::class);
+});
 
 Route::view('meetups', 'meetups');
 
