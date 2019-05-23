@@ -6,7 +6,7 @@
         <section class="md:w-2/3">
             <div class="markup mb-10">
                 <h1>Join our Slack community</h1>
-                <p class="text-xl">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus illo est rem sit, perferendis, consequatur provident amet pariatur natus totam alias earum odio? Dicta quidem maxime minima sed laborum accusantium.</p>
+                <p class="text-xl"></p>
             </div>
             <p>
                 <span class="inline-flex flex-col items-center">
