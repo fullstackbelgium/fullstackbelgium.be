@@ -176,7 +176,7 @@ class Event extends Resource
 
     public static function indexQuery(NovaRequest $request, $query)
     {
-        if (empty($request->get('orderBy'))) {
+        if (empty($request->get('events_direction'))) {
             $query->getQuery()->orders = [];
 
             return $query->orderByDesc('date');
