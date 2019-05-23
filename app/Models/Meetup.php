@@ -4,12 +4,23 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Carbon;
+use Spatie\ResponseCache\Facades\ResponseCache;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
 class Meetup extends Model
 {
     use HasSlug;
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::saved(function (self $self) {
+            ResponseCache::clear();
+        });
+    }
 
     public function events(): HasMany
     {
@@ -23,8 +34,18 @@ class Meetup extends Model
             ->saveSlugsTo('slug');
     }
 
-    public function eventAfter(Event $event)
+    public function eventsAfter(Carbon $date)
     {
-        return $this->events()->where('date', '>', $event->date)->first();
+        return $this->events()->where('date', '>=', $date);
+    }
+
+    public function upcomingEvents()
+    {
+        return $this->eventsAfter(Carbon::now());
+    }
+
+    public function previousEvents()
+    {
+        return $this->events()->where('date', '<', Carbon::now());
     }
 }

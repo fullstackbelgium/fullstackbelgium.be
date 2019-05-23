@@ -2,7 +2,9 @@
 
 namespace App\Services\Meetup;
 
+use App\Models\Event;
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Log;
 
 class MeetupApi
 {
@@ -29,5 +31,18 @@ class MeetupApi
         ]);
 
         return $this;
+    }
+
+    public function getAttendees(Event $event)
+    {
+        try {
+            $response = $this->client->get("/{$event->meetup->meetup_com_id}/events/{$event->meetup_com_event_id}?key={$this->apiKey}");
+            $data = json_decode($response->getBody()->getContents(), true);
+            return $data['yes_rsvp_count'];
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return 0;
+        }
+
     }
 }

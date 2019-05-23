@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\Trix;
 use Timothyasp\Color\Color;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
@@ -25,6 +26,7 @@ class Meetup extends Resource
             }),
             Color::make('Color')->hideFromIndex(),
             Text::make('Name')->sortable()->rules('required'),
+            Text::make('Schedule'),
             Text::make('Meetup.com id', 'meetup_com_id')->sortable()->rules('required'),
         ];
     }
