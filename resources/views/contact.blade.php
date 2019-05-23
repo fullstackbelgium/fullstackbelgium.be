@@ -78,9 +78,9 @@
                         <li class="mb-2">Everything from our <strong>Bronze</strong> package</li>
                         <li class="mb-2">Your message of choice in a monthly newsletter sent to the full member list of one of our meetup.com groups</li>
                     </ul>
-                    <p><strong>Gold</strong> &euro;400 / 3 meetups</p>
+                    <p><strong>Gold</strong> &euro;300 / 2 meetups</p>
                     <ul>
-                        <li class="mb-2">Everything from our <strong>Silver</strong> package but for all three meetups</li>
+                        <li class="mb-2">Everything from our <strong>Silver</strong> package but for both meetups</li>
                     </ul>
                     <p class="mb-0">
                         Want to help us out and sponsor one of the meetups, or have a different proposal?<br>
