@@ -83,7 +83,7 @@
                 @endcomponent
             </div>
             <p class="text-2xl mb-4">
-                🎉 Thanks to all <strong class="font-bold text-2xl px-2 py-1 bg-white shadow-md rounded-sm">{{ $totalAttendees }}</strong> attendees for joining last month's meetups! 🎉
+                🎉 Thanks to all <strong class="font-bold text-2xl px-2 py-1 bg-white shadow-md rounded-sm"><total-attendees /></strong> attendees for joining last month's meetups! 🎉
             </p>
             <p class="text-gray-700">
                 We're always on the lookout for speakers, sponsors and venues for our user groups.

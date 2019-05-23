@@ -8,18 +8,12 @@ use App\Services\Meetup\MeetupApi;
 
 class HomeController
 {
-    public function __invoke(MeetupApi $meetupApi)
+    public function __invoke()
     {
         $meetups = Meetup::with('upcomingEvents', 'previousEvents')->get()->sortBy(function (Meetup $meetup) {
             return optional($meetup->upcomingEvents->first())->date;
         });
 
-        $totalAttendees = 0;
-
-        foreach ($meetups as $meetup) {
-            $totalAttendees += $meetupApi->getAttendees($meetup->previousEvents->last());
-        }
-
-        return view('home', compact('meetups', 'totalAttendees'));
+        return view('home', compact('meetups'));
     }
 }

@@ -41,6 +41,7 @@ return [
      */
     'replacers' => [
         \Spatie\ResponseCache\Replacers\CsrfTokenReplacer::class,
+        \App\Http\Replacers\MeetupAttendeesReplacer::class,
     ],
 
     /*
