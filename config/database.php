@@ -49,10 +49,12 @@ return [
         ],
 
         'testing' => [
-            'driver' => 'sqlite',
-            'database' => ':memory:',
+            'driver' => 'mysql',
+            'host' => '127.0.0.1',
+            'database' => 'fullstackbelgium_testing',
+            'username' => 'root',
+            'password' => '',
             'prefix' => '',
-            'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
 
         'pgsql' => [
