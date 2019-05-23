@@ -170,7 +170,20 @@ class Event extends Resource
                     })
                 ];
             }),
-
         ];
+    }
+
+    protected static function applyOrderings($query, array $orderings)
+    {
+        if (empty($orderings)) {
+            // This is your default order
+            return $query->orderBy('date', 'desc');
+        }
+
+        foreach ($orderings as $column => $direction) {
+            $query->orderBy($column, $direction);
+        }
+
+        return $query;
     }
 }
