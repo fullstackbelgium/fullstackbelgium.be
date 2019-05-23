@@ -36,7 +36,7 @@ class Meetup extends Model
 
     public function eventAfter(Event $event)
     {
-        return $this->eventsAfter($event->date)->first();
+        return $this->events()->where('date', '>', $event->date)->first();
     }
 
     public function eventsAfter(Carbon $date)
