@@ -80,7 +80,7 @@ class Event extends Resource
                         $url = asset("storage/{$this->meetup->logo}");
                         return "<img class='h-6' src='{$url}' alt=''></a>";
                     })->asHtml()->onlyOnIndex(),
-                    BelongsTo::make('Meetup')->sortable()->rules('required'),
+                    BelongsTo::make('Meetup')->rules('required'),
                     Text::make('Meetup.com event id', 'meetup_com_event_id')->hideFromIndex(),
                 ];
             }),
