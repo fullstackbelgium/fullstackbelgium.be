@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Event;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -17,9 +18,9 @@ class AddDateFieldToEventsTable extends Migration
             $table->date('date')->first()->nullable();
         });
 
-        \App\Models\Event::withoutEvents(function () {
-            $events = \App\Models\Event::all();
-            $events->each(function (\App\Models\Event $event) {
+        Event::withoutEvents(function () {
+            $events = Event::all();
+            $events->each(function (Event $event) {
                 $event->update(['date' => $event->name]);
             });
         });

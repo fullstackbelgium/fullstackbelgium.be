@@ -28,6 +28,9 @@ class EventTest extends TestCase
     /** @test */
     public function when_updating_an_event_with_a_meetup_com_event_id_it_will_update_the_event_on_meetup_com()
     {
+        Event::flushEventListeners();
+        Event::boot();
+
         $this->event->intro = 'new intro';
         $this->event->save();
 
@@ -49,6 +52,7 @@ class EventTest extends TestCase
     /** @test */
     public function it_can_generate_the_name_for_meetup_com()
     {
+        /** @var Event $event */
         $event = factory(Event::class)->create([
             'venue_name' => null,
             'date' => Carbon::createFromFormat('Ymd', '20180201')
