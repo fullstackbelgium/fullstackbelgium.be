@@ -5,12 +5,22 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
+use Spatie\ResponseCache\Facades\ResponseCache;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
 class Meetup extends Model
 {
     use HasSlug;
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::saved(function (self $self) {
+            ResponseCache::clear();
+        });
+    }
 
     public function events(): HasMany
     {

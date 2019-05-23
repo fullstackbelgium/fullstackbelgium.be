@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Spatie\ResponseCache\Facades\ResponseCache;
 
 class Event extends Model
 {
@@ -27,6 +28,8 @@ class Event extends Model
         parent::boot();
 
         static::saved(function (Event $event) {
+            ResponseCache::clear();
+
             if (empty($event->meetup_com_event_id)) {
                 return;
             }
