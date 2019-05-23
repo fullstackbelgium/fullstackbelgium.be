@@ -5,6 +5,7 @@ namespace App\Nova;
 use App\Http\Controllers\Admin\GenerateNewsletterController;
 use App\Http\Controllers\Admin\GenerateSlidesController;
 use App\Nova\Fields\EventSponsorFields;
+use App\Nova\Filters\Upcoming;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
@@ -41,6 +42,19 @@ class Event extends Resource
         'speaker_2_abstract',
         'tweet',
     ];
+
+    /**
+     * Get the filters available for the resource.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return array
+     */
+    public function filters(Request $request)
+    {
+        return [
+            new Upcoming(),
+        ];
+    }
 
     public function fields(Request $request)
     {
@@ -167,8 +181,6 @@ class Event extends Resource
 
             return $query->orderByDesc('date');
         }
-
-
 
         return $query;
     }
