@@ -1,5 +1,7 @@
 <html>
 <body>
+<p><strong>{{ $event->determineMeetupComName() }} on {{ $event->date->format('l \t\h\e jS ') }}</strong></p>
+
 Dear Meetup members,<br /><br/>
 {!! markdownToHtml($event->intro) !!}<br/>
 If you want to attend this meetup, please RSVP on <a href="{{ $event->meetup_com_url }}">the event page at meetup.com</a><br/><br />
