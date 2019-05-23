@@ -21,80 +21,95 @@
             bottom: 80px;
             height: 5px;
         }
+
+        .w-2\/5 {
+            width: 40%;
+        }
     </style>
 </head>
 <body>
-<div class="reveal">
-    <div class="slides">
-        <section>
-            <img class="w-1/2" src="{{ asset('/storage/'.$event->meetup->logo) }}" alt="">
-        </section>
-        <section>
-            <h2>Thanks to</h2>
-            <img class="w-1/2" src="{{ asset('/storage/'.$event->venue_logo) }}" alt="">
-            <h2>for hosting</h2>
-        </section>
-        @foreach ($event->sponsors as $sponsor)
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <img class="w-1/2" src="{{ asset('/storage/'.$event->meetup->logo) }}" alt="">
+            </section>
             <section>
                 <h2>Thanks to</h2>
-                <img class="w-1/2" src="{{ asset('/storage/'.$sponsor->logo) }}" alt="">
-                <h2>for sponsoring</h2>
+                <img class="w-2/5" src="{{ asset('/storage/'.$event->venue_logo) }}" alt="">
+                <h2>for hosting</h2>
             </section>
-        @endforeach
-        <?php $nextMeetup = $event->meetup->eventAfter($event->date)->first() ?>
-        @if ($nextMeetup)
-            <section class="text-left px-12" data-markdown>
-                <textarea class="leading-normal" data-template>
-                    ## Our next meetup <span style="color: {{ $event->meetup->color  }}">{{ $nextMeetup->date->format('d/m') }}</span> <small>at <span style="color: {{ $event->meetup->color  }}">{{ $nextMeetup->venue_name }}</span></small>
-                    **{{ $nextMeetup->speaker_1_title }}**<br>
-                    &mdash; {{ $nextMeetup->speaker_1_name }}
 
-                    @if ($nextMeetup->speaker_2_abstract)
-                    **{{ $nextMeetup->speaker_2_title }}**<br>
-                    &mdash; {{ $nextMeetup->speaker_2_name }}
-                    @else
-                    **You?**<br>
-                    &mdash; Contact dries.vints@gmail.com to claim your slot!
-                    @endif
-                </textarea>
+            @foreach ($event->sponsors as $sponsor)
+                <section>
+                    <h2>Thanks to</h2>
+                    <img class="w-2/5" src="{{ asset('/storage/'.$sponsor->logo) }}" alt="">
+                    <h2>for sponsoring</h2>
+                </section>
+            @endforeach
+
+            <?php $nextMeetup = $event->meetup->eventAfter($event) ?>
+
+            @if ($nextMeetup)
+                <section class="text-left px-12" data-markdown>
+                    <textarea class="leading-normal" data-template>
+                        ## Our next meetup <span style="color: {{ $event->meetup->color  }}">{{ $nextMeetup->date->format('d/m') }}</span> <small>at <span style="color: {{ $event->meetup->color  }}">{{ $nextMeetup->venue_name }}</span></small>
+                        **{{ $nextMeetup->speaker_1_title }}**<br>
+                        &mdash; {{ $nextMeetup->speaker_1_name }}
+
+                        @if ($nextMeetup->speaker_2_abstract)
+                        **{{ $nextMeetup->speaker_2_title }}**<br>
+                        &mdash; {{ $nextMeetup->speaker_2_name }}
+                        @else
+                        **You?**<br>
+                        &mdash; Contact dries.vints@gmail.com to claim your slot!
+                        @endif
+                    </textarea>
+                </section>
+            @endif
+
+            <section>
+                <h2>Join us</h2>
+                <img class="w-1/3" src="{{ asset('images/full-stack-belgium.png') }}" alt="">
+                <p>fullstackbelgium.be</p>
             </section>
-        @endif
-        <section>
-            <h2>Join us</h2>
-            <img class="w-1/3" src="{{ asset('images/full-stack-belgium.png') }}" alt="">
-            <p>fullstackbelgium.be</p>
-        </section>
-        <section style="background: url({{ asset('images/fseu-bg.png') }}); background-size: cover;">
-            <img class="w-1/2" src="{{ asset('images/fseu.png') }}" alt="">
-        </section>
-        <section class="text-left px-12">
-            <div class="flex items-center">
-                <img class="w-1/2" src="{{ asset('/storage/'.$event->meetup->logo) }}" alt="">
-                <div class="ml-auto" style="margin-right: 50px;">
-                    <h2>Enjoy!</h2>
-                    <p style="color: {{ $event->meetup->color }}">fullstackbelgium.be</p>
-                    <p style="color: {{ $event->meetup->color }}">twitter.com/fullstackbe</p>
+
+            <section style="background: url({{ asset('images/fseu-bg.png') }}); background-size: cover;">
+                <img class="w-1/2" src="{{ asset('images/fseu.png') }}" alt="">
+            </section>
+
+            <section>
+                <img src="{{ asset('images/fseu-speakers.jpg') }}" alt="">
+            </section>
+
+            <section class="text-left px-12">
+                <div class="flex items-center">
+                    <img class="w-1/2" src="{{ asset('/storage/'.$event->meetup->logo) }}" alt="">
+                    <div class="ml-auto" style="margin-right: 50px;">
+                        <h2>Enjoy!</h2>
+                        <p style="color: {{ $event->meetup->color }}">fullstackbelgium.be</p>
+                        <p style="color: {{ $event->meetup->color }}">twitter.com/fullstackbe</p>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </div>
-</div>
-<footer>
-    Full Stack Belgium
-</footer>
 
-<script src="/revealjs/js/reveal.js"></script>
+    <footer>
+        Full Stack Belgium
+    </footer>
 
-<script>
-    // More info about config & dependencies:
-    // - https://github.com/hakimel/reveal.js#configuration
-    // - https://github.com/hakimel/reveal.js#dependencies
-    Reveal.initialize({
-        dependencies: [
-            { src: '/revealjs/plugin/markdown/marked.js' },
-            { src: '/revealjs/plugin/markdown/markdown.js' },
-        ]
-    });
-</script>
+    <script src="/revealjs/js/reveal.js"></script>
+
+    <script>
+        // More info about config & dependencies:
+        // - https://github.com/hakimel/reveal.js#configuration
+        // - https://github.com/hakimel/reveal.js#dependencies
+        Reveal.initialize({
+            dependencies: [
+                { src: '/revealjs/plugin/markdown/marked.js' },
+                { src: '/revealjs/plugin/markdown/markdown.js' },
+            ]
+        });
+    </script>
 </body>
 </html>

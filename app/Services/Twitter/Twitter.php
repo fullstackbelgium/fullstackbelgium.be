@@ -3,7 +3,6 @@
 namespace App\Services\Twitter;
 
 use Abraham\TwitterOAuth\TwitterOAuth;
-use Log;
 
 class Twitter
 {
@@ -17,8 +16,6 @@ class Twitter
 
     public function tweet(string $status)
     {
-        Log::info("Tweeting {$status}");
-
         if (! app()->environment('production')) {
             return;
         }
