@@ -73,7 +73,6 @@
             <div class="py-6 md:flex justify-between text-xs text-gray-700">
                 <ul class="flex mb-2 md:mb-0">
                     <li class="mr-3 md:mr-6"><a href="{{ url('contact') }}">Contact</a></li>
-                    <li class="mr-3 md:mr-6"><a href="{{ url('policy') }}">Policy</a></li>
                     <li><a href="{{ url('code-of-conduct') }}">Code of conduct</a></li>
                 </ul>
                 <p>
