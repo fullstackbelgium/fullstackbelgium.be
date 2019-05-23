@@ -34,6 +34,11 @@ class Meetup extends Model
             ->saveSlugsTo('slug');
     }
 
+    public function eventAfter(Event $event)
+    {
+        return $this->eventsAfter($event->date)->first();
+    }
+
     public function eventsAfter(Carbon $date)
     {
         return $this->events()->where('date', '>=', $date);
