@@ -1,3 +1,4 @@
+Dear meetup members,<br/><br/>
 {!! $event->intro !!}<br/>
 
 We hope to see you soon,<br/>
@@ -15,8 +16,7 @@ TALKS
 {!! $event->speaker_1_abstract !!}<br>
 @endif
 @if ($event->speaker_1_bio)
-<span>Speaker:</span>
-{!! $event->speaker_1_bio !!}<br>
+Speaker: {!! $event->speaker_1_bio !!}<br>
 @endif
 @if ($event->speaker_1_length)
 Length: {{ $event->speaker_1_length }}min<br><br>
@@ -29,8 +29,7 @@ Length: {{ $event->speaker_1_length }}min<br><br>
 {!! $event->speaker_2_abstract !!}<br>
 @endif
 @if ($event->speaker_2_bio)
-<span>Speaker:</span>
-{!! $event->speaker_2_bio !!}<br>
+Speaker: {!! $event->speaker_2_bio !!}<br>
 @endif
 @if ($event->speaker_2_length)
 Length: {{ $event->speaker_2_length }}min<br><br>
