@@ -5,6 +5,7 @@ namespace App\Nova;
 use App\Http\Controllers\Admin\GenerateNewsletterController;
 use App\Http\Controllers\Admin\GenerateSlidesController;
 use App\Nova\Fields\EventSponsorFields;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
@@ -47,7 +48,16 @@ class Event extends Resource
             new Panel("General information", function () {
                 return [
                     Heading::make('General information')->onlyOnForms(),
-                    Date::make('Date')->help('Will not be sent to meetup.com')->rules('required')->sortable(),
+                    Text::make('Date')
+                        ->help('Will not be sent to meetup.com')
+                        ->rules(['required', 'date'])
+                        ->displayUsing(function ($value) {
+                            return Carbon::parse($value)->format('Y-m-d');
+                        })
+                        ->resolveUsing(function ($value) {
+                            return Carbon::parse($value)->format('Y-m-d');
+                        })
+                        ->sortable(),
                     Text::make('', function () {
                         if (! $this->exists) {
                             return '';
