@@ -46,7 +46,7 @@ class Meetup extends Model
 
     public function upcomingEvents()
     {
-        return $this->eventsAfter(Carbon::now());
+        return $this->eventsAfter(Carbon::now()->startOfDay());
     }
 
     public function previousEvents()
