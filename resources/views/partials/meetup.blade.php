@@ -27,7 +27,11 @@
         @if ($nextEvent)
             <p class="text-xl mb-6">
                 <a href="{{ $nextEvent->meetup_com_url }}" target="_blank" rel="noopener" title="View on meetup.com">
-                    <time class="font-medium" datetime="{!! $nextEvent->date->format('Y-m-d') !!}">{!! $nextEvent->date->format('F j<\s\up>S<\/\s\up>') !!}</time>
+                    @if ($nextEvent->date->startOfDay() > \Carbon\Carbon::now()->startOfDay())
+                        <time class="font-medium" datetime="{!! $nextEvent->date->format('Y-m-d') !!}">{!! $nextEvent->date->format('F j<\s\up>S<\/\s\up>') !!}</time>
+                    @else
+                        <span class="font-medium">Today!</span>
+                    @endif
                     at {{ $nextEvent->venue_name }}
                     <span class="inline-block w-4" >
                         {{ svg('meetup') }}
