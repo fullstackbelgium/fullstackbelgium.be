@@ -2,10 +2,10 @@
 Dear meetup members,<br/>
 <br/>
 {!! $event->intro !!}<br/>
-Please remember to change your RSVP if you cannot attend.<br>
 We hope to see you soon,<br/>
-<br/>
 Dries & Rias<br/>
+<br>
+PS: Please remember to change your RSVP if you cannot attend.<br>
 @else
 More info about the meetup soon...<br>
 @endif

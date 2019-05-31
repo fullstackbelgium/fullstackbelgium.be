@@ -23,6 +23,5 @@
                 </span>
             </p>
         </section>
-            {{-- <h1>Several Belgians are typing...</h1> --}}
     </div>
 @endcomponent
