@@ -9,6 +9,9 @@ SCHEDULE
 {!! $event->schedule !!}<br/>
 
 TALKS
+@if (!$event->speaker_1_title && !$event->speaker_2_title)
+Want to speak at this meetup? Contact dries.vints@gmail.com!
+@endif
 @if ($event->speaker_1_title && $event->speaker_1_name)
 {{ $event->speaker_1_title }} by {{ $event->speaker_1_name }}<br>
 @endif
