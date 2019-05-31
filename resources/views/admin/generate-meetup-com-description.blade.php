@@ -10,7 +10,7 @@ PS: Please remember to change your RSVP if you cannot attend.<br>
 More info about the meetup soon...<br>
 @endif
 <br/>
-SCHEDULES<br>
+SCHEDULE<br>
 {!! $event->schedule !!}<br/>
 
 TALKS<br>
