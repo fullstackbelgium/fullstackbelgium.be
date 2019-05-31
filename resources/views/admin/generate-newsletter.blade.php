@@ -4,7 +4,8 @@
 
 Dear Meetup members,<br /><br/>
 {!! markdownToHtml($event->intro) !!}<br/>
-If you want to attend this meetup, please RSVP on <a href="{{ $event->meetup_com_url }}">the event page at meetup.com</a><br/><br />
+If you want to attend this meetup, please RSVP on <a href="{{ $event->meetup_com_url }}">the event page at meetup.com</a>.<br>
+If you cannot attend, <b>please remember to change your RSVP</b>.<br/><br />
 
 @if ($event->sponsors->count() > 0)
     <p><b>Sponsors</b></p>
