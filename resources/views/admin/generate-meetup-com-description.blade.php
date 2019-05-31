@@ -10,10 +10,10 @@ PS: Please remember to change your RSVP if you cannot attend.<br>
 More info about the meetup soon...<br>
 @endif
 <br/>
-SCHEDULE
+SCHEDULES<br>
 {!! $event->schedule !!}<br/>
 
-TALKS
+TALKS<br>
 @if (!$event->speaker_1_title && !$event->speaker_2_title)
 Want to speak at this meetup? Contact dries.vints@gmail.com!
 @endif
