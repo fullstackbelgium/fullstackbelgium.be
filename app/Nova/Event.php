@@ -64,6 +64,9 @@ class Event extends Resource
                     Heading::make('General information')->onlyOnForms(),
                     Text::make('Date')
                         ->help('Will not be sent to meetup.com')
+                        ->withMeta([
+                            'placeholder' => 'yyyy-mm-dd'
+                        ])
                         ->rules(['required', 'date'])
                         ->displayUsing(function ($value) {
                             return Carbon::parse($value)->format('Y-m-d');
