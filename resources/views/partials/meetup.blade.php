@@ -61,23 +61,27 @@
                     </p>
                 </li>
                 @php($schedule->addMinutes(15))
-                @if ($nextEvent->speaker_2_name)
-                    <li class="flex items-start pl-2 py-2 bg-gray-200">
-                        <time class="inline-block font-bold text-sm w-16 mt-1/2">{{ $schedule->format('H:i') }}</time>
-                        <p class="flex-1">
+                <li class="flex items-start pl-2 py-2 bg-gray-200">
+                    <time class="inline-block font-bold text-sm w-16 mt-1/2">{{ $schedule->format('H:i') }}</time>
+                    <p class="flex-1">
+                        @if ($nextEvent->speaker_2_title)
                             {{ $nextEvent->speaker_2_title }}
                             <br>
                             <span class="text-sm text-gray-700">by {{ $nextEvent->speaker_2_name }}</span>
-                        </p>
-                    </li>
-                    @php($schedule->addMinutes($nextEvent->speaker_2_length))
-                    <li class="flex items-start pl-2 py-2">
-                        <time class="inline-block font-bold text-sm w-16 mt-1/2">{{ $schedule->format('H:i') }}</time>
-                        <p class="flex-1">
-                            Mingle
-                        </p>
-                    </li>
-                @endif
+                        @else
+                            You?
+                            <br>
+                            <span class="text-sm text-gray-700"><a style="color: {{ $meetup->color }}" href="{{ url('contact') }}">Contact us</a> to claim your slot!</span>
+                        @endif
+                    </p>
+                </li>
+                @php($schedule->addMinutes($nextEvent->speaker_2_length ?? 30))
+                <li class="flex items-start pl-2 py-2">
+                    <time class="inline-block font-bold text-sm w-16 mt-1/2">{{ $schedule->format('H:i') }}</time>
+                    <p class="flex-1">
+                        Mingle
+                    </p>
+                </li>
             </ol>
             {!! $nextEvent->venue_info !!}
         @endif
