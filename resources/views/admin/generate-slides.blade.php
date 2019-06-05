@@ -67,6 +67,28 @@
                 </section>
             @endif
 
+            @foreach ($otherMeetups as $otherMeetup)
+                <?php $nextEvent = $otherMeetup->eventAfter($event) ?>
+
+                @if ($nextEvent)
+                    <section class="text-left px-12" data-markdown>
+                        <textarea class="leading-normal" data-template>
+                            ## Our next <span style="color: {{ $nextEvent->meetup->color }}">{{ str_replace('Full Stack ', '', $otherMeetup->name) }}</span><br>meetup: <span style="color: {{ $nextEvent->meetup->color }}">{{ $nextEvent->date->format('d/m') }}</span><br><small>at <span style="color: {{ $nextEvent->meetup->color  }}">{{ $nextEvent->venue_name }}</span></small>
+                            **{{ $nextEvent->speaker_1_title }}**<br>
+                            &mdash; {{ $nextEvent->speaker_1_name }}
+
+                            @if ($nextEvent->speaker_2_abstract)
+                            **{{ $nextEvent->speaker_2_title }}**<br>
+                            &mdash; {{ $nextEvent->speaker_2_name }}
+                            @else
+                            **You?**<br>
+                            &mdash; Contact <a href="mailto:dries.vints@gmail.com" style="color: {{ $nextEvent->meetup->color }}">dries.vints@gmail.com</a> to claim your slot!
+                            @endif
+                        </textarea>
+                    </section>
+                @endif
+            @endforeach
+
             <section>
                 <h2>Join us</h2>
                 <img class="w-1/3" src="{{ asset('images/full-stack-belgium.png') }}" alt="">
