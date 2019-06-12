@@ -99,9 +99,9 @@
                 <img class="w-1/2" src="{{ asset('images/fseu.png') }}" alt="">
             </section>
 
-            <section>
-                <img src="{{ asset('images/fseu-speakers.jpg') }}" alt="">
-            </section>
+{{--            <section>--}}
+{{--                <img src="{{ asset('images/fseu-speakers.jpg') }}" alt="">--}}
+{{--            </section>--}}
 
             <section class="text-left px-12">
                 <div class="flex items-center">
