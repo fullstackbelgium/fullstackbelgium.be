@@ -99,6 +99,15 @@
                 <img class="w-1/2" src="{{ asset('images/fseu.png') }}" alt="">
             </section>
 
+            <section>
+                <h2>Full Stack Europe</h2>
+                <p>With talks about...</p>
+                <p>
+                    Serverless, React, Machine Learning, Chatbots, JavaScript, Application Achitecture, Type Hints, Microservices, Linux, Graph Databases, Varnish and much more...
+                </p>
+                <p>fullstackeurope.com</p>
+            </section>
+
 {{--            <section>--}}
 {{--                <img src="{{ asset('images/fseu-speakers.jpg') }}" alt="">--}}
 {{--            </section>--}}
