@@ -21,7 +21,7 @@ return "echo '\033[32m" .$message. "\033[0m';\n";
 startDeployment
 cloneRepository
 runComposer
-runYarn
+runNpm
 generateAssets
 updateSymlinks
 optimizeInstallation
@@ -77,17 +77,16 @@ composer install --prefer-dist --no-scripts --no-dev -q -o;
 php artisan nova:publish
 @endtask
 
-@task('runYarn', ['on' => 'remote'])
-{{ logMessage("📦  Running Yarn…") }}
+@task('runNpm', ['on' => 'remote'])
+{{ logMessage("📦  Running Npm…") }}
 cd {{ $newReleaseDir }};
-yarn config set ignore-engines true
-yarn
+npm ci
 @endtask
 
 @task('generateAssets', ['on' => 'remote'])
 {{ logMessage("🌅  Generating assets…") }}
 cd {{ $newReleaseDir }};
-yarn run production -- --progress false
+npm run production --progress false
 @endtask
 
 @task('updateSymlinks', ['on' => 'remote'])
