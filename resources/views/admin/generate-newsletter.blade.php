@@ -49,7 +49,7 @@ If you want to attend this meetup, please RSVP on <a href="{{ $event->meetup_com
     @endif
 </div>
 <br />
-We hope to see you there,<<br />
+We hope to see you there,<br />
 <br />
 Dries & Rias
 </body>
