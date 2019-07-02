@@ -27,7 +27,7 @@ If you want to attend this meetup, please RSVP on <a href="{{ $event->meetup_com
         {!! markdownToHtml($event->speaker_1_abstract) !!}<br />
     @endif
     @if ($event->speaker_1_bio)
-        <b>Speaker:</b> {!! markdownToHtml($event->speaker_1_bio) !!}<br />
+        {!! str_replace("<div>", "<div><b>Speaker: </b>", markdownToHtml($event->speaker_1_bio)) !!}<br />
     @endif
     @if ($event->speaker_1_length)
         <b>Length:</b> {{ $event->speaker_1_length }}min<br /><br />
@@ -42,7 +42,7 @@ If you want to attend this meetup, please RSVP on <a href="{{ $event->meetup_com
         {!! markdownToHtml($event->speaker_2_abstract) !!}<br />
     @endif
     @if ($event->speaker_2_bio)
-        <b>Speaker:</b> {!! markdownToHtml($event->speaker_2_bio) !!}<br />
+        {!! str_replace("<div>", "<div><b>Speaker: </b>", markdownToHtml($event->speaker_2_bio)) !!}<br />
     @endif
     @if ($event->speaker_2_length)
         <b>Length:</b> {{ $event->speaker_2_length }}min<br /><br />
