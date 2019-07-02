@@ -117,6 +117,7 @@ class Event extends Resource
                 return [
                     Heading::make('Speaker 1')->onlyOnForms(),
                     Text::make('Name', 'speaker_1_name')->hideFromIndex(),
+                    Text::make('Twitter', 'speaker_1_twitter')->help('Twitter username, without “@”')->hideFromIndex(),
                     Text::make('Talk title', 'speaker_1_title')->hideFromIndex(),
                     Trix::make('Abstract', 'speaker_1_abstract')->hideFromIndex(),
                     Trix::make('Bio', 'speaker_1_bio')->hideFromIndex(),
@@ -130,6 +131,7 @@ class Event extends Resource
                 return [
                     Heading::make('Speaker 2')->onlyOnForms(),
                     Text::make('Name', 'speaker_2_name')->hideFromIndex(),
+                    Text::make('Twitter', 'speaker_2_twitter')->help('Twitter username, without “@”')->hideFromIndex(),
                     Text::make('Talk title', 'speaker_2_title')->hideFromIndex(),
                     Trix::make('Abstract', 'speaker_2_abstract')->hideFromIndex(),
                     Trix::make('Bio', 'speaker_2_bio')->hideFromIndex(),
@@ -159,12 +161,12 @@ class Event extends Resource
 
                         return '<a target="fullstack_belgium_meetup" title="Meetup.com" href="' . $this->meetup_com_url . '"><img class="h-6" src="/svg/meetup.svg" alt=""></a>';
                     })->asHtml(),
-                      
+
                     Text::make('', function () {
                         if (! $this->exists) {
                             return '';
                         }
-                                 
+
                         return '<a target="fullstack_belgium_slides" title="Slides" href="' . action(GenerateSlidesController::class, $this->id) . '"><img class="h-6" src="/svg/slides.svg" alt=""></a>';
                     })->asHtml(),
 
