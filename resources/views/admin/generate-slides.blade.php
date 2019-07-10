@@ -108,9 +108,11 @@
                 <p>fullstackeurope.com</p>
             </section>
 
-{{--            <section>--}}
-{{--                <img src="{{ asset('images/fseu-speakers.jpg') }}" alt="">--}}
-{{--            </section>--}}
+            <section>
+                <h2>FSEU ❤️ FSBE</h2>
+                <h2>€100 Discount</h2>
+                <h2 style="text-transform: lowercase">bit.ly/fullstackeughent</h2>
+            </section>
 
             <section class="text-left px-12">
                 <div class="flex items-center">
