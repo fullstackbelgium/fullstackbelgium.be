@@ -104,7 +104,7 @@
                 <h2>Full Stack Europe</h2>
                 <p>With talks about...</p>
                 <p>
-                    Serverless, React, Machine Learning, Chatbots, JavaScript, Application Achitecture, Type Hints, Microservices, Linux, Graph Databases, Varnish and much more...
+                    Serverless, React, Machine Learning, Chatbots, JavaScript, Application Architecture, Type Hints, Microservices, Linux, Graph Databases, Varnish and much more...
                 </p>
                 <p>fullstackeurope.com</p>
             </section>
