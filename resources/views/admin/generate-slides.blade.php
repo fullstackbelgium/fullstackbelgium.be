@@ -35,8 +35,7 @@
             </section>
             <section>
                 <h2>Thanks to</h2>
-{{--                <img class="w-2/5" src="{{ asset('/storage/'.$event->venue_logo) }}" alt="">--}}
-                <img class="w-2/5" src="{{ asset('/images/itp.png') }}" alt="">
+                <img class="w-2/5" src="{{ asset('/storage/'.$event->venue_logo) }}" alt="">
                 <h2>for hosting</h2>
             </section>
 
