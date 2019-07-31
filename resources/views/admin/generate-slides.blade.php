@@ -114,6 +114,16 @@
                 <h2 style="text-transform: lowercase">bit.ly/fullstackeughent</h2>
             </section>
 
+            <section>
+                <h2>How can you help?</h2>
+                <div class="text-left" style="margin-left: 9rem;">
+                    <p>📸 Take pictures</p>
+                    <p>🐦 Tweet during the meetup</p>
+                    <p>💬 Leave a comment on meetup.com</p>
+                    <p>👤 Bring your colleagues and friends!</p>
+                </div>
+            </section>
+
             <section class="text-left px-12">
                 <div class="flex items-center">
                     <img class="w-1/2" src="{{ asset('/storage/'.$event->meetup->logo) }}" alt="">
