@@ -3,21 +3,34 @@
 namespace App\Services\Meetup;
 
 use App\Models\Event;
+use Exception;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Log;
+use kamermans\OAuth2\GrantType\ClientCredentials;
+use kamermans\OAuth2\OAuth2Middleware;
 
 class MeetupApi
 {
     /** @var \GuzzleHttp\Client */
     protected $client;
-    /** @var string */
-    protected $apiKey;
 
-    public function __construct(Client $client, string $apiKey)
+    public function __construct(Client $meetupClient)
     {
-        $this->client = $client;
+        $client = new Client([
+            // URL for access_token request
+            'base_uri' => 'https://secure.meetup.com/oauth2/access',
+        ]);
 
-        $this->apiKey = $apiKey;
+        $oauthConfig = [
+            'client_id' => config('services.meetup.key'),
+            'client_secret' => config('services.meetup.secret'),
+        ];
+
+        $clientCredentials = new ClientCredentials($client, $oauthConfig);
+        $oAuth2Middleware = new OAuth2Middleware($clientCredentials);
+
+        $this->client = $meetupClient;
+        $this->client->getConfig('handler')->push($oAuth2Middleware);
     }
 
     public function updateEvent(string $meetupId, string $eventId, array $updatedProperties)
@@ -26,7 +39,7 @@ class MeetupApi
             return;
         }
 
-        $this->client->patch("/{$meetupId}/events/{$eventId}?key={$this->apiKey}", [
+        $this->client->patch("/{$meetupId}/events/{$eventId}", [
             'form_params' => $updatedProperties
         ]);
 
@@ -36,10 +49,10 @@ class MeetupApi
     public function getAttendees(Event $event)
     {
         try {
-            $response = $this->client->get("/{$event->meetup->meetup_com_id}/events/{$event->meetup_com_event_id}?key={$this->apiKey}");
+            $response = $this->client->get("/{$event->meetup->meetup_com_id}/events/{$event->meetup_com_event_id}");
             $data = json_decode($response->getBody()->getContents(), true);
             return $data['yes_rsvp_count'];
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             Log::error($e->getMessage());
             return 0;
         }

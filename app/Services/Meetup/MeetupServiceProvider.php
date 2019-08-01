@@ -10,7 +10,6 @@ class MeetupServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(MeetupApi::class, function () {
-
             $client = new Client([
                 'base_uri' => 'https://api.meetup.com/',
                 'headers' => [
@@ -18,9 +17,7 @@ class MeetupServiceProvider extends ServiceProvider
                 ],
             ]);
 
-            $apiKey = config('services.meetup.api_key');
-
-            return new MeetupApi($client, $apiKey);
+            return new MeetupApi($client);
         });
     }
 }

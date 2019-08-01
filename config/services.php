@@ -23,6 +23,8 @@ return [
 
     'meetup' => [
         'api_key' => env('MEETUP_API_KEY'),
+        'key' => env('MEETUP_KEY'),
+        'secret' => env('MEETUP_SECRET'),
     ],
 
     'mailgun' => [

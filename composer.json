@@ -18,6 +18,7 @@
         "abraham/twitteroauth": "^0.9.2",
         "fideloper/proxy": "^4.0",
         "guzzlehttp/guzzle": "^6.3",
+        "kamermans/guzzle-oauth2-subscriber": "^1.0",
         "laravel/framework": "5.8.*",
         "laravel/nova": "^2.0",
         "laravel/tinker": "^1.0",
@@ -26,7 +27,8 @@
         "spatie/laravel-responsecache": "^6.0",
         "spatie/laravel-sluggable": "^2.1",
         "spatie/laravel-tail": "^3.2",
-        "timothyasp/nova-color-field": "^1.0"
+        "timothyasp/nova-color-field": "^1.0",
+        "ext-json": "*"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.5",
