@@ -24,7 +24,7 @@ class UpdateMeetupComEventAction
         $eventId = $event->meetup_com_event_id;
 
         // Don't update the event when it's passed
-        if ($event->date->startOfDay() <= now()->startOfDay()) {
+        if ($event->date && $event->date->startOfDay() <= now()->startOfDay()) {
             return;
         }
 
