@@ -24,7 +24,7 @@ class MeetupApi
         $oauthConfig = [
             'client_id' => config('services.meetup.key'),
             'client_secret' => config('services.meetup.secret'),
-            'scope' => 'event_management',
+            'scope' => 'basic+event_management',
         ];
 
         $clientCredentials = new ClientCredentials($client, $oauthConfig);
