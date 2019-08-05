@@ -25,6 +25,7 @@ return [
         'api_key' => env('MEETUP_API_KEY'),
         'key' => env('MEETUP_KEY'),
         'secret' => env('MEETUP_SECRET'),
+        'refresh_token' => env('MEETUP_REFRESH_TOKEN'),
     ],
 
     'mailgun' => [

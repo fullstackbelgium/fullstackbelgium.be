@@ -6,7 +6,7 @@ use App\Models\Event;
 use Exception;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Log;
-use kamermans\OAuth2\GrantType\ClientCredentials;
+use kamermans\OAuth2\GrantType\RefreshToken;
 use kamermans\OAuth2\OAuth2Middleware;
 
 class MeetupApi
@@ -24,11 +24,12 @@ class MeetupApi
         $oauthConfig = [
             'client_id' => config('services.meetup.key'),
             'client_secret' => config('services.meetup.secret'),
-            'scope' => 'basic+event_management',
+            'refresh_token' => config('services.meetup.refresh_token'),
+            'scope' => 'ageless+basic+event_management',
         ];
 
-        $clientCredentials = new ClientCredentials($client, $oauthConfig);
-        $oAuth2Middleware = new OAuth2Middleware($clientCredentials);
+        $refreshToken = new RefreshToken($client, $oauthConfig);
+        $oAuth2Middleware = new OAuth2Middleware($refreshToken);
 
         $this->client = $meetupClient;
         $this->client->getConfig('handler')->push($oAuth2Middleware);
