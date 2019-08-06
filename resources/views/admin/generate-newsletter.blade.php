@@ -4,6 +4,7 @@
 
 Dear meetup members,<br/><br/>
 {!! markdownToHtml($event->intro) !!}<br/>
+We're also happy to share a discount code with you for our conference: <a href="https://fullstackeurope.com">Full Stack Europe</a>. <a href="https://bit.ly/fullstackeughent">Use the following link</a> to get a discount of €100. Join us to have 2 amazing days of learning from a wide range of topics and amazing speakers!<br><br>
 If you want to attend this meetup, please RSVP on <a href="{{ $event->meetup_com_url }}">the event page at meetup.com</a>. If you cannot attend, <b>please remember to change your RSVP</b>.<br/><br />
 
 @if ($event->sponsors->count() > 0)

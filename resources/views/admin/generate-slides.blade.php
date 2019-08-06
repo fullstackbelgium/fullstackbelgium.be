@@ -111,7 +111,7 @@
             <section>
                 <h2>FSEU ❤️ FSBE</h2>
                 <h2>€100 Discount</h2>
-                <h2 style="text-transform: lowercase">bit.ly/fullstackeuantwerp</h2>
+                <h2 style="text-transform: lowercase">bit.ly/fullstackeughent</h2>
             </section>
 
             <section>
