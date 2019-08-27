@@ -33,6 +33,7 @@
             <section>
                 <img class="w-1/2" src="{{ asset('/storage/'.$event->meetup->logo) }}" alt="">
             </section>
+
             <section>
                 <h2>Thanks to</h2>
                 <img class="w-2/5" src="{{ asset('/storage/'.$event->venue_logo) }}" alt="">
