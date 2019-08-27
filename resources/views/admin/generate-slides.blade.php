@@ -52,7 +52,7 @@
                 <h2>How can you help?</h2>
                 <div class="text-left" style="margin-left: 9rem;">
                     <p>📸 Take pictures</p>
-                    <p>🐦 Tweet during the meetup (mention @fullstackbe)</p>
+                    <p>🐦 Tweet during the meetup<br>(mention @fullstackbe)</p>
                     <p>💬 Leave a comment on meetup.com</p>
                     <p>👤 Bring your colleagues and friends!</p>
                 </div>
