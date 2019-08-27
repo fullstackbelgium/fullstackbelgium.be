@@ -47,6 +47,16 @@
                 </section>
             @endforeach
 
+            <section>
+                <h2>How can you help?</h2>
+                <div class="text-left" style="margin-left: 9rem;">
+                    <p>📸 Take pictures</p>
+                    <p>🐦 Tweet during the meetup (mention @fullstackbe)</p>
+                    <p>💬 Leave a comment on meetup.com</p>
+                    <p>👤 Bring your colleagues and friends!</p>
+                </div>
+            </section>
+
             <?php $nextMeetup = $event->meetup->eventAfter($event) ?>
 
             @if ($nextMeetup)
@@ -111,17 +121,7 @@
             <section>
                 <h2>FSEU ❤️ FSBE</h2>
                 <h2>€100 Discount</h2>
-                <h2 style="text-transform: lowercase">bit.ly/fullstackeughent</h2>
-            </section>
-
-            <section>
-                <h2>How can you help?</h2>
-                <div class="text-left" style="margin-left: 9rem;">
-                    <p>📸 Take pictures</p>
-                    <p>🐦 Tweet during the meetup</p>
-                    <p>💬 Leave a comment on meetup.com</p>
-                    <p>👤 Bring your colleagues and friends!</p>
-                </div>
+                <h2 style="text-transform: lowercase">bit.ly/fullstackeuantwerp</h2>
             </section>
 
             <section class="text-left px-12">
