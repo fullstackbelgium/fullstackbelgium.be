@@ -25,6 +25,11 @@
         .w-2\/5 {
             width: 40%;
         }
+
+        .my-1 {
+            margin-top: 0.25rem;
+            margin-bottom: 0.25rem;
+        }
     </style>
 </head>
 <body>
@@ -36,7 +41,7 @@
 
             <section>
                 <h2>Thanks to</h2>
-                <img class="w-2/5" src="{{ asset('/storage/'.$event->venue_logo) }}" alt="">
+                <img class="w-2/5 my-1" src="{{ asset('/storage/'.$event->venue_logo) }}" alt="">
                 <h2>for hosting</h2>
             </section>
 
