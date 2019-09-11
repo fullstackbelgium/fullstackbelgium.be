@@ -63,7 +63,7 @@
             @if ($nextMeetup)
                 <section class="text-left px-12" data-markdown>
                     <textarea class="leading-normal" data-template>
-                        ## Our next meetup <span style="color: {{ $event->meetup->color  }}">{{ $nextMeetup->date->format('d/m') }}</span> <small>at <span style="color: {{ $event->meetup->color  }}">{{ $nextMeetup->venue_name }}</span></small>
+                        ## Our next meetup <span style="color: {{ $event->meetup->color  }}">{{ $nextMeetup->date->format('d/m') }}</span>@if($nextMeetup->venue_name)<br><small>at <span style="color: {{ $event->meetup->color  }}">{{ $nextMeetup->venue_name }}</span></small>@endif
                         **{{ $nextMeetup->speaker_1_title }}**<br>
                         &mdash; {{ $nextMeetup->speaker_1_name }}
 
@@ -84,7 +84,7 @@
                 @if ($nextEvent)
                     <section class="text-left px-12" data-markdown>
                         <textarea class="leading-normal" data-template>
-                            ## Our next <span style="color: {{ $nextEvent->meetup->color }}">{{ str_replace('Full Stack ', '', $otherMeetup->name) }}</span><br>meetup: <span style="color: {{ $nextEvent->meetup->color }}">{{ $nextEvent->date->format('d/m') }}</span>@if($nextEvent->venue_name && !empty($nextEvent->venue_name))<p><small>at <span style="color: {{ $nextEvent->meetup->color  }}">{{ $nextEvent->venue_name }}</span></small></p>@endif
+                            ## Our next <span style="color: {{ $nextEvent->meetup->color }}">{{ str_replace('Full Stack ', '', $otherMeetup->name) }}</span><br>meetup: <span style="color: {{ $nextEvent->meetup->color }}">{{ $nextEvent->date->format('d/m') }}</span>@if($nextEvent->venue_name)<br><small>at <span style="color: {{ $nextEvent->meetup->color  }}">{{ $nextEvent->venue_name }}</span></small>@endif
                             **{{ $nextEvent->speaker_1_title }}**<br>
                             &mdash; {{ $nextEvent->speaker_1_name }}
 
