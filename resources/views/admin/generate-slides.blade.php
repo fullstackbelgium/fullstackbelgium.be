@@ -48,7 +48,7 @@
             @foreach ($event->sponsors as $sponsor)
                 <section>
                     <h2>Thanks to</h2>
-                    <img class="w-2/5" src="{{ asset('/storage/'.$sponsor->logo) }}" alt="">
+                    <img class="w-2/5 my-1" src="{{ asset('/storage/'.$sponsor->logo) }}" alt="">
                     <h2>for sponsoring</h2>
                 </section>
             @endforeach
