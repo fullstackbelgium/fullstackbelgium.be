@@ -84,7 +84,7 @@
                 @if ($nextEvent)
                     <section class="text-left px-12" data-markdown>
                         <textarea class="leading-normal" data-template>
-                            ## Our next <span style="color: {{ $nextEvent->meetup->color }}">{{ str_replace('Full Stack ', '', $otherMeetup->name) }}</span><br>meetup: <span style="color: {{ $nextEvent->meetup->color }}">{{ $nextEvent->date->format('d/m') }}</span><br><small>at <span style="color: {{ $nextEvent->meetup->color  }}">{{ $nextEvent->venue_name }}</span></small>
+                            ## Our next <span style="color: {{ $nextEvent->meetup->color }}">{{ str_replace('Full Stack ', '', $otherMeetup->name) }}</span><br>meetup: <span style="color: {{ $nextEvent->meetup->color }}">{{ $nextEvent->date->format('d/m') }}</span>@if($nextEvent->venue_name)<br><small>at <span style="color: {{ $nextEvent->meetup->color  }}">{{ $nextEvent->venue_name }}</span></small>@endif
                             **{{ $nextEvent->speaker_1_title }}**<br>
                             &mdash; {{ $nextEvent->speaker_1_name }}
 
@@ -122,7 +122,11 @@
             <section>
                 <h2>FSEU ❤️ FSBE</h2>
                 <h2>€100 Discount</h2>
-                <h2 style="text-transform: lowercase">bit.ly/fullstackeuantwerp</h2>
+                @if($event->meetup->name === 'Full Stack Antwerp')
+                    <h2 style="text-transform: lowercase">bit.ly/fullstackeuantwerp</h2>
+                @else
+                    <h2 style="text-transform: lowercase">bit.ly/fullstackeughent</h2>
+                @endif
             </section>
 
             <section class="text-left px-12">
