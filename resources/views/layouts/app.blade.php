@@ -70,6 +70,9 @@
                         <li class="mb-3 sm:mb-0 sm:mr-3 md:mr-5">
                             <a href="https://twitter.com/fullstackbe" target="_blank"  rel="noopener">Twitter</a>
                         </li>
+                        <li class="mb-3 sm:mb-0 sm:mr-3 md:mr-5">
+                            <a href="https://www.instagram.com/fullstackbe/" target="_blank"  rel="noopener">Instagram</a>
+                        </li>
                         <li class="{{ $active === 'contact' ? 'font-bold text-black' : '' }}">
                             <a href="{{ url('contact') }}">Contact</a>
                         </li>
