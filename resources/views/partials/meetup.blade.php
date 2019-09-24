@@ -71,7 +71,7 @@
                         @else
                             You?
                             <br>
-                            <span class="text-sm text-gray-700"><a style="color: {{ $meetup->color }}" href="{{ url('contact') }}">Contact us</a> to claim your slot!</span>
+                            <span class="text-sm text-gray-700"><a href="{{ url('contact') }}" class="link">Contact us</a> to claim your slot!</span>
                         @endif
                     </p>
                 </li>
