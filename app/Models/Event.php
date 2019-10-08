@@ -34,7 +34,7 @@ class Event extends Model
                 return;
             }
 
-            //app(UpdateMeetupComEventAction::class)->execute($event);
+            app(UpdateMeetupComEventAction::class)->execute($event);
         });
     }
 
