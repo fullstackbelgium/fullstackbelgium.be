@@ -115,25 +115,6 @@
                 <img class="w-1/2" src="{{ asset('images/fseu.png') }}" alt="">
             </section>
 
-            <section>
-                <h2>Full Stack Europe</h2>
-                <p>With talks about...</p>
-                <p>
-                    Serverless, React, Machine Learning, Chatbots, JavaScript, Application Architecture, Type Hints, Microservices, Linux, Graph Databases, Varnish and much more...
-                </p>
-                <p>fullstackeurope.com</p>
-            </section>
-
-            <section>
-                <h2>FSEU ❤️ FSBE</h2>
-                <h2>€100 Discount</h2>
-                @if($event->meetup->name === 'Full Stack Antwerp')
-                    <h2 style="text-transform: lowercase">bit.ly/fullstackeuantwerp</h2>
-                @else
-                    <h2 style="text-transform: lowercase">bit.ly/fullstackeughent</h2>
-                @endif
-            </section>
-
             <section class="text-left px-12">
                 <div class="flex items-center">
                     <img class="w-1/2" src="{{ asset('/storage/'.$event->meetup->logo) }}" alt="">
