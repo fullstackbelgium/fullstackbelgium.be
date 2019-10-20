@@ -112,7 +112,11 @@
             </section>
 
             <section style="background: url({{ asset('images/fseu-bg.png') }}); background-size: cover;">
-                <img class="w-1/2" src="{{ asset('images/fseu.png') }}" alt="">
+                <img src="{{ asset('images/fseu.png') }}" alt="">
+            </section>
+
+            <section>
+                <img src="{{ asset('images/eventy.png') }}" alt="">
             </section>
 
             <section class="text-left px-12">
