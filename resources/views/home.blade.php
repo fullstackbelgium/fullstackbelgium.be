@@ -125,12 +125,28 @@
     @foreach ($meetups as $meetup)
         @foreach ($meetup->upcomingEvents as $event)
             <?php
+                /** @var \Illuminate\Support\Carbon $startDate */
+                $startDate = $event->date;
+                $startDate->setHour(19)->setMinutes(0)->setSeconds(0);
+                $endDate = $startDate->copy()->setHour(22);
             /** @var \App\Models\Event $event */
             $socialEvent = Spatie\SchemaOrg\Schema::socialEvent()
+                ->name($meetup->name)
+                ->startDate($startDate)
+                ->endDate($endDate)
                 ->url($event->meetup_com_url)
                 ->image(Spatie\SchemaOrg\Schema::imageObject()->url(asset('/storage/'.$meetup->logo)))
-                ->location(Spatie\SchemaOrg\Schema::place()->name($event->venue_name)->image(Spatie\SchemaOrg\Schema::imageObject()->url(asset('/storage/'.$event->venue_logo))))
-                ->doorTime($event->date->format('Y-m-d 19:00:00'))
+                ->location(
+                    Spatie\SchemaOrg\Schema::place()
+                        ->name($event->venue_name)
+                        ->image(Spatie\SchemaOrg\Schema::imageObject()->url(asset('/storage/'.$event->venue_logo)))
+                        ->address(
+                            Spatie\SchemaOrg\Schema::postalAddress()
+                                ->addressCountry('Belgium')
+                                ->addressLocality(str_replace('Full Stack ', '', $meetup->name))
+                        )
+                )
+                ->doorTime($startDate)
                 ->isAccessibleForFree(true)
                 ->organizer([
                     Spatie\SchemaOrg\Schema::person()->name('Dries Vints')->url('https://driesvints.com'),
