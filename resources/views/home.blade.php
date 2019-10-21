@@ -125,13 +125,31 @@
     @foreach ($meetups as $meetup)
         @foreach ($meetup->upcomingEvents as $event)
             <?php
-                /** @var \Illuminate\Support\Carbon $startDate */
-                $startDate = $event->date;
-                $startDate->setHour(19)->setMinutes(0)->setSeconds(0);
-                $endDate = $startDate->copy()->setHour(22);
+            /** @var \Illuminate\Support\Carbon $startDate */
+            $startDate = $event->date;
+            $startDate->setHour(19)->setMinutes(0)->setSeconds(0);
+            $endDate = $startDate->copy()->setHour(22);
+
+            $performers = [];
+            if ($event->speaker_1_name) {
+                $performers[] = Spatie\SchemaOrg\Schema::person()
+                    ->name($event->speaker_1_name)
+                    ->url("https://twitter.com/{$event->speaker_1_twitter}")
+                    ->description($event->speaker_1_bio);
+            }
+
+            if ($event->speaker_2_name) {
+                $performers[] = Spatie\SchemaOrg\Schema::person()
+                    ->name($event->speaker_2_name)
+                    ->url("https://twitter.com/{$event->speaker_2_twitter}")
+                    ->description($event->speaker_2_bio);
+            }
+
             /** @var \App\Models\Event $event */
             $socialEvent = Spatie\SchemaOrg\Schema::socialEvent()
                 ->name($meetup->name)
+                ->description($event->intro)
+                ->performers($performers)
                 ->startDate($startDate)
                 ->endDate($endDate)
                 ->url($event->meetup_com_url)
