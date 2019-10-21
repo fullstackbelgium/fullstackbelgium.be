@@ -121,4 +121,33 @@
             </ul>
         </div>
     </section>
+
+    @foreach ($meetups as $meetup)
+        @foreach ($meetup->upcomingEvents as $event)
+            <?php
+            /** @var \App\Models\Event $event */
+            $socialEvent = Spatie\SchemaOrg\Schema::socialEvent()
+                ->url($event->meetup_com_url)
+                ->image(Spatie\SchemaOrg\Schema::imageObject()->url(asset('/storage/'.$meetup->logo)))
+                ->location(Spatie\SchemaOrg\Schema::place()->name($event->venue_name)->image(Spatie\SchemaOrg\Schema::imageObject()->url(asset('/storage/'.$event->venue_logo))))
+                ->doorTime($event->date->format('Y-m-d 19:00:00'))
+                ->isAccessibleForFree(true)
+                ->organizer([
+                    Spatie\SchemaOrg\Schema::person()->name('Dries Vints')->url('https://driesvints.com'),
+                    Spatie\SchemaOrg\Schema::person()->name('Rias Van der Veken')->url('https://rias.be'),
+                ]);
+
+            $sponsors = $event->sponsors->map(function (App\Models\Sponsor $sponsor) {
+                return Spatie\SchemaOrg\Schema::organization()
+                    ->name($sponsor->name)
+                    ->image(Spatie\SchemaOrg\Schema::imageObject()->url(asset('/storage/'.$sponsor->logo)));
+            });
+
+            if (count($sponsors) > 0) {
+                $socialEvent->sponsor($sponsors);
+            }
+            ?>
+            {!! $socialEvent->toScript() !!}
+        @endforeach
+    @endforeach
 @endcomponent
