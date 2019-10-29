@@ -53,16 +53,6 @@
                 </section>
             @endforeach
 
-            <section>
-                <h2>How can you help?</h2>
-                <div class="text-left" style="margin-left: 9rem;">
-                    <p>📸 Take pictures</p>
-                    <p>🐦 Tweet or share a story on Instagram during the meetup (mention @fullstackbe)</p>
-                    <p>💬 Leave a comment on meetup.com</p>
-                    <p>👤 Bring your colleagues and friends!</p>
-                </div>
-            </section>
-
             <?php $nextMeetup = $event->meetup->eventAfter($event) ?>
 
             @if ($nextMeetup)
@@ -117,6 +107,16 @@
 
             <section>
                 <img src="{{ asset('images/eventy.png') }}" alt="">
+            </section>
+
+            <section>
+                <h2>How can you help?</h2>
+                <div class="text-left" style="margin-left: 9rem;">
+                    <p>📸 Take pictures</p>
+                    <p>🐦 Tweet or share a story on Instagram during the meetup (mention @fullstackbe)</p>
+                    <p>💬 Leave a comment on meetup.com</p>
+                    <p>👤 Bring your colleagues and friends!</p>
+                </div>
             </section>
 
             <section class="text-left px-12">
