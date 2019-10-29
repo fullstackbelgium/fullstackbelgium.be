@@ -1,11 +1,21 @@
 <html>
 <body>
-<p><strong>{{ $event->determineMeetupComName() }} on {{ $event->date->format('l \t\h\e jS ') }}</strong></p>
+<p>
+    <strong>{{ $event->determineMeetupComName() }} on {{ $event->date->format('l \t\h\e jS ') }}</strong>
+</p>
 
-Dear meetup members,<br/><br/>
-{!! markdownToHtml($event->intro) !!}<br/>
-We're also happy to share a discount code with you for our conference: <a href="https://fullstackeurope.com">Full Stack Europe</a>. <a href="https://bit.ly/fullstackeughent">Use the following link</a> to get a discount of €100. Join us to have 2 amazing days of learning from a wide range of topics and amazing speakers!<br><br>
-If you want to attend this meetup, please RSVP on <a href="{{ $event->meetup_com_url }}">the event page at meetup.com</a>. If you cannot attend, <b>please remember to change your RSVP</b>.<br/><br />
+<p>Dear meetup members,</p>
+<br>
+{!! markdownToHtml($event->intro) !!}
+<br>
+<p>
+    We're also happy to announce <a href="https://eventy.io/">Eventy, a new platform for managing your events</a>. Eventy is currently under construction but as soon as it's ready we'll be moving with the user group to our new home. Make sure you <a href="https://eventy.io/">subscribe to the newsletter</a> and <a href="https://twitter.com/eventyio">follow the twitter account</a> to be the first to know when it launches.
+</p>
+<br>
+<p>
+    If you want to attend this meetup, please RSVP on <a href="{{ $event->meetup_com_url }}">the event page at meetup.com</a>. If you cannot attend, <b>please remember to change your RSVP</b>.
+</p>
+<br>
 
 @if ($event->sponsors->count() > 0)
     <p><b>Sponsors</b></p>
