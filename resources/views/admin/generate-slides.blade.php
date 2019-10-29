@@ -101,7 +101,7 @@
                 <p>fullstackbelgium.be</p>
             </section>
 
-            <section style="background: url({{ asset('images/fseu-bg.png') }}); background-size: cover;">
+            <section>
                 <img src="{{ asset('images/fseu.png') }}" alt="">
             </section>
 

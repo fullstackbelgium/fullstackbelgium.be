@@ -3,18 +3,16 @@
 <p>
     <strong>{{ $event->determineMeetupComName() }} on {{ $event->date->format('l \t\h\e jS ') }}</strong>
 </p>
-
-<p>Dear meetup members,</p>
+Dear members,<br>
 <br>
 {!! markdownToHtml($event->intro) !!}
+
+If you want to attend this event, please RSVP on <a href="{{ $event->meetup_com_url }}">the event page at meetup.com</a>. If you cannot attend, <b>please remember to change your RSVP</b>.<br>
 <br>
-<p>
-    We're also happy to announce <a href="https://eventy.io/">Eventy, a new platform for managing your events</a>. Eventy is currently under construction but as soon as it's ready we'll be moving with the user group to our new home. Make sure you <a href="https://eventy.io/">subscribe to the newsletter</a> and <a href="https://twitter.com/eventyio">follow the twitter account</a> to be the first to know when it launches.
-</p>
+<b>Eventy</b><br>
 <br>
-<p>
-    If you want to attend this meetup, please RSVP on <a href="{{ $event->meetup_com_url }}">the event page at meetup.com</a>. If you cannot attend, <b>please remember to change your RSVP</b>.
-</p>
+We're also happy to announce <a href="https://eventy.io/">Eventy, a new platform for managing your events</a>. Eventy is currently under construction but as soon as it's ready we'll be moving with the user group to our new home. Make sure you <a href="https://eventy.io/">subscribe to the newsletter</a> and <a href="https://twitter.com/eventyio">follow the twitter account</a> to be the first to know when it launches.
+<br>
 <br>
 
 @if ($event->sponsors->count() > 0)

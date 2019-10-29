@@ -1,5 +1,5 @@
 @if ($event->intro)
-Dear meetup members,<br/>
+Dear members,<br/>
 <br/>
 {!! $event->intro !!}<br/>
 We hope to see you soon,<br/>
@@ -7,7 +7,7 @@ Dries & Rias<br/>
 <br>
 PS: Please remember to change your RSVP if you cannot attend.<br>
 @else
-More info about the meetup soon...<br>
+More info about the event soon...<br>
 @endif
 <br>
 EVENTY<br>
@@ -20,7 +20,7 @@ SCHEDULE<br>
 
 TALKS<br>
 @if (!$event->speaker_1_title && !$event->speaker_2_title)
-Want to speak at this meetup? Contact dries.vints@gmail.com!
+Want to speak at this event? Contact dries.vints@gmail.com!
 @endif
 @if ($event->speaker_1_title && $event->speaker_1_name)
 {{ $event->speaker_1_title }} by {{ $event->speaker_1_name }}<br>
