@@ -58,7 +58,7 @@
             @if ($nextMeetup)
                 <section class="text-left px-12" data-markdown>
                     <textarea class="leading-normal" data-template>
-                        ## Our next meetup <span style="color: {{ $event->meetup->color  }}">{{ $nextMeetup->date->format('d/m') }}</span>@if($nextMeetup->venue_name)<br><small>at <span style="color: {{ $event->meetup->color  }}">{{ $nextMeetup->venue_name }}</span></small>@endif
+                        ## Our next event <span style="color: {{ $event->meetup->color  }}">{{ $nextMeetup->date->format('d/m') }}</span>@if($nextMeetup->venue_name)<br><small>at <span style="color: {{ $event->meetup->color  }}">{{ $nextMeetup->venue_name }}</span></small>@endif
                         **{{ $nextMeetup->speaker_1_title }}**<br>
                         &mdash; {{ $nextMeetup->speaker_1_name }}
 
@@ -79,7 +79,7 @@
                 @if ($nextEvent)
                     <section class="text-left px-12" data-markdown>
                         <textarea class="leading-normal" data-template>
-                            ## Our next <span style="color: {{ $nextEvent->meetup->color }}">{{ str_replace('Full Stack ', '', $otherMeetup->name) }}</span><br>meetup: <span style="color: {{ $nextEvent->meetup->color }}">{{ $nextEvent->date->format('d/m') }}</span>@if($nextEvent->venue_name)<br><small>at <span style="color: {{ $nextEvent->meetup->color  }}">{{ $nextEvent->venue_name }}</span></small>@endif
+                            ## Our next <span style="color: {{ $nextEvent->meetup->color }}">{{ str_replace('Full Stack ', '', $otherMeetup->name) }}</span><br>event: <span style="color: {{ $nextEvent->meetup->color }}">{{ $nextEvent->date->format('d/m') }}</span>@if($nextEvent->venue_name)<br><small>at <span style="color: {{ $nextEvent->meetup->color  }}">{{ $nextEvent->venue_name }}</span></small>@endif
                             **{{ $nextEvent->speaker_1_title }}**<br>
                             &mdash; {{ $nextEvent->speaker_1_name }}
 
@@ -113,8 +113,8 @@
                 <h2>How can you help?</h2>
                 <div class="text-left" style="margin-left: 9rem;">
                     <p>📸 Take pictures</p>
-                    <p>🐦 Tweet or share a story on Instagram during the meetup (mention @fullstackbe)</p>
-                    <p>💬 Leave a comment on meetup.com</p>
+                    <p>🐦 Tweet or share a story on Instagram during the event (mention @fullstackbe)</p>
+                    <p>💬 Leave a comment on the event page</p>
                     <p>👤 Bring your colleagues and friends!</p>
                 </div>
             </section>

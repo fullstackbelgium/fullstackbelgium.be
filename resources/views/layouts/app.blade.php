@@ -24,7 +24,7 @@
         <title>Full Stack Belgium</title>
     @endisset
 
-    <meta name="description" content="Organising meetups on front-end, back-end, devops and everything in between in the cities of Antwerp and Ghent">
+    <meta name="description" content="Organising events on front-end, back-end, devops and everything in between in the cities of Antwerp and Ghent">
 
     <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">

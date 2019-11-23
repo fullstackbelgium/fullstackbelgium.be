@@ -1,13 +1,13 @@
 @component('layouts.app', ['active' => 'home'])
     <section class="wrapper pb-12">
         <p class="md:w-2/3 text-2xl pb-16 md:pb-24 md:border-b">
-            Organising meetups on front-end, back-end, devops and everything in between in the cities of <strong class="font-medium">Antwerp</strong> and <strong class="font-medium">Ghent</strong>.
+            Organising events on front-end, back-end, devops and everything in between in the cities of <strong class="font-medium">Antwerp</strong> and <strong class="font-medium">Ghent</strong>.
         </p>
         <div class="flex flex-col items-end mb-12 md:mb-24" style="margin-top: -2.4rem;">
             <div class="w-full md:max-w-min-content">
                 <section class="box p-6 md:flex whitespace-no-wrap">
                     <h2 class="mb-2 mr-8 font-bold">
-                        Our next meetups
+                        Our next events
                     </h2>
                     <ol>
                         @foreach ($meetups as $meetup)
@@ -38,7 +38,7 @@
                     </ol>
                 </section>
                 <p class="mr-1 mt-3 text-xs text-gray-700 text-center md:text-right">
-                    Can't join any of our meetups? Hang out with us on <a class="link is-small" href="{{ url('slack') }}">Slack</a> instead!
+                    Can't join any of our events? Hang out with us on <a class="link is-small" href="{{ url('slack') }}">Slack</a> instead!
                 </p>
             </div>
         </div>
@@ -87,7 +87,7 @@
                 @endcomponent
             </div>
             <p class="text-2xl mb-4">
-                🎉 Thanks to all <strong class="font-bold text-2xl px-2 py-1 bg-white shadow-md rounded-sm">{{ $totalAttendees }}</strong> attendees for joining last month's meetups! 🎉
+                🎉 Thanks to all <strong class="font-bold text-2xl px-2 py-1 bg-white shadow-md rounded-sm">{{ $totalAttendees }}</strong> attendees for joining last month's events! 🎉
             </p>
             <p class="text-gray-700">
                 We're always on the lookout for speakers, sponsors and venues for our user groups.
@@ -100,7 +100,7 @@
     <section class="bg-white border-t border-b border-gray-300 py-8 md:py-16">
         <div class="wrapper">
             <h2 class="text-center font-bold mb-1">Organised by Dries &amp; Rias</h2>
-            <p class="text-center text-sm text-gray-700 mb-8 md:mb-12">Come say hi at our next meetup! 👋</p>
+            <p class="text-center text-sm text-gray-700 mb-8 md:mb-12">Come say hi at our next event! 👋</p>
             <ul class="flex flex-wrap justify-center">
                 <li class="w-full sm:w-1/2 md:w-1/3 mb-8 md:mb-0 text-center">
                     <img class="inline-block w-24 mb-3 rounded-full border-4 border-white shadow-md" src="{{ url('images/dries.jpg') }}" alt="Headshot of Dries Vints">

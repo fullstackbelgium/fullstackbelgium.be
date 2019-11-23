@@ -32,6 +32,14 @@ return [
     */
     'connections' => [
 
+        'sqlite' => [
+            'driver' => 'sqlite',
+            'url' => env('DATABASE_URL'),
+            'database' => env('DB_DATABASE', database_path('database.sqlite')),
+            'prefix' => '',
+            'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
+        ],
+
         'mysql' => [
             'driver' => 'mysql',
             'host' => env('DB_HOST', '127.0.0.1'),
@@ -46,15 +54,6 @@ return [
             'prefix_indexes' => true,
             'strict' => true,
             'engine' => null,
-        ],
-
-        'testing' => [
-            'driver' => 'mysql',
-            'host' => '127.0.0.1',
-            'database' => 'fullstackbelgium_testing',
-            'username' => 'root',
-            'password' => '',
-            'prefix' => '',
         ],
 
         'pgsql' => [

@@ -10,6 +10,9 @@ class RemoveDateFieldFromEventsTable extends Migration
     {
         Schema::table('events', function (Blueprint $table) {
             $table->dropColumn('date');
+        });
+
+        Schema::table('events', function (Blueprint $table) {
             $table->string('name')->nullable();
         });
     }

@@ -14,7 +14,7 @@
                 intended - a guide to make it easier to enrich all of us and the technical communities in which we
                 participate.</p>
             <p>This code of conduct applies to all spaces used by the Full Stack Belgium community for communication. This includes
-                Full Stack Belgium Slack, GitHub, Twitter, our Meetups, conferences, and any other
+                Full Stack Belgium Slack, GitHub, Twitter, our Events, conferences, and any other
                 relevant forums. Violations of this code outside of any spaces managed by the Full Stack Belgium team will still
                 affect a person’s ability to participate within them.</p>
             <p>If you believe someone is violating the code of conduct, we ask that you report it by emailing <a

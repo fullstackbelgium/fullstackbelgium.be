@@ -4,10 +4,13 @@ namespace Tests\Models;
 
 use App\Models\Event;
 use Carbon\Carbon;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class EventTest extends TestCase
 {
+    use RefreshDatabase;
+
     /** @var \Tests\Mocks\MeetupApi */
     protected $meetupApi;
 
@@ -58,10 +61,10 @@ class EventTest extends TestCase
             'date' => Carbon::createFromFormat('Ymd', '20180201')
         ]);
 
-        $this->assertEquals('February Meetup', $event->determineMeetupComName());
+        $this->assertEquals('February Event', $event->determineMeetupComName());
 
         $event->update(['venue_name' => 'Spatie']);
 
-        $this->assertEquals('February Meetup at Spatie', $event->determineMeetupComName());
+        $this->assertEquals('February Event at Spatie', $event->determineMeetupComName());
     }
 }

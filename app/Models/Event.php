@@ -77,7 +77,7 @@ class Event extends Model
 
     public function determineMeetupComName(): string
     {
-        $name = "{$this->date->format('F')} Meetup";
+        $name = "{$this->date->format('F')} Event";
 
         if (! empty($this->venue_name)) {
             $name .= " at {$this->venue_name}";

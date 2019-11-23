@@ -13,14 +13,9 @@ use Tests\Mocks\Twitter as TwitterMock;
 
 abstract class TestCase extends BaseTestCase
 {
-    use CreatesApplication,
-        RefreshDatabase,
-        InteractsWithContainer;
-
-    public function setUp(): void
-    {
-        parent::setUp();
-    }
+    use CreatesApplication;
+    use RefreshDatabase;
+    use InteractsWithContainer;
 
     protected function setNow(string $date)
     {
@@ -38,8 +33,6 @@ abstract class TestCase extends BaseTestCase
 
     protected function fakeMeetupApi(): MeetupApiMock
     {
-
-
         $this->swap(MeetupApi::class, new MeetupApiMock());
 
         return app(MeetupApi::class);

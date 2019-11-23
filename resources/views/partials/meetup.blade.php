@@ -21,7 +21,7 @@
     </header>
     <div class="flex-1">
         <h3 class="text-sm text-gray-700 mb-2">
-            Next meetup:
+            Next event:
         </h3>
         @php($nextEvent = $meetup->upcomingEvents->first())
         @if ($nextEvent)
