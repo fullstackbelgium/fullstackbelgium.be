@@ -47,7 +47,7 @@
         <section class="bg-europe-dark border-t-4 border-europe-light text-white font-medium pt-3 pb-4 mb-4">
             <div class="wrapper text-center">
                 <a class="focus:underline focus:bg-transparent" href="https://fullstackeurope.com/" target="_blank" rel="noopener">
-                    We're doing a conference! Join us at Hilton Antwerp Old Town for Full Stack Europe 2019 →
+                    Join us at Full Stack Europe, our conference in Antwerp  →
                 </a>
             </div>
         </section>
