@@ -6,8 +6,7 @@ use App\Services\Twitter\Twitter;
 
 class SendTweetAction
 {
-    /** @var \App\Services\Twitter\Twitter */
-    protected $twitter;
+    protected Twitter $twitter;
 
     public function __construct(Twitter $twitter)
     {
