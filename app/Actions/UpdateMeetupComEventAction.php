@@ -9,7 +9,8 @@ use Illuminate\Support\Facades\Log;
 
 class UpdateMeetupComEventAction
 {
-    protected MeetupApi $meetupApi;
+    /** @var \App\Services\Meetup\MeetupApi */
+    protected $meetupApi;
 
     public function __construct(MeetupApi $meetupApi)
     {

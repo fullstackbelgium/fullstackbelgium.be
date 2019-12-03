@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Log;
 class MeetupApi
 {
     /** @var \GuzzleHttp\Client */
-    protected Client $client;
+    protected $client;
 
     public function __construct(Client $meetupClient)
     {

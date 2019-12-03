@@ -41,7 +41,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     protected function gate()
     {
-        Gate::define('viewNova', fn($user) => auth()->check());
+        Gate::define('viewNova', function ($user) {
+            return auth()->check();
+        });
     }
 
     /**
