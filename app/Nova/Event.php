@@ -11,26 +11,20 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Boolean;
-use Laravel\Nova\Fields\Date;
-use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Heading;
-use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Trix;
-use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Panel;
 
 class Event extends Resource
 {
     public static $model = \App\Models\Event::class;
 
-    public static $title = 'date';
+    public static $title = 'name';
 
     public static $search = [
-        'venue_name',
         'intro',
         'speaker_1_name',
         'speaker_1_title',
@@ -90,15 +84,8 @@ class Event extends Resource
 
             new Panel("Venue", function () {
                 return [
-                    Heading::make('Venue')->onlyOnForms(),
-                    Text::make('Venue name')->help('Will not be sent to meetup.com'),
+                    BelongsTo::make('Venue')->nullable(),
                     Trix::make('Venue info')->help('Will not be sent to meetup.com. e.g. Venue will provide snacks & drinks.'),
-                    Image::make('Venue logo')
-                      ->disk('public')->storeAs(function (Request $request) {
-                          return sha1($request->venue_logo->getClientOriginalName()) . '.' . $request->venue_logo->getClientOriginalExtension();
-                      })
-                      ->hideFromIndex()
-                      ->help('Will not be sent to meetup.com'),
                 ];
             }),
 

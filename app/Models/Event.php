@@ -50,6 +50,11 @@ class Event extends Model
             ->withTimestamps();
     }
 
+    public function venue(): BelongsTo
+    {
+        return $this->belongsTo(Venue::class);
+    }
+
     public function scopeShouldBeTweeted(Builder $query)
     {
         return $query
@@ -79,8 +84,8 @@ class Event extends Model
     {
         $name = "{$this->date->format('F')} Event";
 
-        if (! empty($this->venue_name)) {
-            $name .= " at {$this->venue_name}";
+        if ($this->venue) {
+            $name .= " at {$this->venue->name}";
         }
 
         return $name;
@@ -89,5 +94,10 @@ class Event extends Model
     public function getMeetupComUrlAttribute(): string
     {
         return "https://meetup.com/{$this->meetup->meetup_com_id}/events/{$this->meetup_com_event_id}";
+    }
+
+    public function getNameAttribute(): string
+    {
+        return "{$this->meetup->name} {$this->date->format('d/m/Y')}";
     }
 }

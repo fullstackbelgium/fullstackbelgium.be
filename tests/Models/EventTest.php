@@ -3,6 +3,7 @@
 namespace Tests\Models;
 
 use App\Models\Event;
+use App\Models\Venue;
 use Carbon\Carbon;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -57,14 +58,13 @@ class EventTest extends TestCase
     {
         /** @var Event $event */
         $event = factory(Event::class)->create([
-            'venue_name' => null,
             'date' => Carbon::createFromFormat('Ymd', '20180201')
         ]);
 
         $this->assertEquals('February Event', $event->determineMeetupComName());
 
-        $event->update(['venue_name' => 'Spatie']);
+        $event->update(['venue_id' => Venue::create(['name' => 'Spatie'])->id]);
 
-        $this->assertEquals('February Event at Spatie', $event->determineMeetupComName());
+        $this->assertEquals('February Event at Spatie', $event->fresh()->determineMeetupComName());
     }
 }

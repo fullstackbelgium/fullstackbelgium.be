@@ -39,11 +39,13 @@
                 <img class="w-1/2" src="{{ asset('/storage/'.$event->meetup->logo) }}" alt="">
             </section>
 
-            <section>
-                <h2>Thanks to</h2>
-                <img class="w-2/5 my-1" src="{{ asset('/storage/'.$event->venue_logo) }}" alt="">
-                <h2>for hosting</h2>
-            </section>
+            @if ($event->venue)
+                <section>
+                    <h2>Thanks to</h2>
+                    <img class="w-2/5 my-1" src="{{ asset('/storage/'.$event->venue->logo) }}" alt="">
+                    <h2>for hosting</h2>
+                </section>
+            @endif
 
             @foreach ($event->sponsors as $sponsor)
                 <section>
@@ -58,7 +60,7 @@
             @if ($nextMeetup)
                 <section class="text-left px-12" data-markdown>
                     <textarea class="leading-normal" data-template>
-                        ## Our next event <span style="color: {{ $event->meetup->color  }}">{{ $nextMeetup->date->format('d/m') }}</span>@if($nextMeetup->venue_name)<br><small>at <span style="color: {{ $event->meetup->color  }}">{{ $nextMeetup->venue_name }}</span></small>@endif
+                        ## Our next event <span style="color: {{ $event->meetup->color  }}">{{ $nextMeetup->date->format('d/m') }}</span>@if($nextMeetup->venue)<br><small>at <span style="color: {{ $event->meetup->color  }}">{{ $nextMeetup->venue->name }}</span></small>@endif
                         **{{ $nextMeetup->speaker_1_title }}**<br>
                         &mdash; {{ $nextMeetup->speaker_1_name }}
 
@@ -79,7 +81,7 @@
                 @if ($nextEvent)
                     <section class="text-left px-12" data-markdown>
                         <textarea class="leading-normal" data-template>
-                            ## Our next <span style="color: {{ $nextEvent->meetup->color }}">{{ str_replace('Full Stack ', '', $otherMeetup->name) }}</span><br>event: <span style="color: {{ $nextEvent->meetup->color }}">{{ $nextEvent->date->format('d/m') }}</span>@if($nextEvent->venue_name)<br><small>at <span style="color: {{ $nextEvent->meetup->color  }}">{{ $nextEvent->venue_name }}</span></small>@endif
+                            ## Our next <span style="color: {{ $nextEvent->meetup->color }}">{{ str_replace('Full Stack ', '', $otherMeetup->name) }}</span><br>event: <span style="color: {{ $nextEvent->meetup->color }}">{{ $nextEvent->date->format('d/m') }}</span>@if($nextEvent->venue)<br><small>at <span style="color: {{ $nextEvent->meetup->color  }}">{{ $nextEvent->venue->name }}</span></small>@endif
                             **{{ $nextEvent->speaker_1_title }}**<br>
                             &mdash; {{ $nextEvent->speaker_1_name }}
 
