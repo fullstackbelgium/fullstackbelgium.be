@@ -84,9 +84,7 @@ class Event extends Model
     {
         $name = "{$this->date->format('F')} Event";
 
-        if ($this->venue) {
-            $name .= " at {$this->venue->name}";
-        }
+        $name .= $this->venue ? " at {$this->venue->name}" : " at TBD";
 
         return $name;
     }
