@@ -76,7 +76,7 @@ class HomepageViewModel extends ViewModel
                     ->location(
                         Schema::place()
                             ->name($event->venue ? $event->venue->name : '')
-                            ->image(Schema::imageObject()->url(asset('/storage/'.$event->venue->logo)))
+                            ->image($event->venue ? Schema::imageObject()->url(asset('/storage/'.$event->venue->logo)) : '')
                             ->address(
                                 Schema::postalAddress()
                                     ->addressCountry('Belgium')
