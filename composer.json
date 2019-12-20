@@ -19,7 +19,7 @@
         "abraham/twitteroauth": "^0.9.2",
         "facade/ignition": "^1.11",
         "fideloper/proxy": "^4.0",
-        "guzzlehttp/guzzle": "^6.3",
+        "guzzlehttp/guzzle": "^6.5",
         "laravel/framework": "5.8.*",
         "laravel/nova": "^2.0",
         "laravel/tinker": "^1.0",
