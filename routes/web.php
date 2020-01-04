@@ -15,3 +15,5 @@ Route::view('contact', 'contact');
 Route::view('policy', 'policy');
 
 Route::view('code-of-conduct', 'code-of-conduct');
+
+Route::view('cfp', 'cfp');
