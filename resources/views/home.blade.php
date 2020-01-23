@@ -59,7 +59,7 @@
                     Want to help us out?
                 </p>
                 <p class="text-gray-700">
-                    <a class="link" href="{{ url('contact') }}#venues">Host</a> or <a class="link" href="{{ url('contact') }}#sponsorships">sponsor</a> a meetup!
+                    Our events are free and voluntarily organised. <a class="link" href="{{ url('contact') }}#venues">Host</a> or <a class="link" href="{{ url('contact') }}#sponsorships">sponsor</a> an event!
                 </p>
             </div>
         </div>
