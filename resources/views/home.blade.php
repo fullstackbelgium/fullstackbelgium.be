@@ -53,6 +53,16 @@
                 </p>
             </div>
         </div>
+        <div class="flex items-end mt-8">
+            <div class="flex-2 mr-4 ml-auto text-right">
+                <p class="text-xl">
+                    Want to help us out?
+                </p>
+                <p class="text-gray-700">
+                    Host or sponsor a meetup, <a class="link" href="{{ url('contact') }}#venues">get in touch</a>!
+                </p>
+            </div>
+        </div>
     </section>
 
     <div class="bg-white border-t md:border-b border-gray-300 pt-12 md:pt-24 pb-12 md:pb-16">
