@@ -59,7 +59,7 @@
                     Want to help us out?
                 </p>
                 <p class="text-gray-700">
-                    Host or sponsor a meetup, <a class="link" href="{{ url('contact') }}#venues">get in touch</a>!
+                    <a class="link" href="{{ url('contact') }}#venues">Host</a> or <a class="link" href="{{ url('contact') }}#sponsorships">sponsor</a> a meetup!
                 </p>
             </div>
         </div>
