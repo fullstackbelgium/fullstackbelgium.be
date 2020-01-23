@@ -50,6 +50,8 @@ class Sponsor extends Resource
 
             Text::make('Name'),
 
+            Text::make('Url'),
+
             Image::make('Logo')->disk('public')->storeAs(function (Request $request) {
                 return sha1($request->logo->getClientOriginalName()) . '.' . $request->logo->getClientOriginalExtension();
             }),

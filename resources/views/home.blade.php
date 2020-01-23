@@ -59,7 +59,7 @@
                     Want to help us out?
                 </p>
                 <p class="text-gray-700">
-                    Our events are free and voluntarily organised. <a class="link" href="{{ url('contact') }}#venues">Host</a> or <a class="link" href="{{ url('contact') }}#sponsorships">sponsor</a> an event!
+                    Our events are free and voluntarily organised. <a class="link" href="{{ url('contact') }}#venues">Host</a> or <a class="link" href="{{ url('contact') }}#sponsors">sponsor</a> an event!
                 </p>
             </div>
         </div>
@@ -69,9 +69,6 @@
         <section class="wrapper">
             @foreach ($meetups as $meetup)
                 @include('partials.meetup', ['meetup' => $meetup])
-                @if (! $loop->last)
-                    <hr class="h-px w-2/3 bg-gray-400 my-12 md:mt-20 md:mb-24">
-                @endif
             @endforeach
         </section>
     </div>
