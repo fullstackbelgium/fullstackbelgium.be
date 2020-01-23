@@ -46,7 +46,7 @@
     <div class="flex flex-col min-h-screen">
         <section class="bg-europe-dark border-t-4 border-europe-light text-white font-medium pt-3 pb-4 mb-4">
             <div class="wrapper text-center">
-                <a class="focus:underline focus:bg-transparent" href="/cfp" target="_blank" rel="noopener">
+                <a class="focus:underline focus:bg-transparent" href="/cfp">
                     We’re doing lightning talks in March! Enter the CFP here →
                 </a>
             </div>
