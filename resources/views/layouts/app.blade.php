@@ -3,17 +3,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    @if (app()->environment('production'))
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-63381990-2"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'UA-63381990-2');
-        </script>
-    @endif
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -98,6 +87,24 @@
             </div>
         </footer>
     </div>
+
+    @if (app()->environment('production'))
+        <!-- Fathom - simple website analytics - https://usefathom.com -->
+        <script>
+            (function(f, a, t, h, o, m){
+                a[h]=a[h]||function(){
+                    (a[h].q=a[h].q||[]).push(arguments)
+                };
+                o=f.createElement('script'),
+                    m=f.getElementsByTagName('script')[0];
+                o.async=1; o.src=t; o.id='fathom-script';
+                m.parentNode.insertBefore(o,m)
+            })(document, window, 'https://cdn.usefathom.com/tracker.js', 'fathom');
+            fathom('set', 'siteId', 'KXNVRTKF');
+            fathom('trackPageview');
+        </script>
+        <!-- / Fathom -->
+    @endif
 </body>
 </html>
 <!--
