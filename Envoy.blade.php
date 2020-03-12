@@ -54,7 +54,7 @@ cd {{ $releasesDir }};
 mkdir {{ $newReleaseDir }};
 
 # Clone the repo
-git clone --depth 1 git@fsbe:{{ $repository }} {{ $newReleaseName }}
+git clone --depth 1 git@github.com:{{ $repository }} {{ $newReleaseName }}
 
 # Configure sparse checkout
 cd {{ $newReleaseDir }}
