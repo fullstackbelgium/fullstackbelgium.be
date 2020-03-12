@@ -1,5 +1,5 @@
 @setup
-$server = "68.183.222.4";
+$server = "134.122.64.252";
 $userAndServer = 'forge@'. $server;
 $repository = "fullstackbelgium/fullstackbelgium.be";
 $baseDir = "/home/forge/fullstackbelgium.be";
@@ -161,5 +161,5 @@ php artisan cache:clear
 php artisan config:cache
 php artisan responsecache:clear
 sudo supervisorctl restart all
-sudo service php7.3-fpm restart
+sudo service php7.4-fpm restart
 @endtask
