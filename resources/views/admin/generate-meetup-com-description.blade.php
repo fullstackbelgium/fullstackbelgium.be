@@ -1,7 +1,7 @@
-@if ($event->intro)
+@if ($event->event_intro)
 Dear members,<br/>
 <br/>
-{!! $event->intro !!}<br/>
+{!! $event->event_intro !!}<br/>
 We hope to see you soon,<br/>
 Dries & Rias<br/>
 <br>
@@ -16,34 +16,21 @@ EVENTY<br>
     <br/>
 <br/>
 SCHEDULE<br>
-{!! $event->schedule !!}<br/>
+{!! $event->event_schedule !!}<br/>
 
 TALKS<br>
-@if (!$event->speaker_1_title && !$event->speaker_2_title)
-Want to speak at this event? Contact dries.vints@gmail.com!
-@endif
-@if ($event->speaker_1_title && $event->speaker_1_name)
-{{ $event->speaker_1_title }} by {{ $event->speaker_1_name }}<br>
-@endif
-@if ($event->speaker_1_abstract)
-{!! $event->speaker_1_abstract !!}<br>
-@endif
-@if ($event->speaker_1_bio)
-Speaker: {!! $event->speaker_1_bio !!}<br>
-@endif
-@if ($event->speaker_1_length)
-Length: {{ $event->speaker_1_length }}min<br><br>
-@endif
-<br>
-@if ($event->speaker_2_title && $event->speaker_2_name)
-{{ $event->speaker_2_title }} by {{ $event->speaker_2_name }}<br>
-@endif
-@if ($event->speaker_2_abstract)
-{!! $event->speaker_2_abstract !!}<br>
-@endif
-@if ($event->speaker_2_bio)
-Speaker: {!! $event->speaker_2_bio !!}<br>
-@endif
-@if ($event->speaker_2_length)
-Length: {{ $event->speaker_2_length }}min<br><br>
-@endif
+@forelse ($event->speakers as $speaker)
+    {{ $speaker['talk_title'] }} by {{ $speaker['name'] }}<br>
+    @if ($speaker['abstract'])
+        {!! $speaker['abstract'] !!}<br>
+    @endif
+    @if ($speaker['bio'])
+        Speaker: {!! $speaker['bio'] !!}<br>
+    @endif
+    @if ($speaker['length'])
+        Length: {{ $speaker['length'] }}min<br><br>
+    @endif
+    <br>
+@empty
+    Want to speak at this event? Contact dries.vints@gmail.com!
+@endforelse

@@ -11,6 +11,10 @@
         {
             "type": "composer",
             "url": "https://nova.laravel.com"
+        },
+        {
+            "type": "path",
+            "url": "addons/rias/statamic-entry-button"
         }
     ],
     "require": {
@@ -30,6 +34,7 @@
         "spatie/laravel-tail": "^3.2",
         "spatie/laravel-view-models": "^1.2",
         "spatie/schema-org": "^2.9",
+        "statamic/cms": "^3.0@beta",
         "timothyasp/nova-color-field": "^1.0"
     },
     "require-dev": {
@@ -77,7 +82,8 @@
         ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi"
+            "@php artisan package:discover --ansi",
+            "@php artisan statamic:install --ansi"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""

@@ -1,0 +1,9 @@
+title: Events
+route: 'admin/generate-slides/{id}'
+blueprints:
+  - event
+revisions: false
+date: true
+date_behavior:
+  past: unlisted
+  future: private

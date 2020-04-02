@@ -1,13 +1,13 @@
 <html>
 <body>
 <p>
-    <strong>{{ $event->determineMeetupComName() }} on {{ $event->date->format('l \t\h\e jS ') }}</strong>
+    <strong>{{ $event->title }} on {{ $event->date()->format('l \t\h\e jS ') }}</strong>
 </p>
 Dear members,<br>
 <br>
-{!! markdownToHtml($event->intro) !!}
+{!! \Statamic\Modifiers\Modify::value($event->intro)->markdown() !!}
 
-If you want to attend this event, please RSVP on <a href="{{ $event->meetup_com_url }}">the event page at meetup.com</a>. If you cannot attend, <b>please remember to change your RSVP</b>.<br>
+If you want to attend this event, please RSVP on <a href="{{ meetupUrl($event) }}">the event page at meetup.com</a>. If you cannot attend, <b>please remember to change your RSVP</b>.<br>
 <br>
 <b>Eventy</b><br>
 <br>

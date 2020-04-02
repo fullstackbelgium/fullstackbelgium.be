@@ -1,0 +1,7 @@
+title: Venues
+blueprints:
+  - venue
+revisions: false
+date_behavior:
+  past: public
+  future: private

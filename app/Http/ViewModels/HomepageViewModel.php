@@ -2,12 +2,11 @@
 
 namespace App\Http\ViewModels;
 
-use App\Models\Event;
-use App\Models\Meetup;
-use App\Models\Sponsor;
 use App\Services\Meetup\MeetupApi;
 use Spatie\SchemaOrg\Schema;
-use Spatie\ViewModels\ViewModel;
+use Statamic\Entries\Entry;
+use Statamic\Facades\Entry as EntryFacade;
+use Statamic\View\ViewModel;
 
 class HomepageViewModel extends ViewModel
 {
@@ -17,70 +16,97 @@ class HomepageViewModel extends ViewModel
     /** @var \App\Services\Meetup\MeetupApi */
     private $meetupApi;
 
-    public function __construct(MeetupApi $meetupApi)
+    public function __construct()
     {
-        $this->meetups = Meetup::with('upcomingEvents', 'previousEvents')->get()->sortBy(function (Meetup $meetup) {
-            return optional($meetup->upcomingEvents->first())->date;
-        });
-        $this->meetupApi = $meetupApi;
+        $this->meetups = EntryFacade::query()
+            ->where('collection', 'groups')
+            ->get()
+            ->sortBy(function (Entry $group) {
+                $nextEvent = \Statamic\Facades\Entry::query()
+                    ->where('collection', 'events')
+                    ->where('group', $group->id())
+                    ->where('date', '>=', now()->startOfDay())
+                    ->first();
+
+                return $nextEvent->date();
+            });
+
+        $this->meetupApi = app(MeetupApi::class);
     }
 
-    public function meetups()
+    public function data(): array
     {
-        return $this->meetups;
+        return [
+            'meetups' => $this->meetups,
+            'totalAttendees' => $this->totalAttendees(),
+            'schemaOrg' => $this->schemaOrg(),
+        ];
     }
 
     public function totalAttendees(): int
     {
-        $totalAttendees = 0;
-        foreach ($this->meetups as $meetup) {
-            $totalAttendees += $this->meetupApi->getAttendees($meetup->previousEvents->last());
-        }
+        return cache()->remember('total-attendees', now()->addDay(), function () {
+            $totalAttendees = 0;
 
-        return $totalAttendees;
+            foreach ($this->meetups as $meetup) {
+                $previousEvent = EntryFacade::query()
+                    ->where('collection', 'events')
+                    ->where('date', '<', now())
+                    ->where('group', $meetup->id())
+                    ->orderBy('date', 'desc')
+                    ->first();
+
+                $totalAttendees += $this->meetupApi->getAttendees($meetup, $previousEvent);
+            }
+
+            return $totalAttendees;
+        });
     }
 
     public function schemaOrg(): string
     {
-        return $this->meetups->flatMap(function (Meetup $meetup) {
-            return $meetup->upcomingEvents->map(function (Event $event) use ($meetup) {
+        return $this->meetups->flatMap(function (Entry $meetup) {
+            $meetupData = $meetup->toAugmentedArray();
+            $upcomingEvents = EntryFacade::query()
+                ->where('collection', 'events')
+                ->where('date', '>=', now())
+                ->where('group', $meetup->id())
+                ->get();
+
+            return $upcomingEvents->map(function (Entry $event) use ($meetup, $meetupData) {
+                $eventData = $event->toAugmentedArray();
+
                 /** @var \Illuminate\Support\Carbon $startDate */
-                $startDate = $event->date;
+                $startDate = $event->date();
                 $startDate->setHour(19)->setMinutes(0)->setSeconds(0);
                 $endDate = $startDate->copy()->setHour(22);
 
                 $performers = [];
-                if ($event->speaker_1_name) {
+
+                foreach ($eventData['speakers']->value() as $speaker) {
                     $performers[] = Schema::person()
-                        ->name($event->speaker_1_name)
-                        ->url("https://twitter.com/{$event->speaker_1_twitter}")
-                        ->description($event->speaker_1_bio);
+                        ->name($speaker['name'])
+                        ->url("https://twitter.com/{$speaker['twitter']}")
+                        ->description($speaker['bio']);
                 }
 
-                if ($event->speaker_2_name) {
-                    $performers[] = Schema::person()
-                        ->name($event->speaker_2_name)
-                        ->url("https://twitter.com/{$event->speaker_2_twitter}")
-                        ->description($event->speaker_2_bio);
-                }
-
-                /** @var \App\Models\Event $event */
+                /** @var Entry $event */
                 $socialEvent = Schema::socialEvent()
-                    ->name($meetup->name)
+                    ->name($meetup->title)
                     ->description($event->intro)
                     ->performers($performers)
                     ->startDate($startDate)
                     ->endDate($endDate)
-                    ->url($event->meetup_com_url)
-                    ->image(Schema::imageObject()->url(asset('/storage/'.$meetup->logo)))
+                    ->url(meetupUrl($event))
+                    ->image(Schema::imageObject()->url($meetupData['logo']->value()->url()))
                     ->location(
                         Schema::place()
-                            ->name($event->venue ? $event->venue->name : '')
-                            ->image($event->venue ? Schema::imageObject()->url(asset('/storage/'.$event->venue->logo)) : '')
+                            ->name($eventData['venue'] ? $eventData['venue']->value()->title : '')
+                            ->image($eventData['venue'] ? Schema::imageObject()->url(optional($eventData['venue']->value()->toAugmentedArray()['logo']->value())->url()) : '')
                             ->address(
                                 Schema::postalAddress()
                                     ->addressCountry('Belgium')
-                                    ->addressLocality(str_replace('Full Stack ', '', $meetup->name))
+                                    ->addressLocality(str_replace('Full Stack ', '', $eventData['group']->value()->title))
                             )
                     )
                     ->doorTime($startDate)
@@ -90,14 +116,13 @@ class HomepageViewModel extends ViewModel
                         Schema::person()->name('Rias Van der Veken')->url('https://rias.be'),
                     ]);
 
-                $sponsors = $event->sponsors->map(function (Sponsor $sponsor) {
-                    return Schema::organization()
-                        ->name($sponsor->name)
-                        ->image(Schema::imageObject()->url(asset('/storage/'.$sponsor->logo)));
-                });
-
-                if (count($sponsors) > 0) {
-                    $socialEvent->sponsor($sponsors);
+                if ($event->sponsor) {
+                    $sponsor = \Statamic\Facades\Entry::find($event->sponsor);
+                    /** @var \Statamic\Assets\Asset $logo */
+                    $logo = $sponsor->toAugmentedArray()['logo']->value();
+                    $socialEvent->sponsor(Schema::organization()
+                        ->name($sponsor->title)
+                        ->image(Schema::imageObject()->url($logo ? $logo->absoluteUrl() : '')));
                 }
 
                 return $socialEvent->toScript();

@@ -6,6 +6,7 @@ use App\Models\Event;
 use Exception;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Log;
+use Statamic\Entries\Entry;
 
 class MeetupApi
 {
@@ -30,10 +31,10 @@ class MeetupApi
         return $this;
     }
 
-    public function getAttendees(Event $event)
+    public function getAttendees(Entry $group, Entry $event)
     {
         try {
-            $response = $this->client->get("/{$event->meetup->meetup_com_id}/events/{$event->meetup_com_event_id}");
+            $response = $this->client->get("/{$group->meetup_com_id}/events/{$event->meetup_com_id}");
             $data = json_decode($response->getBody()->getContents(), true);
             return $data['yes_rsvp_count'];
         } catch (Exception $e) {

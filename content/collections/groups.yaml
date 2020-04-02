@@ -1,0 +1,7 @@
+title: Groups
+blueprints:
+  - group
+revisions: false
+date_behavior:
+  past: public
+  future: private

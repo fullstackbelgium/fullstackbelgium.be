@@ -1,0 +1,7 @@
+title: Assets
+disk: public
+allow_uploads: true
+allow_downloading: true
+allow_renaming: true
+allow_moving: true
+create_folders: true

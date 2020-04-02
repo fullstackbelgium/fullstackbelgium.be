@@ -1,0 +1,26 @@
+title: Sponsor
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: logo
+        field:
+          container: assets
+          mode: grid
+          restrict: false
+          allow_uploads: true
+          max_files: 1
+          type: assets
+          localizable: false
+          listable: hidden
+          display: Logo
+      -
+        handle: url
+        field:
+          input_type: url
+          type: text
+          localizable: false
+          listable: hidden
+          display: Url
+          validate: url

@@ -1,0 +1,38 @@
+title: Group
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: logo
+        field:
+          container: assets
+          mode: grid
+          restrict: false
+          allow_uploads: true
+          max_files: 1
+          type: assets
+          localizable: false
+          listable: hidden
+          display: Logo
+      -
+        handle: color
+        field:
+          theme: classic
+          color_modes:
+            - hex
+          default_color_mode: HEXA
+          lock_opacity: true
+          type: color
+          localizable: false
+          listable: hidden
+          display: Color
+      -
+        handle: meetup_com_id
+        field:
+          input_type: text
+          type: text
+          localizable: false
+          listable: hidden
+          display: 'Meetup.com ID'
+          validate: required

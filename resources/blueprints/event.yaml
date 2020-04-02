@@ -1,0 +1,177 @@
+title: Event
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: group
+        field:
+          max_items: 1
+          mode: select
+          collections:
+            - groups
+          type: entries
+          localizable: false
+          width: 50
+          listable: hidden
+          display: Group
+          validate: required
+      -
+        handle: meetup_com_id
+        field:
+          input_type: text
+          type: text
+          localizable: false
+          listable: hidden
+          display: 'Meetup.com ID'
+  venue:
+    display: Venue
+    fields:
+      -
+        handle: venue
+        field:
+          max_items: 1
+          mode: typeahead
+          collections:
+            - venues
+          type: entries
+          localizable: false
+          width: 50
+          listable: hidden
+          display: Venue
+      -
+        handle: venue_info
+        field:
+          restrict: false
+          automatic_line_breaks: true
+          automatic_links: false
+          escape_markup: false
+          smartypants: true
+          type: markdown
+          instructions: 'Will not be sent to meetup.com. e.g. Venue will provide snacks & drinks.'
+          localizable: false
+          listable: hidden
+          display: 'Venue info'
+  event_details:
+    display: 'Event details'
+    fields:
+      -
+        handle: event_intro
+        field:
+          restrict: false
+          automatic_line_breaks: true
+          automatic_links: false
+          escape_markup: false
+          smartypants: false
+          type: markdown
+          localizable: false
+          listable: hidden
+          display: Intro
+      -
+        handle: event_schedule
+        field:
+          restrict: false
+          automatic_line_breaks: true
+          automatic_links: false
+          escape_markup: false
+          smartypants: false
+          type: markdown
+          localizable: false
+          listable: hidden
+          display: Schedule
+  speakers:
+    display: Speakers
+    fields:
+      -
+        handle: speakers
+        field:
+          fields:
+            -
+              handle: name
+              field:
+                type: textarea
+                localizable: false
+                listable: hidden
+                display: Name
+            -
+              handle: twitter
+              field:
+                input_type: text
+                prepend: '@'
+                type: text
+                localizable: false
+                listable: hidden
+                display: Twitter
+            -
+              handle: talk_title
+              field:
+                input_type: text
+                type: text
+                localizable: false
+                listable: hidden
+                display: 'Talk title'
+            -
+              handle: abstract
+              field:
+                restrict: false
+                automatic_line_breaks: true
+                automatic_links: false
+                escape_markup: false
+                smartypants: false
+                type: markdown
+                localizable: false
+                listable: hidden
+                display: Abstract
+            -
+              handle: bio
+              field:
+                restrict: false
+                automatic_line_breaks: true
+                automatic_links: false
+                escape_markup: false
+                smartypants: false
+                type: markdown
+                localizable: false
+                listable: hidden
+                display: Bio
+            -
+              handle: length
+              field:
+                type: integer
+                instructions: 'Talk length in minutes'
+                localizable: false
+                listable: hidden
+                display: Length
+          mode: stacked
+          add_row: 'Add speaker'
+          reorderable: true
+          type: grid
+          localizable: false
+          listable: hidden
+          display: Speakers
+  sponsor:
+    display: Sponsor
+    fields:
+      -
+        handle: sponsor
+        field:
+          mode: typeahead
+          collections:
+            - sponsors
+          type: entries
+          localizable: false
+          listable: hidden
+          display: Sponsor
+          max_items: 1
+      -
+        handle: sponsor_message
+        field:
+          restrict: false
+          automatic_line_breaks: true
+          automatic_links: false
+          escape_markup: false
+          smartypants: false
+          type: markdown
+          localizable: false
+          listable: hidden
+          display: Message
