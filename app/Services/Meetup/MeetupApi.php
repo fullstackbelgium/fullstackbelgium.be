@@ -37,7 +37,7 @@ class MeetupApi
             $data = json_decode($response->getBody()->getContents(), true);
             return $data['yes_rsvp_count'];
         } catch (Exception $e) {
-            Log::error($e->getMessage());
+            //Log::error($e->getMessage());
             return 0;
         }
 
