@@ -21,7 +21,7 @@ class GenerateSlides extends Action
         return redirect()->action(GenerateSlidesController::class, $items[0]->id());
     }
 
-    public function filter($item)
+    public function visibleTo($item)
     {
         return $item instanceof Entry && $item->collection('events');
     }

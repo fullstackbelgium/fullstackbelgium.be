@@ -21,7 +21,7 @@ class GenerateNewsletter extends Action
         return redirect()->action(GenerateNewsletterController::class, $items[0]->id());
     }
 
-    public function filter($item)
+    public function visibleTo($item)
     {
         return $item instanceof Entry && $item->collection('events');
     }
