@@ -28,7 +28,7 @@ class HomepageViewModel extends ViewModel
                     ->where('date', '>=', now()->startOfDay())
                     ->first();
 
-                return $nextEvent->date();
+                return optional($nextEvent)->date();
             });
 
         $this->meetupApi = app(MeetupApi::class);

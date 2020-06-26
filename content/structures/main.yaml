@@ -1,0 +1,18 @@
+title: 'Main Nav'
+collections:
+  - pages
+max_depth: 1
+root: true
+tree:
+  -
+    entry: a3a54860-7a2e-4ef5-ab38-70a23e952656
+  -
+    entry: 64ceeb3e-5ede-4ee3-866b-b6404eba906b
+  -
+    title: Twitter
+    url: 'https://twitter.com/fullstackbe'
+  -
+    title: Instagram
+    url: 'https://www.instagram.com/fullstackbe/'
+  -
+    entry: b9fc217e-fc4e-4e43-ba56-5e09c790975e
