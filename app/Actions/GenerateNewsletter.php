@@ -11,6 +11,11 @@ class GenerateNewsletter extends Action
     protected $confirm = false;
     protected static $title = "Newsletter";
 
+    public function visibleToBulk($items)
+    {
+        return count($items) === 1;
+    }
+
     public function redirect($items, $values)
     {
         return redirect()->action(GenerateNewsletterController::class, $items[0]->id());
