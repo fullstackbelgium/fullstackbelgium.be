@@ -8,6 +8,9 @@ use Statamic\Entries\Entry;
 
 class GenerateNewsletter extends Action
 {
+    protected $confirm = false;
+    protected static $title = "Newsletter";
+
     public function redirect($items, $values)
     {
         return redirect()->action(GenerateNewsletterController::class, $items[0]->id());

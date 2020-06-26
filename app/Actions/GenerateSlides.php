@@ -8,6 +8,9 @@ use Statamic\Entries\Entry;
 
 class GenerateSlides extends Action
 {
+    protected $confirm = false;
+    protected static $title = "Slides";
+
     public function redirect($items, $values)
     {
         return redirect()->action(GenerateSlidesController::class, $items[0]->id());
