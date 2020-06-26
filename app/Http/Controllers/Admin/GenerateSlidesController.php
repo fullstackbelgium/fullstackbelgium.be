@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Event;
-use App\Models\Meetup;
 use Statamic\Facades\Entry;
 
 class GenerateSlidesController

@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Event;
+use Statamic\Facades\Entry;
 
 class GenerateNewsletterController
 {
-    public function __invoke(Event $event)
+    public function __invoke(string $event)
     {
-        $event->load('sponsors');
+        $event = Entry::find($event);
 
         return view('admin.generate-newsletter', compact('event'));
     }
