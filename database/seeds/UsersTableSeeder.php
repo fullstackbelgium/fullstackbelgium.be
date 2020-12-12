@@ -9,7 +9,6 @@ class UsersTableSeeder extends Seeder
     {
         collect([
             'john@example.com',
-            'dries.vints@gmail.com',
             'hello@rias.be',
         ])->each(function (string $email) {
             factory(User::class)->create([
