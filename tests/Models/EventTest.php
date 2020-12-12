@@ -18,7 +18,7 @@ class EventTest extends TestCase
     /** @var \App\Models\Event */
     protected $event;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -58,7 +58,7 @@ class EventTest extends TestCase
     {
         /** @var Event $event */
         $event = factory(Event::class)->create([
-            'date' => Carbon::createFromFormat('Ymd', '20180201')
+            'date' => Carbon::createFromFormat('Ymd', '20180201'),
         ]);
 
         $this->assertEquals('February Event at TBD', $event->determineMeetupComName());

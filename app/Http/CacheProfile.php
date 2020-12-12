@@ -2,8 +2,8 @@
 
 namespace App\Http;
 
-use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Spatie\ResponseCache\CacheProfiles\BaseCacheProfile;
 use Symfony\Component\HttpFoundation\Response;
 

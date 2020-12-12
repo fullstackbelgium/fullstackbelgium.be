@@ -3,9 +3,9 @@
 namespace App\Nova;
 
 use App\Nova\Fields\EventSponsorFields;
+use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\ID;
-use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
@@ -53,7 +53,7 @@ class Sponsor extends Resource
             Text::make('Url'),
 
             Image::make('Logo')->disk('public')->storeAs(function (Request $request) {
-                return sha1($request->logo->getClientOriginalName()) . '.' . $request->logo->getClientOriginalExtension();
+                return sha1($request->logo->getClientOriginalName()).'.'.$request->logo->getClientOriginalExtension();
             }),
 
             BelongsToMany::make('Events')

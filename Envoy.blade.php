@@ -25,7 +25,6 @@ runNpm
 generateAssets
 updateSymlinks
 optimizeInstallation
-backupDatabase
 migrateDatabase
 blessNewRelease
 cleanOldReleases
@@ -110,12 +109,6 @@ ln -nfs {{ $baseDir }}/.env .env;
 {{ logMessage("✨  Optimizing installation…") }}
 cd {{ $newReleaseDir }};
 php artisan clear-compiled;
-@endtask
-
-@task('backupDatabase', ['on' => 'remote'])
-{{ logMessage("📀  Backing up database…") }}
-cd {{ $newReleaseDir }}
-php artisan backup:run
 @endtask
 
 @task('migrateDatabase', ['on' => 'remote'])

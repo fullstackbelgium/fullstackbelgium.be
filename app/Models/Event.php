@@ -20,14 +20,14 @@ class Event extends Model
     ];
 
     protected $attributes = [
-        'schedule' => '19:00 Doors Open<br />20:00 Start Talks'
+        'schedule' => '19:00 Doors Open<br />20:00 Start Talks',
     ];
 
     protected static function boot()
     {
         parent::boot();
 
-        static::saved(function (Event $event) {
+        static::saved(function (self $event) {
             ResponseCache::clear();
 
             if (empty($event->meetup_com_event_id)) {
@@ -75,7 +75,7 @@ class Event extends Model
 
     public function getMeetupComDescriptionAttribute(): string
     {
-        $html =  view('admin.generate-meetup-com-description', ['event' => $this]);
+        $html = view('admin.generate-meetup-com-description', ['event' => $this]);
 
         return strip_tags($html, '<br><p>');
     }
@@ -84,7 +84,7 @@ class Event extends Model
     {
         $name = "{$this->date->format('F')} Event";
 
-        $name .= $this->venue ? " at {$this->venue->name}" : " at TBD";
+        $name .= $this->venue ? " at {$this->venue->name}" : ' at TBD';
 
         return $name;
     }

@@ -7,13 +7,6 @@ class UsersTableSeeder extends Seeder
 {
     public function run()
     {
-        collect([
-            'john@example.com',
-            'hello@rias.be',
-        ])->each(function (string $email) {
-            factory(User::class)->create([
-                'email' => $email,
-            ]);
-        });
+        factory(User::class)->create(['email' => 'john@example.com']);
     }
 }

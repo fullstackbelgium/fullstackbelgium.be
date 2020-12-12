@@ -34,8 +34,8 @@ class ScheduledTweet extends Resource
             Text::make('Tweet')->rules('required'),
 
             Boolean::make('Sent', function () {
-                return !is_null($this->sent_at);
-            })
+                return ! is_null($this->sent_at);
+            }),
         ];
     }
 
