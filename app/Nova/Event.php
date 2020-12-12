@@ -53,13 +53,13 @@ class Event extends Resource
     public function fields(Request $request)
     {
         return [
-            new Panel("General information", function () {
+            new Panel('General information', function () {
                 return [
                     Heading::make('General information')->onlyOnForms(),
                     Text::make('Date')
                         ->help('Will not be sent to meetup.com')
                         ->withMeta([
-                            'placeholder' => 'yyyy-mm-dd'
+                            'placeholder' => 'yyyy-mm-dd',
                         ])
                         ->rules(['required', 'date'])
                         ->displayUsing(function ($value) {
@@ -75,6 +75,7 @@ class Event extends Resource
                         }
 
                         $url = asset("storage/{$this->meetup->logo}");
+
                         return "<img class='h-6' src='{$url}' alt=''></a>";
                     })->asHtml()->onlyOnIndex(),
                     BelongsTo::make('Meetup')->rules('required'),
@@ -82,14 +83,14 @@ class Event extends Resource
                 ];
             }),
 
-            new Panel("Venue", function () {
+            new Panel('Venue', function () {
                 return [
                     BelongsTo::make('Venue')->nullable(),
                     Trix::make('Venue info')->help('Will not be sent to meetup.com. e.g. Venue will provide snacks & drinks.'),
                 ];
             }),
 
-            new Panel("Event details", function () {
+            new Panel('Event details', function () {
                 return [
                     Heading::make('Event details')->onlyOnForms(),
                     Trix::make('Intro')->hideFromIndex(),
@@ -100,7 +101,7 @@ class Event extends Resource
                 ];
             }),
 
-            new Panel("Speaker 1", function () {
+            new Panel('Speaker 1', function () {
                 return [
                     Heading::make('Speaker 1')->onlyOnForms(),
                     Text::make('Name', 'speaker_1_name')->hideFromIndex(),
@@ -114,7 +115,7 @@ class Event extends Resource
                 ];
             }),
 
-            new Panel("Speaker 2", function () {
+            new Panel('Speaker 2', function () {
                 return [
                     Heading::make('Speaker 2')->onlyOnForms(),
                     Text::make('Name', 'speaker_2_name')->hideFromIndex(),
@@ -138,7 +139,7 @@ class Event extends Resource
                             return '';
                         }
 
-                        return '<a target="fullstack_belgium_newsletter" title="Newsletter" href="' . action(GenerateNewsletterController::class, $this->id) . '"><img class="h-6" src="/svg/newsletter.svg" alt=""></a>';
+                        return '<a target="fullstack_belgium_newsletter" title="Newsletter" href="'.action(GenerateNewsletterController::class, $this->id).'"><img class="h-6" src="/svg/newsletter.svg" alt=""></a>';
                     })->asHtml(),
 
                     Text::make('', function () {
@@ -146,7 +147,7 @@ class Event extends Resource
                             return '';
                         }
 
-                        return '<a target="fullstack_belgium_meetup" title="Meetup.com" href="' . $this->meetup_com_url . '"><img class="h-6" src="/svg/meetup.svg" alt=""></a>';
+                        return '<a target="fullstack_belgium_meetup" title="Meetup.com" href="'.$this->meetup_com_url.'"><img class="h-6" src="/svg/meetup.svg" alt=""></a>';
                     })->asHtml(),
 
                     Text::make('', function () {
@@ -154,12 +155,12 @@ class Event extends Resource
                             return '';
                         }
 
-                        return '<a target="fullstack_belgium_slides" title="Slides" href="' . action(GenerateSlidesController::class, $this->id) . '"><img class="h-6" src="/svg/slides.svg" alt=""></a>';
+                        return '<a target="fullstack_belgium_slides" title="Slides" href="'.action(GenerateSlidesController::class, $this->id).'"><img class="h-6" src="/svg/slides.svg" alt=""></a>';
                     })->asHtml(),
 
                     Boolean::make('Tweet sent', function () {
                         return ! is_null($this->tweet_sent_at);
-                    })
+                    }),
                 ];
             }),
         ];

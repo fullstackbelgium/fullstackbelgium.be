@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateSpeakerFieldsInEventsTable extends Migration
 {
@@ -22,6 +22,7 @@ class CreateSpeakerFieldsInEventsTable extends Migration
             $table->string('speaker_2_name')->after('speaker_1_length')->nullable();
             $table->string('speaker_2_title')->after('speaker_2_name')->nullable();
             $table->longText('speaker_2_bio')->after('speaker_2_abstract')->nullable();
-            $table->string('speaker_2_length')->after('speaker_2_bio')->nullable();       });
+            $table->string('speaker_2_length')->after('speaker_2_bio')->nullable();
+        });
     }
 }

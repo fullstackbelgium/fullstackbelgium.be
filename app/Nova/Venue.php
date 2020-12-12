@@ -2,9 +2,9 @@
 
 namespace App\Nova;
 
+use Illuminate\Http\Request;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
-use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
 
@@ -42,7 +42,7 @@ class Venue extends Resource
             Text::make('Name'),
 
             Image::make('Logo')->disk('public')->storeAs(function (Request $request) {
-                return sha1($request->logo->getClientOriginalName()) . '.' . $request->logo->getClientOriginalExtension();
+                return sha1($request->logo->getClientOriginalName()).'.'.$request->logo->getClientOriginalExtension();
             }),
 
             HasMany::make('Events'),

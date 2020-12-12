@@ -23,7 +23,7 @@ class Twitter extends \App\Services\Twitter\Twitter
 
     public function assertTweetsSent(array $texts)
     {
-        TestCase::assertEquals($texts, $this->tweets, "Tweets were not sent");
+        TestCase::assertEquals($texts, $this->tweets, 'Tweets were not sent');
     }
 
     public function assertTweetsSentCount(int $count)
