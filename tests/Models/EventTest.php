@@ -18,7 +18,7 @@ class EventTest extends TestCase
     /** @var \App\Models\Event */
     protected $event;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
 

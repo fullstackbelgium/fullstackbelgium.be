@@ -11,7 +11,7 @@ class SendEventTweetsCommandTest extends TestCase
     /** @var \Tests\Mocks\Twitter */
     protected $twitter;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
 
