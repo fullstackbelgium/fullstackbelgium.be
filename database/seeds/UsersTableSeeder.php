@@ -8,6 +8,7 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         collect([
+            'john@example.com',
             'dries.vints@gmail.com',
             'hello@rias.be',
         ])->each(function (string $email) {
