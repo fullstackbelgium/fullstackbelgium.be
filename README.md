@@ -15,7 +15,7 @@ Visit it at [https://fullstackbelgium.be](https://fullstackbelgium.be)
 
 The following tools are required in order to start the installation.
 
-- PHP >=7.1
+- PHP >=7.4
 - [Composer](https://getcomposer.org/download/)
 - [NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 - [A valid Laravel Nova license](https://nova.laravel.com)
