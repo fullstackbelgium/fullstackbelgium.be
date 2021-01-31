@@ -2,10 +2,10 @@
 
 namespace App\Exceptions;
 
-use Throwable;
 use Exception;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Throwable;
 use Whoops\Handler\HandlerInterface;
 
 class Handler extends ExceptionHandler
