@@ -3,8 +3,8 @@
 <a href="https://github.com/fullstackbelgium/fullstackbelgium.be?query=workflow%3ATests">
     <img src="https://github.com/fullstackbelgium/fullstackbelgium.be/workflows/Tests/badge.svg" alt="Tests">
 </a>
-<a href="https://github.styleci.io/repos/12023173">
-    <img src="https://github.styleci.io/repos/12023173/shield?style=flat" alt="Code Style">
+<a href="https://github.styleci.io/repos/129402152">
+    <img src="https://github.styleci.io/repos/129402152/shield?style=flat" alt="Code Style">
 </a>
 
 The source code of the Full Stack Belgium website.
