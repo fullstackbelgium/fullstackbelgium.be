@@ -30,3 +30,8 @@ jobs:
 
       - name: Execute tests
         run: vendor/bin/phpunit --verbose
+        env:
+          MEETUP_API_KEY: ${{ secrets.MEETUP_API_KEY }}
+          MEETUP_KEY: ${{ secrets.MEETUP_KEY }}
+          MEETUP_REFRESH_TOKEN: ${{ secrets.MEETUP_REFRESH_TOKEN }}
+          MEETUP_SECRET: ${{ secrets.MEETUP_SECRET }}
