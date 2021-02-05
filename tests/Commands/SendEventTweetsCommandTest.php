@@ -53,7 +53,7 @@ class SendEventTweetsCommandTest extends TestCase
 
     protected function createEvent(string $date, $tweetText = null): Event
     {
-        return factory(Event::class)->create([
+        return Event::factory()->create([
             'date' => Carbon::createFromFormat('Y-m-d', $date),
             'tweet' => $tweetText ?? faker()->sentence,
         ]);

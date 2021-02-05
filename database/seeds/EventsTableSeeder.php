@@ -9,7 +9,7 @@ class EventsTableSeeder extends Seeder
     public function run()
     {
         Meetup::get()->each(function (Meetup $meetup) {
-            factory(Event::class, 20)->create([
+            Event::factory()->count(20)->create([
                 'meetup_id' => $meetup->id,
             ]);
         });

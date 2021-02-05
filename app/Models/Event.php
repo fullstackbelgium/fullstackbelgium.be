@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use App\Actions\SendTweetAction;
 use App\Actions\UpdateMeetupComEventAction;
 use Illuminate\Database\Eloquent\Builder;
@@ -12,6 +13,8 @@ use Spatie\ResponseCache\Facades\ResponseCache;
 
 class Event extends Model
 {
+    use HasFactory;
+
     protected $guarded = [];
 
     protected $dates = [

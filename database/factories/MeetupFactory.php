@@ -1,11 +1,29 @@
 <?php
 
-use App\Models\Meetup;
-use Faker\Generator as Faker;
+namespace Database\Factories;
 
-$factory->define(Meetup::class, function (Faker $faker) {
-    return [
-        'name' => $faker->word,
-        'meetup_com_id' => $faker->slug,
-    ];
-});
+use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Meetup;
+
+class MeetupFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Meetup::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'name' => $this->faker->word,
+            'meetup_com_id' => $this->faker->slug,
+        ];
+    }
+}

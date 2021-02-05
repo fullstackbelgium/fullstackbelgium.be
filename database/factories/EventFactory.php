@@ -1,24 +1,42 @@
 <?php
 
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Event;
 use App\Models\Meetup;
-use Faker\Generator as Faker;
 
-$factory->define(Event::class, function (Faker $faker) {
-    return [
-        'date' => $faker->dateTimeBetween('now', '+3 years')->format('Y-m-d'),
-        'meetup_id' => function () {
-            return factory(Meetup::class)->create()->id;
-        },
+class EventFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Event::class;
 
-        'meetup_com_event_id' => $faker->word,
-        'intro' => $faker->paragraph,
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'date' => $this->faker->dateTimeBetween('now', '+3 years')->format('Y-m-d'),
+            'meetup_id' => function () {
+                return Meetup::factory()->create()->id;
+            },
 
-        'schedule' => $faker->paragraph,
-        'speaker_1_abstract' => $faker->paragraph,
-        'speaker_2_abstract' => $faker->paragraph,
+            'meetup_com_event_id' => $this->faker->word,
+            'intro' => $this->faker->paragraph,
 
-        'tweet' => $faker->sentence,
-        'tweet_sent_at' => null,
-    ];
-});
+            'schedule' => $this->faker->paragraph,
+            'speaker_1_abstract' => $this->faker->paragraph,
+            'speaker_2_abstract' => $this->faker->paragraph,
+
+            'tweet' => $this->faker->sentence,
+            'tweet_sent_at' => null,
+        ];
+    }
+}

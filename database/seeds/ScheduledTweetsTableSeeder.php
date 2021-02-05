@@ -7,6 +7,6 @@ class ScheduledTweetsTableSeeder extends Seeder
 {
     public function run()
     {
-        factory(ScheduledTweet::class, 20)->create();
+        ScheduledTweet::factory()->count(20)->create();
     }
 }

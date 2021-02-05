@@ -1,9 +1,27 @@
 <?php
 
-use Faker\Generator as Faker;
+namespace Database\Factories;
 
-$factory->define(\App\Models\Sponsor::class, function (Faker $faker) {
-    return [
-        'name' => $faker->company,
-    ];
-});
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+class SponsorFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = \App\Models\Sponsor::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'name' => $this->faker->company,
+        ];
+    }
+}

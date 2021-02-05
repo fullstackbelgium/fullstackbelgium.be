@@ -22,7 +22,7 @@ class EventTest extends TestCase
     {
         parent::setUp();
 
-        $this->event = factory(Event::class)->create([
+        $this->event = Event::factory()->create([
             'meetup_com_event_id' => faker()->word,
         ]);
 
@@ -57,7 +57,7 @@ class EventTest extends TestCase
     public function it_can_generate_the_name_for_meetup_com()
     {
         /** @var Event $event */
-        $event = factory(Event::class)->create([
+        $event = Event::factory()->create([
             'date' => Carbon::createFromFormat('Ymd', '20180201'),
         ]);
 

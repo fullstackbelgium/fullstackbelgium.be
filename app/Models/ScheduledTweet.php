@@ -2,12 +2,15 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use App\Actions\SendTweetAction;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 class ScheduledTweet extends Model
 {
+    use HasFactory;
+
     protected $dates = [
         'scheduled_to_be_sent_at',
         'sent_at',
