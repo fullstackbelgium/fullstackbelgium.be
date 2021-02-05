@@ -13,7 +13,6 @@ use Spatie\Sluggable\SlugOptions;
 class Meetup extends Model
 {
     use HasFactory;
-
     use HasSlug;
 
     protected static function boot()
