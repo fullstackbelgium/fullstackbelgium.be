@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders;
+
 use App\Models\Event;
 use App\Models\Meetup;
 use Illuminate\Database\Seeder;
