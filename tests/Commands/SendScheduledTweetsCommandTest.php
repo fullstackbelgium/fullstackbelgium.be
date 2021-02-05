@@ -48,7 +48,7 @@ class SendScheduledTweetsCommandTest extends TestCase
 
     protected function createScheduledTweet(string $dateTime, $tweetText = null): ScheduledTweet
     {
-        return factory(ScheduledTweet::class)->create([
+        return ScheduledTweet::factory()->create([
             'scheduled_to_be_sent_at' => Carbon::createFromFormat('Y-m-d H:i:s', $dateTime),
             'tweet' => $tweetText ?? faker()->sentence,
             'sent_at' => null,
