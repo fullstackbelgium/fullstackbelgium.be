@@ -83,8 +83,8 @@ class HomepageViewModel extends ViewModel
                             ->address(
                                 Schema::postalAddress()
                                     ->addressCountry('Belgium')
-                                    ->addressLocality(str_replace('Full Stack ', '', $meetup->name))
-                            )
+                                    ->addressLocality(str_replace('Full Stack ', '', $meetup->name)),
+                            ),
                     )
                     ->doorTime($startDate)
                     ->isAccessibleForFree(true)
