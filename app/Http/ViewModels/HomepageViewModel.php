@@ -33,8 +33,11 @@ class HomepageViewModel extends ViewModel
     public function totalAttendees(): int
     {
         $totalAttendees = 0;
+
         foreach ($this->meetups as $meetup) {
-            $totalAttendees += $this->meetupApi->getAttendees($meetup->previousEvents->last());
+            if ($event = $meetup->previousEvents->last()) {
+                $totalAttendees += $this->meetupApi->getAttendees($event);
+            }
         }
 
         return $totalAttendees;
