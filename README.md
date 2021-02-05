@@ -1,7 +1,7 @@
 # fullstackbelgium.be
 
-<a href="https://github.com/driesvints/driesvints.com/actions?query=workflow%3ATests">
-    <img src="https://github.com/driesvints/driesvints.com/workflows/Tests/badge.svg" alt="Tests">
+<a href="https://github.com/fullstackbelgium/fullstackbelgium.be?query=workflow%3ATests">
+    <img src="https://github.com/fullstackbelgium/fullstackbelgium.be/workflows/Tests/badge.svg" alt="Tests">
 </a>
 <a href="https://github.styleci.io/repos/12023173">
     <img src="https://github.styleci.io/repos/12023173/shield?style=flat" alt="Code Style">
