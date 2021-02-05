@@ -14,7 +14,7 @@ class TwitterServiceProvider extends ServiceProvider
                 config('services.twitter.consumer_key'),
                 config('services.twitter.consumer_secret'),
                 config('services.twitter.access_token'),
-                config('services.twitter.access_token_secret')
+                config('services.twitter.access_token_secret'),
             );
 
             return new Twitter($connection);

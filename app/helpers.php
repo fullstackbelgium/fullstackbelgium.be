@@ -17,13 +17,13 @@ function markdownToHtml(?string $markdown = ''): string
 function svg(string $filename): HtmlString
 {
     return new HtmlString(
-        file_get_contents(resource_path("svg/{$filename}.svg"))
+        file_get_contents(resource_path("svg/{$filename}.svg")),
     );
 }
 
 function inline_mix(string $path): HtmlString
 {
     return new HtmlString(file_get_contents(
-        public_path(mix($path))
+        public_path(mix($path)),
     ));
 }

@@ -3,8 +3,6 @@
 namespace App\Nova\Fields;
 
 use Laravel\Nova\Fields\Markdown;
-use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Trix;
 
 class EventSponsorFields
 {

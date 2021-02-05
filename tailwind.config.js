@@ -1,7 +1,7 @@
 module.exports = {
     important: true,
     theme: {
-        borderColor: theme => ({
+        borderColor: (theme) => ({
             default: theme('colors.gray.400', 'currentColor'),
             ...theme('colors'),
         }),

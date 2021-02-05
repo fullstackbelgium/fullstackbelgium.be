@@ -4,8 +4,6 @@ namespace App\Actions;
 
 use App\Models\Event;
 use App\Services\Meetup\MeetupApi;
-use Exception;
-use Illuminate\Support\Facades\Log;
 
 class UpdateMeetupComEventAction
 {

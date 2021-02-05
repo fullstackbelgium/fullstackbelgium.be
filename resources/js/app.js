@@ -1,9 +1,9 @@
 import { $, $$ } from './util';
 
-$$('[data-gallery]').forEach(galleryEl => {
+$$('[data-gallery]').forEach((galleryEl) => {
     const itemEls = $$('[data-gallery-item]', galleryEl);
     const pswpEl = $('.pswp', galleryEl);
-    const items = itemEls.map(itemEl => ({ ...itemEl.dataset }));
+    const items = itemEls.map((itemEl) => ({ ...itemEl.dataset }));
 
     itemEls.forEach((itemEl, index) => {
         itemEl.addEventListener('click', () => {
