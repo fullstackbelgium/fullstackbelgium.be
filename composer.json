@@ -25,6 +25,7 @@
         "laravel/framework": "^8.25",
         "laravel/nova": "^3.20",
         "laravel/tinker": "^2.5",
+        "predis/predis": "^1.1",
         "spatie/laravel-mix-preload": "^1.0",
         "spatie/laravel-responsecache": "^6.6",
         "spatie/laravel-sluggable": "^2.6",
