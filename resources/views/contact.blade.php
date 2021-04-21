@@ -31,7 +31,7 @@
                         <li class="mb-2">Which event(s) you would like to speak at (Antwerp or Ghent)</li>
                     </ul>
                     <p class="mb-0">
-                        <a class="no-link text-belgium font-medium" href="mailto:dries.vints@gmail.com">
+                        <a class="no-link text-belgium font-medium" href="mailto:dries@vints.io">
                             <span class="link is-thick">Get in touch with Dries</span> →
                         </a>
                     </p>
@@ -55,7 +55,7 @@
                         <li class="mb-2">A short pitch of max. 5 minutes to the attendees of an event: an opportunity to introduce your company and highlight any job listings you have</li>
                     </ul>
                     <p class="mb-0">
-                        <a class="no-link text-belgium font-medium" href="mailto:dries.vints@gmail.com">
+                        <a class="no-link text-belgium font-medium" href="mailto:dries@vints.io">
                             <span class="link is-thick">Get in touch with Dries</span> →
                         </a>
                     </p>
@@ -98,7 +98,7 @@
                 <div class="markup flex-1 md:mt-1">
                     <p>Have a question not related to speaking, hosting or sponsoring?</p>
                     <p class="mb-0">
-                        <a class="no-link text-belgium font-medium" href="mailto:dries.vints@gmail.com">
+                        <a class="no-link text-belgium font-medium" href="mailto:dries@vints.io">
                             <span class="link is-thick">Get in touch with Dries</span> →
                         </a>
                     </p>

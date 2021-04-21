@@ -20,7 +20,7 @@ SCHEDULE<br>
 
 TALKS<br>
 @if (!$event->speaker_1_title && !$event->speaker_2_title)
-Want to speak at this event? Contact dries.vints@gmail.com!
+Want to speak at this event? Contact dries@vints.io!
 @endif
 @if ($event->speaker_1_title && $event->speaker_1_name)
 {{ $event->speaker_1_title }} by {{ $event->speaker_1_name }}<br>
