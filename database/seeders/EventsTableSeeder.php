@@ -5,7 +5,6 @@ namespace Database\Seeders;
 use App\Models\Event;
 use App\Models\Meetup;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Event;
 
 class EventsTableSeeder extends Seeder
 {
