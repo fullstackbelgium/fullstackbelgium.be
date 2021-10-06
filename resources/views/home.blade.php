@@ -106,10 +106,10 @@
 
     <section class="bg-white border-t border-b border-gray-300 py-8 md:py-16">
         <div class="wrapper">
-            <h2 class="text-center font-bold mb-1">Organised by Dries &amp; Rias</h2>
+            <h2 class="text-center font-bold mb-1">Organised by Dries, Rias &amp; Freek</h2>
             <p class="text-center text-sm text-gray-700 mb-8 md:mb-12">Come say hi at our next event! 👋</p>
             <ul class="flex flex-wrap justify-center">
-                <li class="w-full sm:w-1/2 md:w-1/3 mb-8 md:mb-0 text-center">
+                <li class="w-full md:w-1/3 mb-8 md:mb-0 text-center">
                     <img class="inline-block w-24 mb-3 rounded-full border-4 border-white shadow-md" src="{{ url('images/dries.jpg') }}" alt="Headshot of Dries Vints">
                     <p>Dries Vints</p>
                     <p class="text-xs text-gray-600">
@@ -117,12 +117,20 @@
                         <a class="link is-small" href="https://driesvints.com">driesvints.com</a>
                     </p>
                 </li>
-                <li class="w-full sm:w-1/2 md:w-1/3 px-2 text-center">
+                <li class="w-full md:w-1/3 mb-8 md:mb-0 text-center">
                     <img class="inline-block w-24 mb-3 rounded-full border-4 border-white shadow-md" src="{{ url('images/rias.jpg') }}" alt="Headshot of Rias Van der Veken">
                     <p>Rias Van der Veken</p>
                     <p class="text-xs text-gray-600">
                         <a class="link is-small mr-1" href="https://twitter.com/riasvdv">@riasvdv</a>
                         <a class="link is-small" href="https://rias.be">rias.be</a>
+                    </p>
+                </li>
+                <li class="w-full md:w-1/3 px-2 text-center">
+                    <img class="inline-block w-24 mb-3 rounded-full border-4 border-white shadow-md" src="{{ url('images/freek.jpg') }}" alt="Headshot of Freek Van der Herten">
+                    <p>Freek Van der Herten</p>
+                    <p class="text-xs text-gray-600">
+                        <a class="link is-small mr-1" href="https://twitter.com/freekmurze">@freekmurze</a>
+                        <a class="link is-small" href="https://freek.dev">freek.dev</a>
                     </p>
                 </li>
             </ul>

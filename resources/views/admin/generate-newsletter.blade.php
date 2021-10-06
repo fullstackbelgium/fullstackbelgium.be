@@ -9,10 +9,6 @@ Dear members,<br>
 
 If you want to attend this event, please RSVP on <a href="{{ $event->meetup_com_url }}">the event page at meetup.com</a>. If you cannot attend, <b>please remember to change your RSVP</b>.<br>
 <br>
-<b>Eventy</b><br>
-<br>
-We're also happy to announce <a href="https://eventy.io/">Eventy, a new platform for managing your events</a>. Eventy is currently under construction but as soon as it's ready we'll be moving with the user group to our new home. Make sure you <a href="https://eventy.io/">subscribe to the newsletter</a> and <a href="https://twitter.com/eventyio">follow the twitter account</a> to be the first to know when it launches.
-<br>
 <br>
 
 @if ($event->sponsors->count() > 0)
@@ -60,6 +56,6 @@ We're also happy to announce <a href="https://eventy.io/">Eventy, a new platform
 <br />
 We hope to see you there,<br />
 <br />
-Dries & Rias
+Dries, Rias & Freek
 </body>
 </html>

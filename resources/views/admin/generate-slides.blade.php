@@ -108,10 +108,6 @@
             </section>
 
             <section>
-                <img src="{{ asset('images/eventy.png') }}" alt="">
-            </section>
-
-            <section>
                 <h2>How can you help?</h2>
                 <div class="text-left" style="margin-left: 9rem;">
                     <p>📸 Take pictures</p>

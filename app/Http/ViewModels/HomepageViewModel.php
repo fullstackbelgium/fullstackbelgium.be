@@ -91,6 +91,7 @@ class HomepageViewModel extends ViewModel
                     ->organizer([
                         Schema::person()->name('Dries Vints')->url('https://driesvints.com'),
                         Schema::person()->name('Rias Van der Veken')->url('https://rias.be'),
+                        Schema::person()->name('Freek Van der Herten')->url('https://freek.dev'),
                     ]);
 
                 $sponsors = $event->sponsors->map(function (Sponsor $sponsor) {
