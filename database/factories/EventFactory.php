@@ -9,13 +9,6 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 class EventFactory extends Factory
 {
     /**
-     * The name of the factory's corresponding model.
-     *
-     * @var string
-     */
-    protected $model = Event::class;
-
-    /**
      * Define the model's default state.
      *
      * @return array
@@ -28,14 +21,14 @@ class EventFactory extends Factory
                 return Meetup::factory()->create()->id;
             },
 
-            'meetup_com_event_id' => $this->faker->word,
-            'intro' => $this->faker->paragraph,
+            'meetup_com_event_id' => $this->faker->word(),
+            'intro' => $this->faker->paragraph(),
 
-            'schedule' => $this->faker->paragraph,
-            'speaker_1_abstract' => $this->faker->paragraph,
-            'speaker_2_abstract' => $this->faker->paragraph,
+            'schedule' => $this->faker->paragraph(),
+            'speaker_1_abstract' => $this->faker->paragraph(),
+            'speaker_2_abstract' => $this->faker->paragraph(),
 
-            'tweet' => $this->faker->sentence,
+            'tweet' => $this->faker->sentence(),
             'tweet_sent_at' => null,
         ];
     }
