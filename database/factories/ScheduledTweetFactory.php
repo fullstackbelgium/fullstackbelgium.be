@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Models\ScheduledTweet;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ScheduledTweetFactory extends Factory
