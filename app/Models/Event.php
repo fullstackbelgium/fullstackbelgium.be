@@ -16,10 +16,9 @@ class Event extends Model
     use HasFactory;
 
     protected $guarded = [];
-
-    protected $dates = [
-        'date',
-        'tweet_sent_at',
+    protected $casts = [
+        'date' => 'datetime',
+        'tweet_sent_at' => 'datetime',
     ];
 
     protected $attributes = [
