@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class RemoveSponsorsFieldFromEventsTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -17,4 +17,4 @@ class RemoveSponsorsFieldFromEventsTable extends Migration
             $table->dropColumn('sponsors');
         });
     }
-}
+};

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSpeakerFieldsInEventsTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -25,4 +25,4 @@ class CreateSpeakerFieldsInEventsTable extends Migration
             $table->string('speaker_2_length')->after('speaker_2_bio')->nullable();
         });
     }
-}
+};
