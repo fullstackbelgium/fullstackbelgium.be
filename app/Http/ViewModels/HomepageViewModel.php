@@ -20,7 +20,7 @@ class HomepageViewModel extends ViewModel
     public function __construct(MeetupApi $meetupApi)
     {
         $this->meetups = Meetup::with('upcomingEvents', 'previousEvents')->get()->sortBy(function (Meetup $meetup) {
-            return optional($meetup->upcomingEvents->first())->date;
+            return $meetup->upcomingEvents->first()?->date;
         });
         $this->meetupApi = $meetupApi;
     }
