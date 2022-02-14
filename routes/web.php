@@ -3,7 +3,7 @@
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
-Route::group(['middleware' => ['cacheResponse:3600']], function () {
+Route::middleware('cacheResponse:3600')->group(function () {
     Route::get('/', HomeController::class);
 });
 
