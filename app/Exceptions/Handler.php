@@ -3,7 +3,6 @@
 namespace App\Exceptions;
 
 use Exception;
-use Illuminate\Auth\AuthenticationException;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
