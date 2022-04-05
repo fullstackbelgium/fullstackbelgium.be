@@ -20,7 +20,7 @@ class MeetupApi
     public function updateEvent(string $meetupId, string $eventId, array $updatedProperties)
     {
         if (! app()->environment('production')) {
-            return;
+            return $this;
         }
 
         $graphQLBody = [
