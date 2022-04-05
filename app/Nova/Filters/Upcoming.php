@@ -3,8 +3,8 @@
 namespace App\Nova\Filters;
 
 use Carbon\Carbon;
-use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Filters\BooleanFilter;
+use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Upcoming extends BooleanFilter
 {

@@ -4,7 +4,6 @@ namespace App\Services\Meetup;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\ServiceProvider;
 
 class MeetupServiceProvider extends ServiceProvider

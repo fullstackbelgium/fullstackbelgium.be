@@ -2,12 +2,11 @@
 
 namespace App\Nova;
 
-use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
-
+use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Venue extends Resource
 {

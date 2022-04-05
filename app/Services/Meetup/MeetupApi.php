@@ -24,22 +24,22 @@ class MeetupApi
         }
 
         $graphQLBody = [
-            'query' => <<<GQL
-                mutation(\$input: EditEventInput!) {
-                    editEvent(input: \$input) {
-                        errors {
-                            message
+            'query' => <<<'GQL'
+                    mutation($input: EditEventInput!) {
+                        editEvent(input: $input) {
+                            errors {
+                                message
+                            }
                         }
                     }
-                }
-            GQL,
+                GQL,
             'variables' => [
                 'input' => [
                     'eventId' => $eventId,
                     'title' => $updatedProperties['name'],
                     'description' => $updatedProperties['description'],
                 ],
-            ]
+            ],
         ];
 
         $this->client->post('/gql', [
@@ -53,18 +53,18 @@ class MeetupApi
     {
         try {
             $graphQLBody = [
-                'query' => <<<GQL
-                    query(\$eventId: ID) {
-                        event(id: \$eventId) {
-                          title
-                          description
-                          dateTime
-                        }
-                      }
-                GQL,
+                'query' => <<<'GQL'
+                        query($eventId: ID) {
+                            event(id: $eventId) {
+                              title
+                              description
+                              dateTime
+                            }
+                          }
+                    GQL,
                 'variables' => [
                     'eventId' => $event->meetup_com_event_id,
-                ]
+                ],
             ];
 
             $response = $this->client->post('/gql', [

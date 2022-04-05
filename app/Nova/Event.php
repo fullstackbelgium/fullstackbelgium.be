@@ -7,7 +7,6 @@ use App\Http\Controllers\Admin\GenerateSlidesController;
 use App\Nova\Fields\EventSponsorFields;
 use App\Nova\Filters\Upcoming;
 use Carbon\Carbon;
-use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Boolean;
@@ -16,8 +15,8 @@ use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Trix;
+use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Panel;
-
 
 class Event extends Resource
 {

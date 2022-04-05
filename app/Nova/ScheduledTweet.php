@@ -2,11 +2,10 @@
 
 namespace App\Nova;
 
-use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Text;
-
+use Laravel\Nova\Http\Requests\NovaRequest;
 
 class ScheduledTweet extends Resource
 {
