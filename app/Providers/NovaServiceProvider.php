@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use Illuminate\Support\Facades\Gate;
-use Laravel\Nova\Cards\Help;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
 
@@ -42,19 +41,23 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function gate()
     {
         Gate::define('viewNova', function ($user) {
-            return auth()->check();
+            return in_array($user->email, [
+                'rias@spatie.be',
+                'freek@spatie.be',
+                'dries@vints.io',
+            ]);
         });
     }
 
     /**
-     * Get the cards that should be displayed on the Nova dashboard.
+     * Get the dashboards that should be listed in the Nova sidebar.
      *
      * @return array
      */
-    protected function cards()
+    protected function dashboards()
     {
         return [
-            new Help,
+            new \App\Nova\Dashboards\Main,
         ];
     }
 
@@ -75,6 +78,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     public function register()
     {
-        //
+        Nova::report(function ($exception) {
+            dd($exception);
+        });
     }
 }

@@ -2,11 +2,11 @@
 
 namespace App\Nova;
 
-use Illuminate\Http\Request;
+use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Http\Requests\NovaRequest;
+
 
 class ScheduledTweet extends Resource
 {
@@ -23,7 +23,7 @@ class ScheduledTweet extends Resource
         return 'Scheduled Tweets';
     }
 
-    public function fields(Request $request)
+    public function fields(NovaRequest $request)
     {
         return [
             DateTime::make('Scheduled for', 'scheduled_to_be_sent_at')

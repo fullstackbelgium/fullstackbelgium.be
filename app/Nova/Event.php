@@ -7,7 +7,7 @@ use App\Http\Controllers\Admin\GenerateSlidesController;
 use App\Nova\Fields\EventSponsorFields;
 use App\Nova\Filters\Upcoming;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
+use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Boolean;
@@ -17,6 +17,7 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Panel;
+
 
 class Event extends Resource
 {
@@ -40,17 +41,17 @@ class Event extends Resource
     /**
      * Get the filters available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
      * @return array
      */
-    public function filters(Request $request)
+    public function filters(NovaRequest $request)
     {
         return [
             new Upcoming(),
         ];
     }
 
-    public function fields(Request $request)
+    public function fields(NovaRequest $request)
     {
         return [
             new Panel('General information', function () {

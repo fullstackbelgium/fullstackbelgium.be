@@ -2,11 +2,12 @@
 
 namespace App\Nova;
 
-use Illuminate\Http\Request;
+use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
+
 
 class Venue extends Resource
 {
@@ -34,14 +35,14 @@ class Venue extends Resource
         'name',
     ];
 
-    public function fields(Request $request): array
+    public function fields(NovaRequest $request): array
     {
         return [
             ID::make()->sortable(),
 
             Text::make('Name'),
 
-            Image::make('Logo')->disk('public')->storeAs(function (Request $request) {
+            Image::make('Logo')->disk('public')->storeAs(function (NovaRequest $request) {
                 return sha1($request->logo->getClientOriginalName()).'.'.$request->logo->getClientOriginalExtension();
             }),
 

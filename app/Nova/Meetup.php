@@ -2,10 +2,9 @@
 
 namespace App\Nova;
 
-use Illuminate\Http\Request;
+use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
-use Timothyasp\Color\Color;
 
 class Meetup extends Resource
 {
@@ -17,13 +16,13 @@ class Meetup extends Resource
         'name',
     ];
 
-    public function fields(Request $request)
+    public function fields(NovaRequest $request)
     {
         return [
-            Image::make('Logo')->disk('public')->storeAs(function (Request $request) {
+            Image::make('Logo')->disk('public')->storeAs(function (NovaRequest $request) {
                 return sha1($request->logo->getClientOriginalName()).'.'.$request->logo->getClientOriginalExtension();
             }),
-            Color::make('Color')->hideFromIndex(),
+            Text::make('Color')->hideFromIndex(),
             Text::make('Name')->sortable()->rules('required'),
             Text::make('Schedule'),
             Text::make('Meetup.com id', 'meetup_com_id')->sortable()->rules('required'),
