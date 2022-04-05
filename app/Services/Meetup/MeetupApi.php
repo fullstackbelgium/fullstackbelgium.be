@@ -42,9 +42,11 @@ class MeetupApi
             ],
         ];
 
-        $this->client->post('/gql', [
+        $response = $this->client->post('/gql', [
             'body' => json_encode($graphQLBody),
         ]);
+
+        logger()->debug($response->getBody()->getContents());
 
         return $this;
     }
@@ -72,6 +74,8 @@ class MeetupApi
             ]);
 
             $data = json_decode($response->getBody()->getContents(), true);
+
+            logger()->debug($response->getBody()->getContents());
 
             return $data['going'] ?? 0;
         } catch (Exception $e) {
