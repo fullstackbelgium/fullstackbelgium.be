@@ -23,8 +23,27 @@ class MeetupApi
             return;
         }
 
-        $this->client->patch("/{$meetupId}/events/{$eventId}", [
-            'form_params' => $updatedProperties,
+        $graphQLBody = [
+            'query' => <<<GQL
+                mutation(\$input: EditEventInput!) {
+                    editEvent(input: \$input) {
+                        errors {
+                            message
+                        }
+                    }
+                }
+            GQL,
+            'variables' => [
+                'input' => [
+                    'eventId' => $eventId,
+                    'title' => $updatedProperties['name'],
+                    'description' => $updatedProperties['description'],
+                ],
+            ]
+        ];
+
+        $this->client->post('/gql', [
+            'body' => json_encode($graphQLBody),
         ]);
 
         return $this;
@@ -33,10 +52,28 @@ class MeetupApi
     public function getAttendees(Event $event)
     {
         try {
-            $response = $this->client->get("/{$event->meetup->meetup_com_id}/events/{$event->meetup_com_event_id}");
+            $graphQLBody = [
+                'query' => <<<GQL
+                    query(\$eventId: ID) {
+                        event(id: \$eventId) {
+                          title
+                          description
+                          dateTime
+                        }
+                      }
+                GQL,
+                'variables' => [
+                    'eventId' => $event->meetup_com_event_id,
+                ]
+            ];
+
+            $response = $this->client->post('/gql', [
+                'body' => json_encode($graphQLBody),
+            ]);
+
             $data = json_decode($response->getBody()->getContents(), true);
 
-            return $data['yes_rsvp_count'];
+            return $data['going'] ?? 0;
         } catch (Exception $e) {
             //Log::error($e->getMessage());
             return 0;

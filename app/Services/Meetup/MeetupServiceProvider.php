@@ -4,6 +4,7 @@ namespace App\Services\Meetup;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\ServiceProvider;
 
 class MeetupServiceProvider extends ServiceProvider
@@ -31,9 +32,9 @@ class MeetupServiceProvider extends ServiceProvider
             }
 
             $client = new Client([
-                'base_uri' => 'https://api.meetup.com/',
+                'base_uri' => 'https://api.meetup.com',
                 'headers' => [
-                    'Accept' => 'application/json',
+                    'Content-Type' => 'application/json',
                     'Authorization' => "Bearer {$token}",
                 ],
             ]);
