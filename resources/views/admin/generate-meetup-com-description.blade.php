@@ -15,7 +15,7 @@ SCHEDULE<br>
 
 TALKS<br>
 @if (!$event->speaker_1_title && !$event->speaker_2_title)
-Want to speak at this event? Contact <a href="mailto:dries@vints.io">dries@vints.io</a>!
+Want to speak at this event? Contact Dries V. through a Meetup.com message.
 @endif
 @if ($event->speaker_1_title && $event->speaker_1_name)
 {{ $event->speaker_1_title }} by {{ $event->speaker_1_name }}<br>
