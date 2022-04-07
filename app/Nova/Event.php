@@ -90,6 +90,34 @@ class Event extends Resource
                 ];
             }),
 
+            new Panel('Actions', function () {
+                return [
+                    Text::make('', function () {
+                        if (! $this->exists) {
+                            return '';
+                        }
+
+                        return '<a target="fullstack_belgium_newsletter" title="Newsletter" href="'.action(GenerateNewsletterController::class, $this->id).'"><img class="h-6" src="/svg/newsletter.svg" alt=""></a>';
+                    })->exceptOnForms()->asHtml(),
+
+                    Text::make('', function () {
+                        if (! $this->exists) {
+                            return '';
+                        }
+
+                        return '<a target="fullstack_belgium_meetup" title="Meetup.com" href="'.$this->meetup_com_url.'"><img class="h-6" src="/svg/meetup.svg" alt=""></a>';
+                    })->exceptOnForms()->asHtml(),
+
+                    Text::make('', function () {
+                        if (! $this->exists) {
+                            return '';
+                        }
+
+                        return '<a target="fullstack_belgium_slides" title="Slides" href="'.action(GenerateSlidesController::class, $this->id).'"><img class="h-6" src="/svg/slides.svg" alt=""></a>';
+                    })->exceptOnForms()->asHtml(),
+                ];
+            }),
+
             new Panel('Event details', function () {
                 return [
                     Heading::make('Event details')->onlyOnForms(),
@@ -133,30 +161,6 @@ class Event extends Resource
                 return [
                     Heading::make('Extra')->onlyOnForms(),
                     Textarea::make('Tweet'),
-
-                    Text::make('', function () {
-                        if (! $this->exists) {
-                            return '';
-                        }
-
-                        return '<a target="fullstack_belgium_newsletter" title="Newsletter" href="'.action(GenerateNewsletterController::class, $this->id).'"><img class="h-6" src="/svg/newsletter.svg" alt=""></a>';
-                    })->asHtml(),
-
-                    Text::make('', function () {
-                        if (! $this->exists) {
-                            return '';
-                        }
-
-                        return '<a target="fullstack_belgium_meetup" title="Meetup.com" href="'.$this->meetup_com_url.'"><img class="h-6" src="/svg/meetup.svg" alt=""></a>';
-                    })->asHtml(),
-
-                    Text::make('', function () {
-                        if (! $this->exists) {
-                            return '';
-                        }
-
-                        return '<a target="fullstack_belgium_slides" title="Slides" href="'.action(GenerateSlidesController::class, $this->id).'"><img class="h-6" src="/svg/slides.svg" alt=""></a>';
-                    })->asHtml(),
 
                     Boolean::make('Tweet sent', function () {
                         return ! is_null($this->tweet_sent_at);
