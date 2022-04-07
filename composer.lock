@@ -2122,17 +2122,17 @@
         },
         {
             "name": "laravel/nova",
-            "version": "4.0.0",
+            "version": "4.0.6",
             "source": {
                 "type": "git",
                 "url": "git@github.com:laravel/nova.git",
-                "reference": "cbf4b83643e4f0b4aa4a57f6de8132dcf21f2282"
+                "reference": "b960d3135fdbd2733ea39177e24bcadeac24a535"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-cbf4b83643e4f0b4aa4a57f6de8132dcf21f2282-zip-11446e.zip",
-                "reference": "cbf4b83643e4f0b4aa4a57f6de8132dcf21f2282",
-                "shasum": "7bb74310d16cb6838547c4f9a33234e022043538"
+                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-b960d3135fdbd2733ea39177e24bcadeac24a535-zip-12f6c7.zip",
+                "reference": "b960d3135fdbd2733ea39177e24bcadeac24a535",
+                "shasum": "7be0e5050861fbd6060b9bcd94ca80e2f91f0d5e"
             },
             "require": {
                 "brick/money": "^0.5.0",
@@ -2221,9 +2221,9 @@
                 "laravel"
             ],
             "support": {
-                "source": "https://github.com/laravel/nova/tree/v4.0.0"
+                "source": "https://github.com/laravel/nova/tree/v4.0.6"
             },
-            "time": "2022-04-05T05:33:46+00:00"
+            "time": "2022-04-07T02:39:39+00:00"
         },
         {
             "name": "laravel/serializable-closure",
