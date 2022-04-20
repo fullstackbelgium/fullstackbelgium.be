@@ -28,7 +28,7 @@ The following tools are required in order to start the installation.
 4. Add [the `auth.json` file from below](#nova-license) to the root of the project
 5. Install the PHP dependencies with `composer install` 
 6. Generate a new app key with `php artisan key:generate`
-7. Prepare the database by running `php artisan migrate --seed` 
+7. Prepare the database by running `php artisan migrate --seed`
 8. Install and compile the front-end dependencies with `npm install && npm run dev`
 9. Serve the website locally by running `php artisan serve`
 
