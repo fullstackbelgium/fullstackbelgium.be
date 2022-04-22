@@ -11,29 +11,27 @@
                     </h2>
                     <ol>
                         @foreach ($meetups as $meetup)
-                            @php($nextEvent = $meetup->upcomingEvents->first())
-                            @if ($nextEvent)
-                                <li class="sm:flex items-center mt-4 sm:mt-0 sm:mb-1">
-                                    <a href="{{ $nextEvent->meetup_com_url }}" target="_blank" rel="noopener" class="w-24 mb-2 sm:mb-0 sm:mr-2">
-                                        <span class="uppercase font-medium tracking-wide text-xs text-white bg-{{ $meetup->meetup_com_id }} py-1 px-2 rounded-full">
-                                            {{ str_replace('Full Stack ', '', $meetup->name) }}
+                            @continue(! $nextEvent = $meetup->upcomingEvents->first())
+                            <li class="sm:flex items-center mt-4 sm:mt-0 sm:mb-1">
+                                <a href="{{ $nextEvent->meetup_com_url }}" target="_blank" rel="noopener" class="w-24 mb-2 sm:mb-0 sm:mr-2">
+                                    <span class="uppercase font-medium tracking-wide text-xs text-white bg-{{ $meetup->meetup_com_id }} py-1 px-2 rounded-full">
+                                        {{ str_replace('Full Stack ', '', $meetup->name) }}
+                                    </span>
+                                </a>
+                                <p style="margin-top: 0.2rem">
+                                    <a href="{{ $nextEvent->meetup_com_url }}" target="_blank" rel="noopener" title="View on meetup.com">
+                                        @if ($nextEvent->date->startOfDay() > \Carbon\Carbon::now()->startOfDay())
+                                            <time class="font-medium" datetime="{{ $nextEvent->date->format('Y-m-d') }}">{!! $nextEvent->date->format('F j<\s\up>S<\/\s\up>') !!}</time>
+                                        @else
+                                            <span class="font-medium">Today!</span>
+                                        @endif
+                                        at {{ $nextEvent->venue ? $nextEvent->venue->name : 'TBA' }}
+                                        <span class="inline-block w-4">
+                                            {{ svg('meetup') }}
                                         </span>
                                     </a>
-                                    <p style="margin-top: 0.2rem">
-                                        <a href="{{ $nextEvent->meetup_com_url }}" target="_blank" rel="noopener" title="View on meetup.com">
-                                            @if ($nextEvent->date->startOfDay() > \Carbon\Carbon::now()->startOfDay())
-                                                <time class="font-medium" datetime="{{ $nextEvent->date->format('Y-m-d') }}">{!! $nextEvent->date->format('F j<\s\up>S<\/\s\up>') !!}</time>
-                                            @else
-                                                <span class="font-medium">Today!</span>
-                                            @endif
-                                            at {{ $nextEvent->venue ? $nextEvent->venue->name : 'TBA' }}
-                                            <span class="inline-block w-4">
-                                                {{ svg('meetup') }}
-                                            </span>
-                                        </a>
-                                    </p>
-                                </li>
-                            @endif
+                                </p>
+                            </li>
                         @endforeach
                     </ol>
                 </section>
