@@ -79,16 +79,16 @@
                 @component('components.gallery')
                     <ul class="md:flex -mx-4 md:-mx-px">
                         <li class="flex-1 mb-4 md:mb-0 md:px-px">
-                            <img class="cursor-zoom-in md:rounded-l-sm" src="{{ url('images/meetups/meetup-dummy-1.jpg') }}" alt="Full Stack Ghent 2019-02-12"
-                                data-gallery-item data-src="/images/meetups/meetup-dummy-1.jpg" data-w="1024" data-h="768">
+                            <img class="cursor-zoom-in md:rounded-l-sm" src="{{ url('images/meetups/meetup-1.jpg') }}" alt="Full Stack Ghent 2019-02-12"
+                                data-gallery-item data-src="{{ url('images/meetups/meetup-1.jpg') }}" data-w="1024" data-h="768">
                         </li>
                         <li class="flex-1 mb-4 md:mb-0 md:px-px">
                             <img class="cursor-zoom-in" src="{{ url('images/meetups/meetup-dummy-2.jpg') }}" alt="Full Stack Ghent 2019-02-12"
-                                data-gallery-item data-src="/images/meetups/meetup-dummy-2.jpg" data-w="1024" data-h="768">
+                                data-gallery-item data-src="{{ url('images/meetups/meetup-dummy-2.jpg') }}" data-w="1024" data-h="768">
                         </li>
                         <li class="flex-1 md:px-px">
                             <img class="cursor-zoom-in md:rounded-r-sm" src="{{ url('images/meetups/meetup-dummy-3.jpg') }}" alt="Full Stack Ghent 2019-02-12"
-                                data-gallery-item data-src="/images/meetups/meetup-dummy-3.jpg" data-w="2048 " data-h="1536">
+                                data-gallery-item data-src="{{ url('images/meetups/meetup-dummy-3.jpg') }}" data-w="2048" data-h="1536">
                         </li>
                     </ul>
                 @endcomponent
@@ -113,7 +113,7 @@
             <p class="text-center text-sm text-gray-700 mb-8 md:mb-12">Come say hi at our next event! 👋</p>
             <ul class="flex flex-wrap justify-center">
                 <li class="w-full md:w-1/3 mb-8 md:mb-0 text-center">
-                    <img class="inline-block w-24 mb-3 rounded-full border-4 border-white shadow-md" src="{{ url('images/dries.jpg') }}" alt="Headshot of Dries Vints">
+                    <img class="inline-block w-24 mb-3 rounded-full border-4 border-white shadow-md" src="https://unavatar.io/twitter/driesvints" alt="Headshot of Dries Vints">
                     <p>Dries Vints</p>
                     <p class="text-xs text-gray-600">
                         <a class="link is-small mr-1" href="https://twitter.com/driesvints">@driesvints</a>
@@ -121,7 +121,7 @@
                     </p>
                 </li>
                 <li class="w-full md:w-1/3 mb-8 md:mb-0 text-center">
-                    <img class="inline-block w-24 mb-3 rounded-full border-4 border-white shadow-md" src="{{ url('images/rias.jpg') }}" alt="Headshot of Rias Van der Veken">
+                    <img class="inline-block w-24 mb-3 rounded-full border-4 border-white shadow-md" src="https://unavatar.io/twitter/riasvdv" alt="Headshot of Rias Van der Veken">
                     <p>Rias Van der Veken</p>
                     <p class="text-xs text-gray-600">
                         <a class="link is-small mr-1" href="https://twitter.com/riasvdv">@riasvdv</a>
@@ -129,7 +129,7 @@
                     </p>
                 </li>
                 <li class="w-full md:w-1/3 px-2 text-center">
-                    <img class="inline-block w-24 mb-3 rounded-full border-4 border-white shadow-md" src="{{ url('images/freek.jpg') }}" alt="Headshot of Freek Van der Herten">
+                    <img class="inline-block w-24 mb-3 rounded-full border-4 border-white shadow-md" src="https://unavatar.io/twitter/freekmurze" alt="Headshot of Freek Van der Herten">
                     <p>Freek Van der Herten</p>
                     <p class="text-xs text-gray-600">
                         <a class="link is-small mr-1" href="https://twitter.com/freekmurze">@freekmurze</a>
