@@ -12,4 +12,4 @@ Route::view('contact', 'contact');
 Route::view('code-of-conduct', 'code-of-conduct');
 Route::view('cfp', 'cfp');
 
-Route::redirect('/login', '/nova/redirect', 301)->name('login');
+Route::redirect('/login', '/nova/login', 301)->name('login');
