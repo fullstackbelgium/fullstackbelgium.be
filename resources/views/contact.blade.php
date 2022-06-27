@@ -84,8 +84,8 @@
                     </ul>
                     <p class="mb-0">
                         Want to help us out and sponsor one of our events, or have a different proposal?<br>
-                        <a class="no-link text-belgium font-medium" href="mailto:hello@rias.be">
-                            <span class="link is-thick">Get in touch with Rias</span> →
+                        <a class="no-link text-belgium font-medium" href="mailto:dries@vints.io">
+                            <span class="link is-thick">Get in touch with Dries</span> →
                         </a>
                     </p>
                 </div>
