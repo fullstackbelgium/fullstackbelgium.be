@@ -86,7 +86,7 @@ class Event extends Resource
             new Panel('Venue', function () {
                 return [
                     BelongsTo::make('Venue')->nullable(),
-                    Trix::make('Venue info')->help('Will not be sent to meetup.com. e.g. Venue will provide snacks & drinks.'),
+                    Trix::make('Venue info')->help('Will be added to the bottom of the meetup.com event. e.g. Venue will provide snacks & drinks.'),
                 ];
             }),
 

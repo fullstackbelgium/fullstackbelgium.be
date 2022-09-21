@@ -40,5 +40,10 @@ Length: {{ $event->speaker_1_length }}min<br><br>
 Speaker: {!! $event->speaker_2_bio !!}<br>
 @endif
 @if ($event->speaker_2_length)
-Length: {{ $event->speaker_2_length }}min<br><br>
+Length: {{ $event->speaker_2_length }}min<br>
+@endif
+@if ($event->venue_info)
+<br>
+VENUE INFO<br>
+{{ $event->venue_info }}
 @endif
