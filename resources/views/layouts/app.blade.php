@@ -39,13 +39,13 @@
 </head>
 <body class="bg-gray-200 font-sans text-black leading-normal">
     <div class="flex flex-col min-h-screen">
-        <section class="bg-europe-dark border-t-4 border-europe-light text-white font-medium pt-3 pb-4 mb-4">
+        {{-- <section class="bg-europe-dark border-t-4 border-europe-light text-white font-medium pt-3 pb-4 mb-4">
             <div class="wrapper text-center">
                 <a class="focus:underline focus:bg-transparent" href="https://fullstackeurope.com/" target="_blank" rel="noopener">
                     Join us at Full Stack Europe, our conference in Antwerp  →
                 </a>
             </div>
-        </section>
+        </section> --}}
         <header class="w-full max-w-5xl px-6 sm:px-12 mx-auto mb-12 md:mb-24">
             <div class="pt-6 flex items-center sm:items-end justify-between relative">
                 <figure class="hidden sm:block absolute right-0 top-0 mt-4" style="width: 18rem">
