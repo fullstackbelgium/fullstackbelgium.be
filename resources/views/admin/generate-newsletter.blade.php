@@ -5,9 +5,13 @@
 </p>
 Dear members,<br>
 <br>
-{!! markdownToHtml($event->intro) !!}
-
+{!! markdownToHtml($event->intro) !!}<br>
+<br>
 If you want to attend this event, please RSVP on <a href="{{ $event->meetup_com_url }}">the event page at meetup.com</a>. If you cannot attend, <b>please remember to change your RSVP</b>.<br>
+<br />
+We hope to see you there,<br />
+<br />
+Dries, Rias & Freek
 <br>
 <br>
 
@@ -53,9 +57,5 @@ If you want to attend this event, please RSVP on <a href="{{ $event->meetup_com_
         <b>Length:</b> {{ $event->speaker_2_length }}min<br /><br />
     @endif
 </div>
-<br />
-We hope to see you there,<br />
-<br />
-Dries, Rias & Freek
 </body>
 </html>
