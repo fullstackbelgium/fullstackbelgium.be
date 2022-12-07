@@ -103,10 +103,12 @@
                 <p>fullstackbelgium.be</p>
             </section>
 
+            {{--
             <section>
                 <img src="{{ asset('images/fseu.png') }}" alt="">
                 <h3 style="color: {{ $event->meetup->color }}">bit.ly/fseu22fsbe</h3>
             </section>
+            --}}
 
             <section>
                 <h2>How can you help?</h2>
