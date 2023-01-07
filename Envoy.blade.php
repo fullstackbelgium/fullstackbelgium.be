@@ -85,7 +85,7 @@ npm ci
 @task('generateAssets', ['on' => 'remote'])
 {{ logMessage("🌅  Generating assets…") }}
 cd {{ $newReleaseDir }};
-npm run production --progress false
+npm run build
 @endtask
 
 @task('updateSymlinks', ['on' => 'remote'])
