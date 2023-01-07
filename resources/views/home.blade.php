@@ -4,7 +4,7 @@
             Organising events on front-end, back-end, devops and everything in between in the cities of <strong class="font-medium">Antwerp</strong> and <strong class="font-medium">Ghent</strong>.
         </p>
         <div class="flex flex-col items-end mb-12 md:mb-24" style="margin-top: -2.4rem;">
-            <div class="w-full md:max-w-min-content">
+            <div class="w-full md:max-w-fit">
                 <section class="box p-6 md:flex whitespace-no-wrap">
                     <h2 class="mb-2 mr-8 font-bold">
                         Our next events
