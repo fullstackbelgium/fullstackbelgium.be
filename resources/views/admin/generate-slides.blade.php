@@ -14,7 +14,7 @@
         .reveal a,
         .reveal .controls,
         .reveal .progress {
-            color: {{ $event->meetup->color }}
+            color: #6859ea;
         }
 
         .reveal .progress {
@@ -30,13 +30,18 @@
             margin-top: 0.25rem;
             margin-bottom: 0.25rem;
         }
+
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
     </style>
 </head>
 <body>
     <div class="reveal">
         <div class="slides">
             <section>
-                <img class="w-1/2" src="{{ asset('/storage/'.$event->meetup->logo) }}" alt="">
+                <img style="width: 80%" src="{{ asset('images/logo.svg') }}" alt="">
             </section>
 
             @if ($event->venue)
@@ -60,7 +65,7 @@
             @if ($nextMeetup)
                 <section class="text-left px-12" data-markdown>
                     <textarea class="leading-normal" data-template>
-                        ## Our next event <span style="color: {{ $event->meetup->color  }}">{{ $nextMeetup->date->format('d/m') }}</span>@if($nextMeetup->venue)<br><small>at <span style="color: {{ $event->meetup->color  }}">{{ $nextMeetup->venue->name }}</span></small>@endif
+                        ## Our next event <span style="color: #6859ea">{{ $nextMeetup->date->format('d/m') }}</span>@if($nextMeetup->venue)<br><small>at <span style="color: #6859ea">{{ $nextMeetup->venue->name }}</span></small>@endif
                         **{{ $nextMeetup->speaker_1_title }}**<br>
                         &mdash; {{ $nextMeetup->speaker_1_name }}
 
@@ -81,7 +86,7 @@
                 @if ($nextEvent)
                     <section class="text-left px-12" data-markdown>
                         <textarea class="leading-normal" data-template>
-                            ## Our next <span style="color: {{ $nextEvent->meetup->color }}">{{ str_replace('Full Stack ', '', $otherMeetup->name) }}</span><br>event: <span style="color: {{ $nextEvent->meetup->color }}">{{ $nextEvent->date->format('d/m') }}</span>@if($nextEvent->venue)<br><small>at <span style="color: {{ $nextEvent->meetup->color  }}">{{ $nextEvent->venue->name }}</span></small>@endif
+                            ## Our next <span style="color: #6859ea">{{ str_replace('Full Stack ', '', $otherMeetup->name) }}</span><br>event: <span style="color: #6859ea">{{ $nextEvent->date->format('d/m') }}</span>@if($nextEvent->venue)<br><small>at <span style="color: {{ $nextEvent->meetup->color  }}">{{ $nextEvent->venue->name }}</span></small>@endif
                             **{{ $nextEvent->speaker_1_title }}**<br>
                             &mdash; {{ $nextEvent->speaker_1_name }}
 
@@ -90,7 +95,7 @@
                             &mdash; {{ $nextEvent->speaker_2_name }}
                             @else
                             **You?**<br>
-                            &mdash; Contact <a href="mailto:dries@vints.io" style="color: {{ $nextEvent->meetup->color }}">dries@vints.io</a> to claim your slot!
+                            &mdash; Contact <a href="mailto:dries@vints.io" style="color: #6859ea">dries@vints.io</a> to claim your slot!
                             @endif
                         </textarea>
                     </section>
@@ -99,7 +104,7 @@
 
             <section>
                 <h2>Join us</h2>
-                <img class="w-1/3" src="{{ asset('images/full-stack-belgium.png') }}" alt="">
+                <img class="w-1/3" src="{{ asset('images/logo.svg') }}" alt="">
                 <p>fullstackbelgium.be</p>
             </section>
 
@@ -112,16 +117,16 @@
                 <h2>How can you help?</h2>
                 <div class="text-left" style="margin-left: 9rem;">
                     <p>📸 Take pictures</p>
-                    <p>🐦 Tweet or share a story on Instagram during the event (mention @fullstackbe)</p>
+                    <p>🐦 Tweet or share a story on Instagram during the event (mention <span style="color: #6859ea">@fullstackbe</span>)</p>
                     <p>💬 Leave a comment on the event page</p>
                     <p>👤 Bring your colleagues and friends!</p>
                 </div>
             </section>
 
-            <section class="text-left px-12">
-                <div class="flex items-center">
-                    <img class="w-1/2" src="{{ asset('/storage/'.$event->meetup->logo) }}" alt="">
-                    <div class="ml-auto" style="margin-right: 50px;">
+            <section class="px-12">
+                <div class="">
+                    <img class="w-1/2" style="margin-bottom: 20px;" src="{{ asset('images/logo.svg') }}" alt="">
+                    <div class="w-1/2 mx-auto text-left">
                         <h2>Enjoy!</h2>
                         <p style="color: {{ $event->meetup->color }}">fullstackbelgium.be</p>
                         <p style="color: {{ $event->meetup->color }}">twitter.com/fullstackbe</p>
@@ -132,7 +137,7 @@
     </div>
 
     <footer>
-        Full Stack Belgium
+        {{ $event->meetup->name }}
     </footer>
 
     <script src="/revealjs/js/reveal.js"></script>
