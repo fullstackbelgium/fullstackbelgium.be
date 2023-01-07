@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\ViewModels\HomepageViewModel;
-use App\Services\Meetup\MeetupApi;
 
 class HomeController
 {
