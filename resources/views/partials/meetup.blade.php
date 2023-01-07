@@ -2,11 +2,6 @@
 @if ($nextEvent)
 <div class="md:flex">
     <header class="md:w-1/3 mb-6 md:mb-0">
-        <figure class="block w-24 mb-3">
-            <a href="https://www.meetup.com/{{ $meetup->meetup_com_id }}" target="_blank" rel="noopener" title="View on meetup.com">
-                <img src="{{ asset('storage/'.$meetup->logo) }}" alt="{{ $meetup->name }}">
-            </a>
-        </figure>
         <div class="w-full">
             <h2 class="font-bold text-xl">
                 <a href="https://www.meetup.com/{{ $meetup->meetup_com_id }}" target="_blank" rel="noopener" title="View on meetup.com">
@@ -25,7 +20,7 @@
                         </a>
                     </figure>
                 @endforeach
-                <div class="text-sm">Your logo here? <a href="{{ url('contact') }}#sponsors" class="text-belgium underline">Get in touch!</a></div>
+                <div class="text-sm">Your logo here? <a href="{{ url('contact') }}#sponsors" class="text-fs-purple underline">Get in touch!</a></div>
             </div>
         </div>
     </header>

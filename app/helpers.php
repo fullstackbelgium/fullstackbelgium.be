@@ -20,10 +20,3 @@ function svg(string $filename): HtmlString
         file_get_contents(public_path("svg/{$filename}.svg")),
     );
 }
-
-function inline_mix(string $path): HtmlString
-{
-    return new HtmlString(file_get_contents(
-        public_path(mix($path)),
-    ));
-}

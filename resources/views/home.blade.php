@@ -4,7 +4,7 @@
             Organising events on front-end, back-end, devops and everything in between in the cities of <strong class="font-medium">Antwerp</strong> and <strong class="font-medium">Ghent</strong>.
         </p>
         <div class="flex flex-col items-end mb-12 md:mb-24" style="margin-top: -2.4rem;">
-            <div class="w-full md:max-w-min-content">
+            <div class="w-full md:max-w-lg">
                 <section class="box p-6 md:flex whitespace-no-wrap">
                     <h2 class="mb-2 mr-8 font-bold">
                         Our next events
@@ -14,6 +14,7 @@
                             @continue(! $nextEvent = $meetup->upcomingEvents->first())
                             <li class="sm:flex items-center mt-4 sm:mt-0 sm:mb-1">
                                 <a href="{{ $nextEvent->meetup_com_url }}" target="_blank" rel="noopener" class="w-24 mb-2 sm:mb-0 sm:mr-2">
+                                    <!-- bg-fullstackghent bg-fullstackantwerp -->
                                     <span class="uppercase font-medium tracking-wide text-xs text-white bg-{{ $meetup->meetup_com_id }} py-1 px-2 rounded-full">
                                         {{ str_replace('Full Stack ', '', $meetup->name) }}
                                     </span>
@@ -111,7 +112,7 @@
             <p class="text-center text-sm text-gray-700 mb-8 md:mb-12">Come say hi at our next event! 👋</p>
             <ul class="flex flex-wrap justify-center">
                 <li class="w-full md:w-1/3 mb-8 md:mb-0 text-center">
-                    <img class="inline-block w-24 mb-3 rounded-full border-4 border-white shadow-md" src="https://unavatar.io/twitter/driesvints" alt="Headshot of Dries Vints">
+                    <img class="inline-block w-24 mb-3 rounded-full border-4 border-white shadow-md" src="https://www.gravatar.com/avatar/{{ md5('dries@vints.io') }}?s=250" alt="Headshot of Dries Vints">
                     <p>Dries Vints</p>
                     <p class="text-xs text-gray-600">
                         <a class="link is-small mr-1" href="https://twitter.com/driesvints">@driesvints</a>
@@ -119,7 +120,7 @@
                     </p>
                 </li>
                 <li class="w-full md:w-1/3 mb-8 md:mb-0 text-center">
-                    <img class="inline-block w-24 mb-3 rounded-full border-4 border-white shadow-md" src="https://unavatar.io/twitter/riasvdv" alt="Headshot of Rias Van der Veken">
+                    <img class="inline-block w-24 mb-3 rounded-full border-4 border-white shadow-md" src="https://www.gravatar.com/avatar/{{ md5('hey@rias.be') }}?s=250" alt="Headshot of Rias Van der Veken">
                     <p>Rias Van der Veken</p>
                     <p class="text-xs text-gray-600">
                         <a class="link is-small mr-1" href="https://twitter.com/riasvdv">@riasvdv</a>
@@ -127,7 +128,7 @@
                     </p>
                 </li>
                 <li class="w-full md:w-1/3 px-2 text-center">
-                    <img class="inline-block w-24 mb-3 rounded-full border-4 border-white shadow-md" src="https://unavatar.io/twitter/freekmurze" alt="Headshot of Freek Van der Herten">
+                    <img class="inline-block w-24 mb-3 rounded-full border-4 border-white shadow-md" src="https://www.gravatar.com/avatar/{{ md5('freek@spatie.be') }}?s=250" alt="Headshot of Freek Van der Herten">
                     <p>Freek Van der Herten</p>
                     <p class="text-xs text-gray-600">
                         <a class="link is-small mr-1" href="https://twitter.com/freekmurze">@freekmurze</a>

@@ -28,7 +28,7 @@
 
 .markup a:not(.no-link),
 .link {
-    color: var(--belgium);
+    color: var(--purple);
     display: inline-block;
     position: relative;
 }

@@ -1,8 +1,7 @@
 /node_modules
 /public/hot
 /public/storage
-/public/css
-/public/js
+/public/build
 /public/images/vendor
 /public/mix-manifest.json
 /storage/*.key
