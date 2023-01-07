@@ -126,6 +126,7 @@ php artisan config:clear
 php artisan view:clear
 php artisan cache:clear
 php artisan config:cache
+php artisan route:cache
 
 sudo service php8.2-fpm restart
 sudo supervisorctl restart all
@@ -151,6 +152,7 @@ php artisan config:clear
 php artisan view:clear
 php artisan cache:clear
 php artisan config:cache
+php artisan route:cache
 sudo supervisorctl restart all
 sudo service php8.2-fpm restart
 @endtask
