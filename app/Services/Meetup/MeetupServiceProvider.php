@@ -10,7 +10,7 @@ class MeetupServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        $this->app->bind(MeetupApi::class, function () {
+        $this->app->singleton(MeetupApi::class, function () {
             $token = '';
 
             try {

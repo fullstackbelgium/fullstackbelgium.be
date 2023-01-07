@@ -7,10 +7,8 @@ use App\Services\Meetup\MeetupApi;
 
 class HomeController
 {
-    public function __invoke(MeetupApi $meetupApi)
+    public function __invoke()
     {
-        $homepageViewModel = new HomepageViewModel($meetupApi);
-
-        return view('home', $homepageViewModel);
+        return view('home', new HomepageViewModel());
     }
 }

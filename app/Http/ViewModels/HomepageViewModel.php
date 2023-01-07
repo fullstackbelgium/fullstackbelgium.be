@@ -14,15 +14,11 @@ class HomepageViewModel extends ViewModel
     /** @var \Illuminate\Database\Eloquent\Collection */
     private $meetups;
 
-    /** @var \App\Services\Meetup\MeetupApi */
-    private $meetupApi;
-
-    public function __construct(MeetupApi $meetupApi)
+    public function __construct()
     {
         $this->meetups = Meetup::with('upcomingEvents', 'previousEvents')->get()->sortBy(function (Meetup $meetup) {
             return optional($meetup->upcomingEvents->first())->date;
         });
-        $this->meetupApi = $meetupApi;
     }
 
     public function meetups()
@@ -32,15 +28,17 @@ class HomepageViewModel extends ViewModel
 
     public function totalAttendees(): int
     {
-        $totalAttendees = 0;
+        return cache()->remember('total-attendees', now()->addWeek(), function () {
+            $totalAttendees = 0;
 
-        foreach ($this->meetups as $meetup) {
-            if ($event = $meetup->previousEvents->last()) {
-                $totalAttendees += $this->meetupApi->getAttendees($event);
+            foreach ($this->meetups as $meetup) {
+                if ($event = $meetup->previousEvents->last()) {
+                    $totalAttendees += app(MeetupApi::class)->getAttendees($event);
+                }
             }
-        }
 
-        return $totalAttendees;
+            return $totalAttendees;
+        });
     }
 
     public function schemaOrg(): string
