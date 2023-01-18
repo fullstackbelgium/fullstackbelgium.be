@@ -109,8 +109,12 @@
             </section>
 
             <section>
-                <img src="{{ asset('images/eventy.png') }}" alt="">
+                <img src="{{ asset('images/fseu.png') }}" alt="">
                 {{-- <h3 style="color: {{ $event->meetup->color }}">bit.ly/fseu22fsbe</h3> --}}
+            </section>
+
+            <section>
+                <img src="{{ asset('images/eventy.png') }}" alt="">
             </section>
 
             <section>

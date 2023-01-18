@@ -29,29 +29,32 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=Array.from" defer></script>
     @vite(['resources/css/app.css', 'resources/css/vendor.css', 'resources/js/app.js'])
 
-    @if (app()->environment('production'))
+    @production
         <!-- Fathom - beautiful, simple website analytics -->
         <script src="https://boom.laravel.io/script.js" data-site="KXNVRTKF" defer></script>
         <!-- / Fathom -->
-    @endif
+    @endproduction
 </head>
 <body class="bg-gray-200 font-sans text-black leading-normal">
     <div class="flex flex-col min-h-screen">
-        {{-- <section class="bg-europe-dark border-t-4 border-europe-light text-white font-medium pt-3 pb-4 mb-4">
+        <section class="bg-europe-dark border-t-4 border-europe-light text-white font-medium pt-3 pb-4 mb-4">
             <div class="wrapper text-center">
                 <a class="focus:underline focus:bg-transparent" href="https://fullstackeurope.com/" target="_blank" rel="noopener">
                     Join us at Full Stack Europe, our conference in Antwerp  →
                 </a>
             </div>
-        </section> --}}
+        </section>
+
         <header class="wrapper mb-12 md:mb-24">
             <div class="pt-6 flex items-center justify-between relative">
                 <figure class="hidden sm:block absolute right-0 top-0 mt-4" style="width: 18rem">
                     {{ svg('belgium') }}
                 </figure>
+
                 <a tabindex="-1" class="logo block w-48 mt-5 mr-8 relative" href="{{ url('/') }}" title="Full Stack Belgium">
                     <img src="{{ asset('images/logo.svg') }}" alt="Full Stack Belgium">
                 </a>
+
                 <nav class="bg-gray-200 text-gray-700 py-1 leading-none sm:mt-8 mb-1 relative">
                     <ul class="sm:flex text-right">
                         <li class="mb-3 sm:mb-0 sm:mr-3 md:mr-5 {{ $active === 'home' ? 'font-bold text-black' : '' }}">
@@ -73,17 +76,20 @@
                 </nav>
             </div>
         </header>
+
         <main class="w-full flex-1">
             {{ $slot }}
         </main>
+
         <footer class="w-full max-w-5xl px-6 sm:px-12 lg:px-24 mx-auto">
             <div class="py-6 md:flex justify-between text-xs text-gray-700">
                 <ul class="flex mb-2 md:mb-0">
                     <li class="mr-3 md:mr-6"><a href="{{ url('contact') }}">Contact</a></li>
                     <li><a href="{{ url('code-of-conduct') }}">Code of conduct</a></li>
                 </ul>
+
                 <p>
-                    &copy; {{ now()->format('Y') }}
+                    &copy; {{ date('Y') }}
                     <a href="{{ url('/') }}">
                         Full Stack Belgium
                     </a>

@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use Illuminate\Http\Request;
 use Illuminate\Validation\Rules;
 use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\ID;
@@ -14,7 +15,7 @@ class User extends Resource
     /**
      * The model the resource corresponds to.
      *
-     * @var string
+     * @var class-string<\App\Models\User>
      */
     public static $model = \App\Models\User::class;
 
