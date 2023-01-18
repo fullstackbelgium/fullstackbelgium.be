@@ -14,7 +14,7 @@
         }
     ],
     "require": {
-        "php": "^8.0",
+        "php": "^8.2",
         "ext-json": "*",
         "abraham/twitteroauth": "^2.0",
         "erusev/parsedown": "^1.7",
