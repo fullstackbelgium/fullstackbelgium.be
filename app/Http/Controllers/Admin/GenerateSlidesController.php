@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\View\View;
 use App\Models\Event;
 use App\Models\Meetup;
+use Illuminate\View\View;
 
 class GenerateSlidesController
 {

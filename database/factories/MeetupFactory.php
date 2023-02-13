@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Models\Meetup;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class MeetupFactory extends Factory

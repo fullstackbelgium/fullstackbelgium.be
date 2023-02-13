@@ -2,11 +2,11 @@
 
 namespace App\Exceptions;
 
-use Illuminate\Http\Response;
-use Illuminate\Http\Request;
 use Exception;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Throwable;
 use Whoops\Handler\HandlerInterface;
 

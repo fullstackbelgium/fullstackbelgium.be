@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 class ScheduledTweet extends Model
 {
     use HasFactory;
+
     protected $casts = [
         'scheduled_to_be_sent_at' => 'datetime',
         'sent_at' => 'datetime',
