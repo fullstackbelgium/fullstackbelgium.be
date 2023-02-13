@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 
 class ScheduledTweetsTableSeeder extends Seeder
 {
-    public function run()
+    public function run(): void
     {
         ScheduledTweet::factory()->count(20)->create();
     }

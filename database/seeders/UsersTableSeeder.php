@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 
 class UsersTableSeeder extends Seeder
 {
-    public function run()
+    public function run(): void
     {
         User::factory()->create([
             'name' => 'Test User',

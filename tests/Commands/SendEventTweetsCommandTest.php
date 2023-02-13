@@ -21,7 +21,7 @@ class SendEventTweetsCommandTest extends TestCase
     }
 
     /** @test */
-    public function it_will_tweet_an_event_that_is_happening_within_two_weeks()
+    public function it_will_tweet_an_event_that_is_happening_within_two_weeks(): void
     {
         $this->createEvent('2018-01-07', 'tweet this');
         $this->artisan('fullstack:send-event-tweets');
@@ -29,7 +29,7 @@ class SendEventTweetsCommandTest extends TestCase
     }
 
     /** @test */
-    public function it_will_only_send_an_announcement_tweet_once()
+    public function it_will_only_send_an_announcement_tweet_once(): void
     {
         $this->createEvent('2018-01-07', 'tweet this');
         $this->artisan('fullstack:send-event-tweets');
@@ -38,7 +38,7 @@ class SendEventTweetsCommandTest extends TestCase
     }
 
     /** @test */
-    public function it_will_only_send_a_tweet_if_an_event_happens_in_the_two_weeks()
+    public function it_will_only_send_a_tweet_if_an_event_happens_in_the_two_weeks(): void
     {
         $this->createEvent('2018-01-21', 'tweet this');
 

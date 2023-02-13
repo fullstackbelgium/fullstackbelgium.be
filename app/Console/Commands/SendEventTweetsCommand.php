@@ -11,7 +11,7 @@ class SendEventTweetsCommand extends Command
 
     protected $description = 'Send tweets to announce events';
 
-    public function handle()
+    public function handle(): void
     {
         $this->info('Sending announcement tweets');
 

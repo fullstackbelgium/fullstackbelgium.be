@@ -11,7 +11,7 @@ class TestMeetupApi extends Command
 
     protected $description = 'A quick way to test the Meetup API';
 
-    public function handle()
+    public function handle(): void
     {
         $meetup = app(MeetupApi::class);
 

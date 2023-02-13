@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    public function up()
+    public function up(): void
     {
         if (env('APP_ENV') !== 'testing') {
             Schema::table('sponsorships', function (Blueprint $table) {

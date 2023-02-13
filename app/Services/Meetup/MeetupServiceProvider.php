@@ -8,7 +8,7 @@ use Illuminate\Support\ServiceProvider;
 
 class MeetupServiceProvider extends ServiceProvider
 {
-    public function register()
+    public function register(): void
     {
         $this->app->singleton(MeetupApi::class, function () {
             $token = '';

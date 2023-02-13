@@ -21,7 +21,7 @@ class SendScheduledTweetsCommandTest extends TestCase
     }
 
     /** @test */
-    public function it_will_only_send_tweets_when_they_should_be_sent()
+    public function it_will_only_send_tweets_when_they_should_be_sent(): void
     {
         $this->createScheduledTweet('2018-01-15 15:59:59', 'past');
         $this->createScheduledTweet('2018-01-15 16:00:00', 'current');
@@ -36,7 +36,7 @@ class SendScheduledTweetsCommandTest extends TestCase
     }
 
     /** @test */
-    public function it_will_not_send_a_schedueld_tweet_that_has_already_been_sent()
+    public function it_will_not_send_a_schedueld_tweet_that_has_already_been_sent(): void
     {
         $this->createScheduledTweet('2018-01-15 15:59:59', 'past');
         $this->artisan('fullstack:send-scheduled-tweets');

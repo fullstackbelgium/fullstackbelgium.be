@@ -30,7 +30,7 @@ class EventTest extends TestCase
     }
 
     /** @test */
-    public function when_updating_an_event_with_a_meetup_com_event_id_it_will_update_the_event_on_meetup_com()
+    public function when_updating_an_event_with_a_meetup_com_event_id_it_will_update_the_event_on_meetup_com(): void
     {
         Event::flushEventListeners();
         Event::boot();
@@ -42,7 +42,7 @@ class EventTest extends TestCase
     }
 
     /** @test */
-    public function it_will_not_try_to_update_meetup_com_when_the_event_id_is_empty()
+    public function it_will_not_try_to_update_meetup_com_when_the_event_id_is_empty(): void
     {
         $this->event->meetup_com_event_id = '';
         $this->event->save();
@@ -54,7 +54,7 @@ class EventTest extends TestCase
     }
 
     /** @test */
-    public function it_can_generate_the_name_for_meetup_com()
+    public function it_can_generate_the_name_for_meetup_com(): void
     {
         /** @var Event $event */
         $event = Event::factory()->create([

@@ -11,7 +11,7 @@ class SendScheduledTweetsCommand extends Command
 
     protected $description = 'Send scheduled tweets';
 
-    public function handle()
+    public function handle(): void
     {
         $this->info('Sending scheduled tweets');
 

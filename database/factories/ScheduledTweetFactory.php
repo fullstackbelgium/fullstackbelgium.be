@@ -12,7 +12,7 @@ class ScheduledTweetFactory extends Factory
      *
      * @return array
      */
-    public function definition()
+    public function definition(): array
     {
         return [
             'scheduled_to_be_sent_at' => $this->faker->dateTimeBetween('-1 year', '+1 month'),

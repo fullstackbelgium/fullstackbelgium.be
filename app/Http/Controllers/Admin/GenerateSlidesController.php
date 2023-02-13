@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Illuminate\View\View;
 use App\Models\Event;
 use App\Models\Meetup;
 
 class GenerateSlidesController
 {
-    public function __invoke(Event $event)
+    public function __invoke(Event $event): View
     {
         $event->load(['sponsors', 'meetup']);
         $otherMeetups = Meetup::query()

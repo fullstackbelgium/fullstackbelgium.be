@@ -13,7 +13,7 @@ class EventFactory extends Factory
      *
      * @return array
      */
-    public function definition()
+    public function definition(): array
     {
         return [
             'date' => $this->faker->dateTimeBetween('now', '+3 years')->format('Y-m-d'),

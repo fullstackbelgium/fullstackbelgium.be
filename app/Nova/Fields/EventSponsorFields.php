@@ -11,7 +11,7 @@ class EventSponsorFields
      *
      * @return array
      */
-    public function __invoke()
+    public function __invoke(): array
     {
         return [
             Markdown::make('Message'),

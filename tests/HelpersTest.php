@@ -5,7 +5,7 @@ namespace Tests;
 class HelpersTest extends TestCase
 {
     /** @test */
-    public function it_can_convert_markdown_to_html()
+    public function it_can_convert_markdown_to_html(): void
     {
         $html = markdownToHtml('**test**');
 

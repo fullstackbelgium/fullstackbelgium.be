@@ -12,7 +12,7 @@ class Main extends Dashboard
      *
      * @return array
      */
-    public function cards()
+    public function cards(): array
     {
         return [
             new Help,

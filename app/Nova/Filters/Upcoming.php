@@ -2,6 +2,7 @@
 
 namespace App\Nova\Filters;
 
+use Illuminate\Database\Eloquent\Builder;
 use Carbon\Carbon;
 use Laravel\Nova\Filters\BooleanFilter;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -16,7 +17,7 @@ class Upcoming extends BooleanFilter
      * @param  mixed  $value
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function apply(NovaRequest $request, $query, $value)
+    public function apply(NovaRequest $request, Builder $query, $value): Builder
     {
         if (! $value['upcoming']) {
             return $query;
@@ -31,7 +32,7 @@ class Upcoming extends BooleanFilter
      * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
      * @return array
      */
-    public function options(NovaRequest $request)
+    public function options(NovaRequest $request): array
     {
         return [
             'Upcoming' => 'upcoming',

@@ -2,6 +2,8 @@
 
 namespace App\Exceptions;
 
+use Illuminate\Http\Response;
+use Illuminate\Http\Request;
 use Exception;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
@@ -44,7 +46,7 @@ class Handler extends ExceptionHandler
      * @param  \Throwable  $exception
      * @return void
      */
-    public function report(Throwable $exception)
+    public function report(Throwable $exception): void
     {
         parent::report($exception);
     }
@@ -56,7 +58,7 @@ class Handler extends ExceptionHandler
      * @param  \Throwable  $exception
      * @return \Illuminate\Http\Response
      */
-    public function render($request, Throwable $exception)
+    public function render(Request $request, Throwable $exception): Response
     {
         return parent::render($request, $exception);
     }
