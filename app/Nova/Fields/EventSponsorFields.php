@@ -8,8 +8,6 @@ class EventSponsorFields
 {
     /**
      * Get the pivot fields for the relationship.
-     *
-     * @return array
      */
     public function __invoke(): array
     {
