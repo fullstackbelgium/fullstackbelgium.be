@@ -35,7 +35,7 @@
                 @else
                     <span class="font-medium">Today!</span>
                 @endif
-                at {{ optional($nextEvent->venue)->name }}
+                at {{ $nextEvent->venue?->name }}
                 <span class="inline-block w-4" >
                     {{ svg('meetup') }}
                 </span>
