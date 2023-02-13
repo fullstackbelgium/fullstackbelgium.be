@@ -10,10 +10,9 @@ use Illuminate\Database\Eloquent\Model;
 class ScheduledTweet extends Model
 {
     use HasFactory;
-
-    protected $dates = [
-        'scheduled_to_be_sent_at',
-        'sent_at',
+    protected $casts = [
+        'scheduled_to_be_sent_at' => 'datetime',
+        'sent_at' => 'datetime',
     ];
 
     public function scopeShouldBeSent(Builder $query)
