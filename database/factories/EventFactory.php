@@ -28,14 +28,14 @@ class EventFactory extends Factory
                 return Meetup::factory()->create()->id;
             },
 
-            'meetup_com_event_id' => $this->faker->word,
-            'intro' => $this->faker->paragraph,
+            'meetup_com_event_id' => $this->faker->word(),
+            'intro' => $this->faker->paragraph(),
 
-            'schedule' => $this->faker->paragraph,
-            'speaker_1_abstract' => $this->faker->paragraph,
-            'speaker_2_abstract' => $this->faker->paragraph,
+            'schedule' => $this->faker->paragraph(),
+            'speaker_1_abstract' => $this->faker->paragraph(),
+            'speaker_2_abstract' => $this->faker->paragraph(),
 
-            'tweet' => $this->faker->sentence,
+            'tweet' => $this->faker->sentence(),
             'tweet_sent_at' => null,
         ];
     }

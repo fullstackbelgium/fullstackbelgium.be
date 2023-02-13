@@ -22,8 +22,8 @@ class MeetupFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->word,
-            'meetup_com_id' => $this->faker->slug,
+            'name' => $this->faker->word(),
+            'meetup_com_id' => $this->faker->slug(),
         ];
     }
 }
