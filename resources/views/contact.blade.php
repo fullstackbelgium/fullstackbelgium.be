@@ -70,17 +70,17 @@
                     <p>If you're looking to highlight some vacancies you have, or want to promote your company at one of our events, we offer the following packages for sponsorships:</p>
                     <p><strong>Bronze</strong> &euro;100 / event</p>
                     <ul>
-                        <li class="mb-2">Shout-out on Twitter from the <a href="https://twitter.com/fullstackbe" target="_blank">@fullstackbe</a> account (<strong>Always</strong> limited to one tweet per month) with a message &amp; link of your choice</li>
+                        <li class="mb-2">Shout-out on Twitter from the <a href="https://twitter.com/fullstackbe" target="_blank">@fullstackbe</a> account (> 1000 followers) (<strong>Always</strong> limited to one tweet per month) with a message &amp; link of your choice</li>
                         <li class="mb-2">Thank you in the opening pitch at one event + logo in the opening slides</li>
                     </ul>
                     <p><strong>Silver</strong> &euro;200 / event</p>
                     <ul>
                         <li class="mb-2">Everything from our <strong>Bronze</strong> package</li>
-                        <li class="mb-2">Your message of choice in a monthly newsletter sent to the full member list of one of our user groups</li>
+                        <li class="mb-2">Your message of choice in a monthly newsletter sent to the full member list of one of our user groups (> 1000 members)</li>
                     </ul>
                     <p><strong>Gold</strong> &euro;300 / 2 events</p>
                     <ul>
-                        <li class="mb-2">Everything from our <strong>Silver</strong> package but for both events</li>
+                        <li class="mb-2">Everything from our <strong>Silver</strong> package but for both events (> 3000 members)</li>
                     </ul>
                     <p class="mb-0">
                         Want to help us out and sponsor one of our events, or have a different proposal?<br>
