@@ -74,7 +74,7 @@
                         &mdash; {{ $nextMeetup->speaker_2_name }}
                         @else
                         **You?**<br>
-                        &mdash; Contact dries@vints.io to claim your slot!
+                        &mdash; Contact dries@vints.be to claim your slot!
                         @endif
                     </textarea>
                 </section>
@@ -95,7 +95,7 @@
                             &mdash; {{ $nextEvent->speaker_2_name }}
                             @else
                             **You?**<br>
-                            &mdash; Contact <a href="mailto:dries@vints.io" style="color: #6859ea">dries@vints.io</a> to claim your slot!
+                            &mdash; Contact <a href="mailto:dries@vints.be" style="color: #6859ea">dries@vints.be</a> to claim your slot!
                             @endif
                         </textarea>
                     </section>
