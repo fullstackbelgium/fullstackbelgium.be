@@ -76,7 +76,7 @@
                     <p><strong>Silver</strong> &euro;200 / event</p>
                     <ul>
                         <li class="mb-2">Everything from our <strong>Bronze</strong> package</li>
-                        <li class="mb-2">Your message of choice in a monthly newsletter sent to the full member list of one of our user groups (> 1000 members)</li>
+                        <li class="mb-2">Your message of choice in a monthly newsletter sent to the full member list of one of our user groups (> 1000 members, max two paragaphs)</li>
                     </ul>
                     <p><strong>Gold</strong> &euro;300 / 2 events</p>
                     <ul>
