@@ -122,7 +122,7 @@ class Event extends Resource
                     Heading::make('Event details')->onlyOnForms(),
                     Trix::make('Intro')->hideFromIndex(),
                     BelongsToMany::make('Sponsors')
-                      ->fields(new EventSponsorFields),
+                        ->fields(new EventSponsorFields),
 
                     Trix::make('Schedule')->hideFromIndex(),
                 ];
