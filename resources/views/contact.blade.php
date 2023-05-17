@@ -2,7 +2,7 @@
     'title' => 'Contact',
     'active' => 'contact',
 ])
-    @if (now() < \Illuminate\Support\Facades\Date::create('2023-06-15 00:00:00'))
+    @if (now() > \Illuminate\Support\Facades\Date::create('2023-06-15 00:00:00'))
         <section class="wrapper markup pb-4 md:pb-16">
             <div class="md:w-2/3">
                 <h1>Contact</h1>
