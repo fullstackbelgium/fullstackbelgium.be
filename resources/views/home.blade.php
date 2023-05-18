@@ -1,8 +1,17 @@
 @component('layouts.app', ['active' => 'home'])
     @if (now() > \Illuminate\Support\Facades\Date::create('2023-06-15 00:00:00'))
         <section class="wrapper pb-12">
-            <p class="md:w-2/3 text-2xl pb-16 md:pb-24">
-                Full Stack Belgium has stopped organizing meetups. We'd love to see you at our <a class="link" href="https://fullstackeurope.com">Full Stack Europe conference</a>.
+            <p class="md:w-2/3 text-2xl pb-16">
+                After 8 wonderful years, we've decided to call it quits. Thanks for attending our meetups over the years! We hope you enjoyed them as much as we did.
+            </p>
+
+            <p class="md:w-2/3 text-2xl pb-16">
+                We're still holding our annual conference and would love to see you at <a class="link" href="https://fullstackeurope.com">Full Stack Europe conference</a>.
+            </p>
+
+            <p class="md:w-2/3 text-2xl pb-16">
+                Cheers,<br>
+                Dries, Rias &amp; Freek
             </p>
         </section>
     @else

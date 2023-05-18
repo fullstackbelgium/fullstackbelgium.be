@@ -55,25 +55,27 @@
                     <img src="{{ asset('images/logo.svg') }}" alt="Full Stack Belgium">
                 </a>
 
-                <nav class="bg-gray-200 text-gray-700 py-1 leading-none sm:mt-8 mb-1 relative">
-                    <ul class="sm:flex text-right">
-                        <li class="mb-3 sm:mb-0 sm:mr-3 md:mr-5 {{ $active === 'home' ? 'font-bold text-black' : '' }}">
-                            <a href="{{ url('/') }}">Home</a>
-                        </li>
-                        <li class="mb-3 sm:mb-0 sm:mr-3 md:mr-5 {{ $active === 'slack' ? 'font-bold text-black' : '' }}">
-                            <a href="{{ url('slack') }}">Slack</a>
-                        </li>
-                        <li class="mb-3 sm:mb-0 sm:mr-3 md:mr-5">
-                            <a href="https://twitter.com/fullstackbe" target="_blank"  rel="noopener">Twitter</a>
-                        </li>
-                        <li class="mb-3 sm:mb-0 sm:mr-3 md:mr-5">
-                            <a href="https://www.instagram.com/fullstackbe/" target="_blank"  rel="noopener">Instagram</a>
-                        </li>
-                        <li class="{{ $active === 'contact' ? 'font-bold text-black' : '' }}">
-                            <a href="{{ url('contact') }}">Contact</a>
-                        </li>
-                    </ul>
-                </nav>
+                @if (now() < \Illuminate\Support\Facades\Date::create('2023-06-15 00:00:00'))
+                    <nav class="bg-gray-200 text-gray-700 py-1 leading-none sm:mt-8 mb-1 relative">
+                        <ul class="sm:flex text-right">
+                            <li class="mb-3 sm:mb-0 sm:mr-3 md:mr-5 {{ $active === 'home' ? 'font-bold text-black' : '' }}">
+                                <a href="{{ url('/') }}">Home</a>
+                            </li>
+                            <li class="mb-3 sm:mb-0 sm:mr-3 md:mr-5 {{ $active === 'slack' ? 'font-bold text-black' : '' }}">
+                                <a href="{{ url('slack') }}">Slack</a>
+                            </li>
+                            <li class="mb-3 sm:mb-0 sm:mr-3 md:mr-5">
+                                <a href="https://twitter.com/fullstackbe" target="_blank"  rel="noopener">Twitter</a>
+                            </li>
+                            <li class="mb-3 sm:mb-0 sm:mr-3 md:mr-5">
+                                <a href="https://www.instagram.com/fullstackbe/" target="_blank"  rel="noopener">Instagram</a>
+                            </li>
+                            <li class="{{ $active === 'contact' ? 'font-bold text-black' : '' }}">
+                                <a href="{{ url('contact') }}">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                @endif
             </div>
         </header>
 
@@ -83,10 +85,12 @@
 
         <footer class="w-full max-w-5xl px-6 sm:px-12 lg:px-24 mx-auto">
             <div class="py-6 md:flex justify-between text-xs text-gray-700">
-                <ul class="flex mb-2 md:mb-0">
-                    <li class="mr-3 md:mr-6"><a href="{{ url('contact') }}">Contact</a></li>
-                    <li><a href="{{ url('code-of-conduct') }}">Code of conduct</a></li>
-                </ul>
+                @if (now() < \Illuminate\Support\Facades\Date::create('2023-06-15 00:00:00'))
+                    <ul class="flex mb-2 md:mb-0">
+                        <li class="mr-3 md:mr-6"><a href="{{ url('contact') }}">Contact</a></li>
+                        <li><a href="{{ url('code-of-conduct') }}">Code of conduct</a></li>
+                    </ul>
+                @endif
 
                 <p>
                     &copy; {{ date('Y') }}
