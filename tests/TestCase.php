@@ -14,8 +14,8 @@ use Tests\Mocks\Twitter as TwitterMock;
 abstract class TestCase extends BaseTestCase
 {
     use CreatesApplication;
-    use RefreshDatabase;
     use InteractsWithContainer;
+    use RefreshDatabase;
 
     protected function setNow(string $date)
     {
