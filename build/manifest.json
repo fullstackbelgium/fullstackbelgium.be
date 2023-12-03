@@ -1,0 +1,37 @@
+{
+  "node_modules/photoswipe/dist/default-skin/default-skin.png": {
+    "file": "assets/default-skin-fd2d3fed.png",
+    "src": "node_modules/photoswipe/dist/default-skin/default-skin.png"
+  },
+  "node_modules/photoswipe/dist/default-skin/preloader.gif": {
+    "file": "assets/preloader-80d7ed3f.gif",
+    "src": "node_modules/photoswipe/dist/default-skin/preloader.gif"
+  },
+  "node_modules/photoswipe/dist/default-skin/default-skin.svg": {
+    "file": "assets/default-skin-6dc726bc.svg",
+    "src": "node_modules/photoswipe/dist/default-skin/default-skin.svg"
+  },
+  "resources/css/vendor.css": {
+    "file": "assets/vendor-33c3d96c.css",
+    "src": "resources/css/vendor.css",
+    "isEntry": true
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-ef829e64.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-566fa188.js",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/photoswipe.js"
+    ]
+  },
+  "resources/js/photoswipe.js": {
+    "file": "assets/photoswipe-0174c905.js",
+    "src": "resources/js/photoswipe.js",
+    "isDynamicEntry": true
+  }
+}
